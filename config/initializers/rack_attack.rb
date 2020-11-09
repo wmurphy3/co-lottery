@@ -27,6 +27,10 @@ class Rack::Attack
     req.ip unless req.path.start_with?('/assets')
   end
 
+  Rack::Attack.safelist('allow from localhost') do |req|
+    '67.198.44.149' == req.ip
+  end
+
   blocklist('block wp routes and 404js malware') do |req|
     req.path.include?('404javascript') ||
     req.path.include?('wp-admin') ||
@@ -39,10 +43,6 @@ class Rack::Attack
 
   blocklist("block all access using %") do |req|
     req.path == '/%'
-  end
-
-  blocklist("block all access from js") do |req|
-    req.path.end_with?('.js')
   end
 
   blocklist("block all passwd attempts") do |req|
@@ -71,12 +71,6 @@ class Rack::Attack
   # Throttle POST requests to /login by IP address
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:logins/ip:#{req.ip}"
-  throttle('logins/ip', :limit => 5, :period => 20.seconds) do |req|
-    if req.path == '/login' && req.post?
-      req.ip
-    end
-  end
-
   # Throttle POST requests to /login by email param
   #
   # Key: "rack::attack:#{Time.now.to_i/:period}:logins/email:#{req.email}"
@@ -85,12 +79,6 @@ class Rack::Attack
   # throttle logins for another user and force their login requests to be
   # denied, but that's not very common and shouldn't happen to you. (Knock
   # on wood!)
-  throttle("logins/email", :limit => 5, :period => 20.seconds) do |req|
-    if req.path == '/login' && req.post?
-      # return the email if present, nil otherwise
-      req.params['email'].presence
-    end
-  end
 
   ### Custom Throttle Response ###
 

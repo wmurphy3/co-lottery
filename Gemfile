@@ -60,10 +60,11 @@ end
 
 gem 'rack-attack'
 gem 'airbrake'
+gem 'redis-activesupport'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-gem 'bootstrap', '~> 5.0.0.alpha1'
-gem 'jquery-rails', '~> 4.3.3'
+gem 'bootstrap'
+gem 'jquery-rails'
 gem "parsley-rails"
 
 gem 'dotenv-rails'

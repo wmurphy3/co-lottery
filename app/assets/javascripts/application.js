@@ -10,10 +10,25 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery3
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require bootstrap
+//= require jquery3
 //= require popper
-//= require bootstrap-sprockets
+//= require parsley
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $('.game-piece').click(function () {
+    $.ajax({
+      type: 'get',
+      url: ('/games/'+$(this).index()),
+      async: false,
+      dataType: 'script',
+      success: function(data) {
+        
+      }
+    });
+  });
+});

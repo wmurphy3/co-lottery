@@ -1,0 +1,3 @@
+class UserPrize < ApplicationRecord
+  
+end

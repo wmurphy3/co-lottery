@@ -1,1 +1,2 @@
-$('.game-piece').eq("<%= params[:id] %>").html("<%= @prize[:prize][:name] %>")
+$('.game-piece').eq("<%= @prize.id %>").html("<%= @prize[:prize][:name] %>")
+setup timeout for next

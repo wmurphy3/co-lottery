@@ -2,12 +2,11 @@ class GamesController < ApplicationController
   before_action :setup_game
 
   def index
-    # TODO if failed show a screen/alert?
+    # TODO if failed/finished show a screen/alert?
   end
 
   def show
-    @prize = @game[params[:id].to_i]
-    # TODO set value in redis, incase somebody refreshes
+    @prize = @game.get_next
   end
 
   private

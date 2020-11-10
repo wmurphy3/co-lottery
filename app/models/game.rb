@@ -22,8 +22,18 @@ class Game
     end 
   end
 
+  def get_next
+    prize = @game.detect {|f| !f[:finished] }
+    prize[:finished] = true
+    prize
+  end
+
   def failed?
-    failed || (game && game[:finished])
+    failed
+  end
+
+  def finished?
+    game && game[:finished]
   end
 
   private
@@ -37,7 +47,11 @@ class Game
   end
 
   def set_prizes
-    users.each_with_index { |u, i| u[:prize] = {id: prizes[i].id, name: prizes[i].name} }
+    users.each_with_index do |u, i| 
+      u[:prize]     = {id: prizes[i].id, name: prizes[i].name}
+      u[:finished]  = false
+      u[:id]        = i
+    end
   end
 
   def user_list

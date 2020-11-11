@@ -3,16 +3,17 @@ class GamesController < ApplicationController
 
   def index
     # TODO if failed/finished show a screen/alert?
+    puts "@new_game: #{@new_game}"
   end
 
-  def show
+  def get_next
     @prize = @game.get_next
   end
 
   private
 
   def setup_game
-    game = Game.new({ip_address: request.remote_ip})
-    @game = game.setup_game
+    @game = Game.new({ip_address: request.remote_ip})
+    @new_game = @game.setup_game
   end
 end

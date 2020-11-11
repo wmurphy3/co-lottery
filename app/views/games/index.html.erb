@@ -8,10 +8,10 @@
         Quit
       </div>
     </div>
-    <div class="card-block card-container">
+    <div class="card-block card-container game">
       <div class="row">
         <%# TODO load values that maybe already happened %>
-        <% @game.each do |g| %>
+        <% @new_game.each do |g| %>
           <div class="col-md-4 game-piece">
             <h3><%= g[:name] %></h3>
           </div>

@@ -62,6 +62,9 @@ gem 'rack-attack'
 gem 'airbrake'
 gem 'redis-activesupport'
 
+gem "hiredis"
+gem "redis", "~> 4.0"
+
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap'
 gem 'jquery-rails'

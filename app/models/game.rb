@@ -1,12 +1,13 @@
 class Game
 
-  attr_accessor :ip, :failed, :users, :prizes, :game
-
+  attr_accessor :ip, :failed, :users, :prizes, :game, :cache
+  
+  # TODO Do we need to clear expired caches?
   def initialize(options={})
     digest  = cache_key(@ip, Date.today)
     @key    = "lottery/#{digest}"
 
-    @cache  = Redis.cache
+    @cache  = Rails.cache
   end
 
   def setup_game
@@ -25,6 +26,9 @@ class Game
   def get_next
     prize = @game.detect {|f| !f[:finished] }
     prize[:finished] = true
+    @game[prize[:id]] = prize
+    cache.write(@key, @game, expires_in: 24.hours)
+
     prize
   end
 

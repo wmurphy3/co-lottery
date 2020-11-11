@@ -19,16 +19,21 @@
 //= require parsley
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
-  $('.game-piece').click(function () {
+$(document).on('turbolinks:load', function () {
+  if ($('.game-piece').length > 0) {
+    getNextPrize();
+  }
+});
+
+function getNextPrize() {
+  // TODO show loading gif?
+  setTimeout(function () {
     $.ajax({
       type: 'get',
-      url: ('/games/'+$(this).index()),
+      url: ('/games/get_next'),
       async: false,
       dataType: 'script',
-      success: function(data) {
-        
-      }
+      success: function(data) {}
     });
-  });
-});
+  }, 3000);
+}

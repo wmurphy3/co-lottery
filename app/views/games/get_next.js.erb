@@ -1,1 +1,7 @@
-$('.game-piece').eq("<%= @prize[:id] %>").html("<%= @prize[:prize][:name] %>");
+$('.prize').eq("<%= @prize[:id] %>").html("<%= @prize[:prize][:name] %>");
+
+<% if @game.finished? %>
+  $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>")
+<% else %>
+  getNextPrize();
+<% end %>

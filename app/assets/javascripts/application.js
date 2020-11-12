@@ -21,10 +21,20 @@
 
 $(document).on('turbolinks:load', function () {
   if ($('.game-piece').length > 0) {
-    getNextPrize();
+    var finished_game = $('.finished_game').val() == "false";
+
+    // Only get next piece if the game wasn't finished earlier
+    if (finished_game) {
+      getNextPrize();
+    }
   }
+
+  $('#confirm').click(function () {
+    $('.enter-raffle').removeAttr("disabled");
+  });
 });
 
+// Get the next prize depending on cache
 function getNextPrize() {
   // TODO show loading gif?
   setTimeout(function () {

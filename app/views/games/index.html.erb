@@ -9,13 +9,24 @@
       </div>
     </div>
     <div class="card-block card-container game">
+      <input type="hidden" value="<%= @game.finished? %>" class="finished_game" />
+
       <div class="row">
-        <%# TODO load values that maybe already happened %>
         <% @new_game.each do |g| %>
           <div class="col-md-4 game-piece">
             <h3><%= g[:name] %></h3>
+            <span class="prize">
+              <% if g[:finished] %>
+                <%= g[:prize][:name] %>
+              <% end %>
+            </span>
           </div>
         <% end %>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="finished text-center"></div>
+        </div>
       </div>
     </div>
   </div>

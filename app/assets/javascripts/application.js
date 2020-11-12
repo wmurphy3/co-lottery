@@ -29,6 +29,12 @@ $(document).on('turbolinks:load', function () {
     }
   }
 
+  // User has decided to open gift
+  $('.user-action').click(function (){
+    getNextPrize();
+  });
+
+  // Confirmed over 18
   $('#confirm').click(function () {
     $('.enter-raffle').removeAttr("disabled");
   });

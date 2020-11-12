@@ -27,7 +27,7 @@ class GamesController < ApplicationController
   end
 
   def redirect_to_present
-    if @game.finished
+    if @game.finished?
       redirect_to game_path(@game.winner_prize)
     end
   end

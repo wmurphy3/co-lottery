@@ -30,12 +30,16 @@ class Game
     begin
       prize = get_next_present
       update_game(prize)
-
+      
       prize
     rescue => e
       puts "e: #{e.inspect}"
       @failed = true
     end 
+  end
+
+  def steal
+    # TODO Figure out bots prize after user steals
   end
 
   # Check if anything failed
@@ -48,6 +52,12 @@ class Game
     game && @game.count { |h| h[:finished] == true } == 6
   end
 
+  # Stop game and let user decide
+  def stop_game?
+    finished? || user_turn?
+  end
+
+  # Find the users prize
   def winner_prize
     @game.detect {|f| !f[:bot] }[:prize][:id]
   end
@@ -69,20 +79,27 @@ class Game
     users.each_with_index do |u, i| 
       u[:prize]     = {id: prizes[i].id, name: prizes[i].name}
       u[:finished]  = false
+      u[:action]    = i == 0 ? (u[:bot] ? "Deciding..." : "OPEN NEW GIFT" ) :nil
       u[:id]        = i
     end
   end
 
-  # detect next hash to pull
+  # Detect next hash to pull
   def get_next_present
     @game.detect {|f| !f[:finished] }
   end
 
   # Update game array and cache it
   def update_game(prize)
-    prize[:finished] = true
+    prize[:finished]  = true
+    prize[:action]    = "Opened"
     @game[prize[:id]] = prize
+
     cache.write(@key, @game, expires_in: 24.hours)
+  end
+
+  def user_turn?
+    @game.find_index{ |item| !item[:bot]} == @game.count { |h| h[:finished] == true }
   end
 
   def cache_key(*key)

@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="card-block card-container game">
-      <input type="hidden" value="<%= @game.finished? %>" class="finished_game" />
+      <input type="hidden" value="<%= @game.stop_game? %>" class="finished_game" />
 
       <div class="row">
         <% @new_game.each do |g| %>
@@ -20,6 +20,9 @@
                 <%= g[:prize][:name] %>
               <% end %>
             </span>
+            <button class="user-action">
+              <%= g[:action] %>
+            </button>
           </div>
         <% end %>
       </div>

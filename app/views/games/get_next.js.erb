@@ -1,7 +1,11 @@
 $('.prize').eq("<%= @prize[:id] %>").html("<%= @prize[:prize][:name] %>");
-
+$('.user-action').eq("<%= @prize[:id] %>").text("<%= @prize[:action] %>");
+// We need to decide about other actions
 <% if @game.finished? %>
   $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>")
+<% elsif @game.stop_game? %>
+  alert('user turn');
 <% else %>
+  $('.user-action').eq("<%= @prize[:id] + 1 %>").text("Deciding...");
   getNextPrize();
 <% end %>

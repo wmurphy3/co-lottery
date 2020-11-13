@@ -91,9 +91,31 @@ class Game
 
   # Update game array and cache it
   def update_game(prize)
-    prize[:finished]  = true
-    prize[:action]    = "Opened"
-    @game[prize[:id]] = prize
+    action = bot_action
+
+    if action == "open"
+      prize[:finished]  = true
+      prize[:action]    = "Opened"
+      @game[prize[:id]] = prize
+    elsif action == "steal_bot"
+      # Grab random index from array where finished
+      index               = rand(finished_count)
+      # Swap current bot gift to stolen bot
+      bot_prize           = @game[index]
+      bot_prize[:action]  = "Stolen"
+      prize[:action]      = "Deciding..."
+      @game[prize[:id]]   = bot_prize
+      @game[index]        = prize
+    else
+      # Grab index of user from array
+      index               = @game.find_index{ |item| !item[:bot]}
+      # Swap current bot with user gift
+      bot_prize           = @game[index]
+      bot_prize[:action]  = "Stolen"
+      prize[:action]      = "Deciding..."
+      @game[prize[:id]]   = bot_prize
+      @game[index]        = prize
+    end
 
     cache.write(@key, @game, expires_in: 24.hours)
   end
@@ -121,6 +143,32 @@ class Game
       {name: "Test User", bot: true},
       {name: "User Test", bot: true}
     ]
+  end
+
+  def finished_count
+    @finished_count ||= @game.count { |h| h[:finished] == true}
+  end
+
+  def bot_action
+    max_open          = 65
+    min_steal_bot     = 66
+    max_steal_bot     = 89
+    min_steal_player  = 90
+    max_steal_player  = 100
+
+    if @game.count { |h| h[:finished] == false} < 1
+      max_open          = 100
+    elsif @game.count { |h| h[:finished] == false && h[:bot] == false } < 1 
+      max_open          = 75
+      min_steal_bot     = 76
+      max_steal_bot     = 100
+    end
+
+    case rand(100) + 1
+      when 1..max_open   then 'open'
+      when min_steal_bot..max_steal_bot   then 'steal_bot'
+      when 90..100  then 'steal_player'
+    end
   end
 
 end

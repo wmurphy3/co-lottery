@@ -39,14 +39,30 @@
   height: 100vh !important;
 }
 
+.dashboard {
+ 
+}
+
 .logo-box {
   position: absolute;
   top: 2rem;
   left: 2rem;
 }
 
+.dashboard-logo-box {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .logo {
   height: 7rem;
+}
+
+.dashboard-white-elephant-logo {
+  height: 50rem;
 }
 
 .white-elephant-logo-box {
@@ -58,6 +74,14 @@
   font-size: 2rem;
 }
 
+.dashboard-white-elephant-logo-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .header {
     height: 25vh;
     background-size: cover;
@@ -66,6 +90,15 @@
     padding: 1rem;
     background-color: $background-color-main;
   }
+
+.dashboard-header {
+  height: 75vh;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  padding: 1rem;
+  background-color: $background-color-main;
+}
 
 .player-card {
   height: 50vh;
@@ -122,10 +155,10 @@
   color: $white;
 }
 
- .btn-green {
-    background-color:$dark-green;
-    color: $white;
-  }
+.btn-green {
+  background-color:$dark-green;
+  color: $white;
+}
   
 .play-now-btn:link, .play-now-btn:visited {
   text-transform: uppercase;

@@ -1,0 +1,39 @@
+<div class="modal fade" id="myPrizeModal" tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="myPrizeTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        Close
+        <button type="button" class="btn-close close-my-prize" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="game-piece">
+          <h3>YOU OPENED...</h3>
+          <h3><%= @game.winner_prize[:prize][:name] %></h3>
+        </div>
+
+        <p>Try to keep or steal the gift you want by the end of the game!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    var myModalEl = document.getElementById('myPrizeModal')
+    myModalEl.addEventListener('hidden.bs.modal', function (e) {
+      var finished_game = $('.finished_game').val() == "true";
+
+      if (finished_game) {
+        $.ajax({
+          type: 'get',
+          url: ('/games/get_next'),
+          async: false,
+          dataType: 'script',
+          success: function(data) {}
+        });
+      }
+    })
+  });
+</script>

@@ -1,0 +1,12 @@
+
+$('.finished_game').val("<%= @game.stop_game? %>");
+
+<% @new_game.each do |g| %>
+  setAction('<%= g[:id] %>', '<%= g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>')
+<% end %>
+getNextPrize();
+
+function setAction(id, name, prize) {
+  $('.user-action').eq(id).text(name);
+  $('.prize').eq(id).html(prize);
+}

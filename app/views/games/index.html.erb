@@ -13,22 +13,26 @@
 
       <div class="row">
         <% @new_game.each do |g| %>
-          <div class="col-md-4 game-piece">
+          <div class="col-md-4 game-piece <%= g[:bot] ? "bot" : "player" %>">
             <h3><%= g[:name] %></h3>
             <span class="prize">
               <% if g[:finished] %>
                 <%= g[:prize][:name] %>
               <% end %>
             </span>
-            <button class="user-action">
-              <%= g[:action] %>
-            </button>
+            <div class="user-action">
+              <p><%= g[:action] %></p>
+            </div>
           </div>
         <% end %>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="finished text-center"></div>
+          <div class="finished text-center">
+            <% if @game.stop_game? %>
+              <%= render :partial => 'my_prize' %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

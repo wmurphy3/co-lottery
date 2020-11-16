@@ -1,36 +1,30 @@
-<div class="col-12">
-  <div class="card">
-    <div class="card-header">
-      <div class="float-left">
-        CL Logo
-      </div>
-      <div class="float-right">
-        Quit
-      </div>
-    </div>
-    <div class="card-block card-container game">
-      <input type="hidden" value="<%= @game.stop_game? %>" class="finished_game" />
+<div class="body">
+  <div class="row vh-100 background-main">
+    <div class="col-12">
+      <div class="game">
+        <input type="hidden" value="<%= @game.stop_game? %>" class="finished_game" />
 
-      <div class="row">
-        <% @new_game.each do |g| %>
-          <div class="col-md-4 game-piece">
-            <h3><%= g[:name] %></h3>
-            <span class="prize">
-              <% if g[:finished] %>
-                <%= g[:prize][:name] %>
-              <% end %>
-            </span>
-            <button class="user-action">
-              <%= g[:action] %>
-            </button>
+        <div class="row">
+          <% @new_game.each do |g| %>
+            <div class="col-md-3 game-piece player-card">
+            <p class="text-center"><%= g[:name] %></p>
+              <span class="prize">
+                <% if g[:finished] %>
+                  <%= g[:prize][:name] %>
+                <% end %>
+              </span>
+              <button class="user-action">
+                <%= g[:action] %>
+              </button>
+            </div>
+          <% end %>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="finished text-center"></div>
           </div>
-        <% end %>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="finished text-center"></div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div>  

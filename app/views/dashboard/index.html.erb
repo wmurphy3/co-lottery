@@ -1,18 +1,19 @@
 <div class="row vh-100">
   <div class="login-screen my-auto">
-    <div class="card card-block">
+    <div class="card-block">
       <div class="card-body">
-        <div class="text-center">
-          <%=image_tag 'logo.png', class: 'mb-4 logo'%>
+
+        <div class="row mb-4">
+          <%= link_to games_path, class: "btn btn-green play-now-btn" do %>
+            PLAY NOW
+          <% end %>
+        </div>
+        <div class="row mt-4">
+          <%= link_to how_to_index_path, class: "btn btn-yellow play-now-btn" do %>
+            HOW TO PLAY
+          <% end %>
         </div>
 
-        <%= link_to games_path, class: "btn btn-primary btn-lg btn-block" do %>
-          PLAY NOW
-        <% end %>
-
-        <%= link_to how_to_index_path, class: "btn btn-secondary btn-lg btn-block" do %>
-          HOW TO PLAY
-        <% end %>
       </div>
     </div>
   </div>

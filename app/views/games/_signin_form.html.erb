@@ -1,12 +1,13 @@
 <a class="sign_up">Sign Up?</a>
 
-<%= form_for(UserPrize.new, remote: true, :html => {'parsley-validate' => '', id: 'new_user'}) do |f| %>
+<%= form_for(UserPrize.new, remote: true, :html => {'parsley-validate' => '', id: 'login'}) do |f| %>
   <%= f.hidden_field :prize_id, value: @prize.id %>
 
   <div class="form-group">
     <label></label>
     <%= f.email_field :email, autocomplete: "email", class: 'form-control',
-      placeholder: 'Email', :required => true, :data => {'parsley-type' => "email", 'parsley-trigger'=>"input"} %>
+      placeholder: 'Email', :required => true, :data => {'parsley-type' => "email", 'parsley-trigger'=>"input",
+      'parsley-error-message'=> "Required", "parsley-error-type-message"=>"Invalid Email"} %>
   </div>
 
   <div class="actions">

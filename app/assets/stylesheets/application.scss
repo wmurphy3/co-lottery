@@ -58,10 +58,6 @@
   height: 100vh !important;
 }
 
-.dashboard {
- 
-}
-
 .logo-box {
   position: absolute;
   top: 2rem;
@@ -102,13 +98,13 @@
 }
 
 .header {
-    height: 25vh;
-    background-size: cover;
-    background-position: top;
-    position: relative;
-    padding: 1rem;
-    background-color: $background-color-main;
-  }
+  height: 25vh;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  padding: 1rem;
+  background-color: $background-color-main;
+}
 
 .dashboard-header {
   height: 75vh;
@@ -120,10 +116,11 @@
 }
 
 .player-card {
+  display: inline-block;
   height: 50vh;
-  width: 40vh;
-  margin: 2rem;
-  background-color: $background-color-user-box;
+  width: 25vw;
+  margin-left: 3rem;
+  margin-right: 3rem;
   border-radius: 1rem;
   border: .2rem solid $player-card-border;
   box-shadow: 0 .2rem 1rem rgba(0,0,0,4);
@@ -131,6 +128,11 @@
 
 .decision-pending {
   background-color: $background-color-user-box-active !important;
+  border: .2rem solid $dark-green;
+}
+
+.decision-waiting {
+  background-color: $background-color-user-box;
   border: .2rem solid $dark-green;
 }
 
@@ -143,11 +145,20 @@
   font-size: 2rem;
 }
 
-.steal-text {
+.red-text-box {
   padding: 1rem 3rem;
-  background-color: $green;
+  background-color: $red;
   color: $white;
   font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.stolen-text-box {
+  padding: 1rem 3rem;
+  background-color: $white;
+  color: gray;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .deciding-text {
@@ -160,6 +171,17 @@
 .background-main {
   background-color: $background-color-main;
 }
+
+
+.dashboard-text {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 3rem;
+  padding: 3rem;
+}
+
 
 //Buttons
 

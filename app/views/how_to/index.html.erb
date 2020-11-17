@@ -1,29 +1,91 @@
-<div class="vh-100 background-main">
-  <div class="col-md-12">
-    <div class="body">
-      <div class= "header-text-box">
-        <p> <strong>Open</strong> your gift or <strong>steal</strong> </br> another player's on your turn.</p>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="player-card">
-            <div class="p-2">
-              <p class="text-center">Player-Name</p>
-              <div class= "text-center yeti"></div>
-              <div class= "steal-text">Steal</div>
-              <div class="text-center mt-4">Gift-Name</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="player-card decision-pending">
-            <p class="text-center">Player-Name</p>
-            <div class= "text-center"><%= image_tag("yeti.png", :alt => "cooler") %></div>
-            <div class= "deciding-text">OPEN NEW GIFT</div>
-          </div>
-        </div>
-
-      </div>
+<div class="background-main">
+  <div class="body">
+      <div class="dashboard-text">
+        <p> <strong>Open</strong> your gift or <strong>steal</strong> another player's on your turn.</p>
     </div>
+    
+      <div class="player-card decision-waiting">
+        <p class="text-center">Player-Name</p>
+        <div class= "text-center yeti"></div>
+        <div class= "red-text-box">white space</div>
+        <div class="text-center">Gift-Name</div>
+      </div>
+  
+      <div class="player-card decision-pending">
+        <p class="text-center">Player-Name</p>
+        <div class= "text-center red-gift"></div>
+        <div class= "red-text-box">Open new gift</div>
+        <div class="text-center">Gift-Name</div>
+      </div>
+
+      <div class="dashboard-text mb-4">
+        <h2> If your the <strong>fist player</strong> you'll only have the option to <strong>open.</strong> Don't worry though, you get the <strong>last steal!</strong></h2>
+      </div>
+
+      <div class="dashboard-text">
+        <p> If your gift gets <strong>stolen</strong>, you'll be able to <strong>open</strong> a new gift or <strong>steal</strong> another one. </p>
+      </div> 
+
+    <div class="player-card decision-waiting">
+      <p class="text-center">Player-Name</p>
+      <div class= "text-center yeti"></div>
+      <div class= "red-text-box">white space</div>
+      <div class="text-center">Gift-Name</div>
+    </div>
+
+    <div class="player-card decision-pending">
+      <p class="text-center">Player-Name</p>
+      <div class= "text-center red-gift"></div>
+      <div class= "red-text-box">Open new gift</div>
+      <div class="text-center">Gift-Name</div>
+    </div>
+
+    <div class="dashboard-text">
+      <p> Each gift may only be <strong>stolen</strong> once.</p>
+    </div>
+
+    <div class="player-card decision-waiting">
+      <p class="text-center">Player-Name</p>
+      <div class= "text-center red-gift"></div>
+      <div class= "stolen-text-box">Stolen</div>
+      <div class="text-center">Gift-Name</div>
+    </div>
+
+    <div class="dashboard-text">
+      <p> The first player <strong>steals</strong> last. Or, <strong>keep</strong> their gift.</p>
+    </div>
+
+    <div class="player-card decision-pending">
+      <p class="text-center">Player-Name</p>
+      <div class= "text-center red-gift"></div>
+      <div class= "red-text-box">Keep my gift</div>
+      <div class="text-center">Gift-Name</div>
+    </div>
+
+    <div class="player-card decision-waiting">
+      <p class="text-center">Player-Name</p>
+      <div class= "text-center red-gift"></div>
+      <div class= "red-text-box">white space</div>
+      <div class="text-center">Gift-Name</div>
+    </div>
+
+      <div class="dashboard-text">
+      <p> Once the game ends, you'll be able to join a raffle to win the real version of your gift.</p>
+    </div>
+
+            <div class="dashboard-text">
+        <h1> Plus, every play has the chance to win <strong>scratch tickets!</strong></h1>
+      </div>
+
+    <div class="player-card decision-pending">
+      <p class="text-center">You're entered to win....</p>
+      <div class= "text-center red-gift"></div>
+      <div class= "red-text-box">white space</div>
+      <div class="text-center">Gift-Name</div>
+    </div>
+
+    <%= link_to games_path, class: "btn btn-green play-now-btn" do %>
+      PLAY NOW
+    <% end %>
   </div>
 </div>  

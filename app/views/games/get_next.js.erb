@@ -11,11 +11,13 @@ $('.finished_game').val("<%= @game.stop_game? %>");
   <% @new_game.each do |g| %>
     setAction('<%= g[:id] %>','<%= g[:bot] && g[:finished] ? "STEAL" : (g[:bot] ? nil : (g[:finished] ? "KEEP" : "OPEN NEW GIFT")) %>','<%= g[:finished] ? g[:prize][:name] : nil %>','<%= g[:finished] ? g[:prize][:class_name] : nil %>')
   <% end %>
+  $('.current_turn').html("<%= @game.current_user %>")
   $(".finished").html("<%= escape_javascript(render partial: 'my_prize' ) %>")
 <% else %>
   <% @new_game.each_with_index do |g,i| %>
     setAction('<%= g[:id] %>', '<%= @prize[:id] + 1 == i && !g[:finished] ? "DECIDING..." : g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>','<%= g[:finished] ? g[:prize][:class_name] : nil %>')
   <% end %>
+  $('.current_turn').html("<%= @game.current_user %>")
   getNextPrize();
 <% end %>
 

@@ -101,11 +101,25 @@ class Game
     game && !finished? && game.count { |h| h[:finished] == true } == 6
   end
 
+  def current_user
+    return nil if finished?
+
+    if last_turn?
+      name = @game.detect {|f| !f[:final] }[:name]
+    else
+      name = @game.detect {|f| !f[:finished] }[:name]
+    end
+
+    name = name == "ME" ? "your" : name
+
+    "It's #{name} turn..."
+  end
+
   private
 
   # Get 5 random bots
   def get_random_user_list 
-    @users = user_list.sample(5).insert(rand(5), {name: "Me", bot: false})
+    @users = user_list.sample(5).insert(rand(5), {name: "ME", bot: false})
   end
 
   # Get 6 random prizes

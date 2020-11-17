@@ -10,6 +10,8 @@
     </div>
     <div class="card-block card-container game">
       <input type="hidden" value="<%= @game.stop_game? %>" class="finished_game" />
+      
+      <p class="text-center current_turn"><%= @game.current_user %></p>
 
       <div class="row">
         <% @new_game.each do |g| %>

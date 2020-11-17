@@ -1,5 +1,4 @@
 class Game
-
   attr_accessor :ip, :failed, :users, :prizes, :game, :cache, :prize_id
   
   # TODO Do we need to clear expired caches?
@@ -28,10 +27,9 @@ class Game
   # Get next prize
   def get_next
     begin
-      puts "@game: #{@game}"
       prize = get_next_present
       prize = update_game(prize)
-      puts "@game: #{@game}"
+    
       prize
     rescue => e
       puts "e: #{e.inspect}"
@@ -53,10 +51,13 @@ class Game
       bot_prize[:prize]     = temp_prize
       # set status
       prize[:finished]      = true
-      bot_prize[:finished]  = false
 
-      if final_turn?
-        prize[:final] = true
+      if last_turn?
+        prize[:final]         = true
+        bot_prize[:action]    = "OPENED"
+        bot_prize[:finished]  = true
+      else
+        bot_prize[:finished]  = false
       end
       
       # set game
@@ -104,7 +105,7 @@ class Game
 
   # Get 5 random bots
   def get_random_user_list 
-    @users = user_list.sample(5).insert(0, {name: "Me", bot: false})
+    @users = user_list.sample(5).insert(rand(5), {name: "Me", bot: false})
   end
 
   # Get 6 random prizes
@@ -115,7 +116,7 @@ class Game
   # Set the prize json
   def set_prizes
     users.each_with_index do |u, i| 
-      u[:prize]     = {id: prizes[i].id, name: prizes[i].name}
+      u[:prize]     = {id: prizes[i].id, name: prizes[i].name, class_name: prizes[i].class_name}
       u[:finished]  = false
       u[:final]     = i == 0 ? false : true
       u[:action]    = i == 0 ? (u[:bot] ? "DECIDING..." : "OPEN NEW GIFT" ) :nil
@@ -137,7 +138,7 @@ class Game
     action = bot_action
 
     if last_turn?
-      prize[:final]  = true
+      prize[:final]     = true
       prize[:action]    = "OPENED"
       @game[prize[:id]] = prize
     elsif action == "open"
@@ -202,18 +203,98 @@ class Game
 
   def user_list
     [
-      {name: "John Doe", bot: true},
-      {name: "Jane Doe", bot: true},
-      {name: "Test User", bot: true},
-      {name: "User Test", bot: true},
-      {name: "John Doe", bot: true},
-      {name: "Jane Doe", bot: true},
-      {name: "Test User", bot: true},
-      {name: "User Test", bot: true},
-      {name: "John Doe", bot: true},
-      {name: "Jane Doe", bot: true},
-      {name: "Test User", bot: true},
-      {name: "User Test", bot: true}
+      {name: "Mitchmonster7", bot: true},
+      {name: "T0p1cal", bot: true},
+      {name: "Roserivera", bot: true},
+      {name: "Notimelikenow3", bot: true},
+      {name: "Stulich08", bot: true},
+      {name: "Gobroncos777", bot: true},
+      {name: "Fancygirl25", bot: true},
+      {name: "J1nglebe11s", bot: true},
+      {name: "Kriskringle22", bot: true},
+      {name: "Rudolphthebrownnoser", bot: true},
+      {name: "Falalalala10", bot: true},
+      {name: "Elfman732", bot: true},
+      {name: "Thesantaclaus", bot: true},
+      {name: "Coloradical48", bot: true},
+      {name: "Xmasisthebest", bot: true},
+      {name: "Sidseymour", bot: true},
+      {name: "Tpacker99", bot: true},
+      {name: "Scottstots", bot: true},
+      {name: "Rockiesrule17", bot: true},
+      {name: "Avsfanatic19", bot: true},
+      {name: "Naughtyornice1", bot: true},
+      {name: "Nuggets4l1fe", bot: true},
+      {name: "Ilikeicecream9", bot: true},
+      {name: "Davidfosterwallet", bot: true},
+      {name: "Peter.mcall8", bot: true},
+      {name: "Crazy4elves", bot: true},
+      {name: "Dancergirl23", bot: true},
+      {name: "Fastguy9", bot: true},
+      {name: "Scrooge4", bot: true},
+      {name: "Mntnboy104", bot: true},
+      {name: "Jchillin87", bot: true},
+      {name: "Janlevg23", bot: true},
+      {name: "Coolronamintz", bot: true},
+      {name: "Coloradoclaus3", bot: true},
+      {name: "Dwitch55", bot: true},
+      {name: "Gpolinski1", bot: true},
+      {name: "Froggy101", bot: true},
+      {name: "Pizzafanatic6", bot: true},
+      {name: "Iheartxmas9", bot: true},
+      {name: "Franzenj3", bot: true},
+      {name: "Zeeezy8", bot: true},
+      {name: "Yeahyeaht", bot: true},
+      {name: "Vivi46", bot: true},
+      {name: "Santaslittlehelper5", bot: true},
+      {name: "C0stanza", bot: true},
+      {name: "Hepennypacker", bot: true},
+      {name: "Avandalay66 ", bot: true},
+      {name: "Sourcreambarly1", bot: true},
+      {name: "Mistermonkeydog", bot: true},
+      {name: "ColoradoChillGirl", bot: true},
+      {name: "Trout1992", bot: true},
+      {name: "BreckBro89", bot: true},
+      {name: "Dawgwalker9000", bot: true},
+      {name: "PicklesDaFrenchie", bot: true},
+      {name: "ToddyBahama", bot: true},
+      {name: "PonchoinDenver", bot: true},
+      {name: "Clowndarkmatter", bot: true},
+      {name: "hashtagSanta", bot: true},
+      {name: "no2stunna", bot: true},
+      {name: "littlemissmuffin", bot: true},
+      {name: "mountainjunoswan", bot: true},
+      {name: "hotdogpants", bot: true},
+      {name: "mountainturkey", bot: true},
+      {name: "mrsrobot", bot: true},
+      {name: "honeybunny", bot: true},
+      {name: "password123", bot: true},
+      {name: "pwned126", bot: true},
+      {name: "amber1977", bot: true},
+      {name: "MDouggie", bot: true},
+      {name: "MuricaMan", bot: true},
+      {name: "FlatEarthDonna", bot: true},
+      {name: "GarfieldFanArt", bot: true},
+      {name: "PowerDaze", bot: true},
+      {name: "TonyRichardson15", bot: true},
+      {name: "EthansLastCrackerJack", bot: true},
+      {name: "Rebeccasunrise", bot: true},
+      {name: "Savannah_Hope", bot: true},
+      {name: "MsMaggieKate", bot: true},
+      {name: "DevinneysRevenge", bot: true},
+      {name: "SantosLHalper", bot: true},
+      {name: "Anniehallmonitor", bot: true},
+      {name: "Insomniac400", bot: true},
+      {name: "Leetspeak337", bot: true},
+      {name: "THISISBEANS", bot: true},
+      {name: "AndysCandies", bot: true},
+      {name: "GladiatorBee", bot: true},
+      {name: "Dougspectacular", bot: true},
+      {name: "BitcoinBaller", bot: true},
+      {name: "BeefSalad", bot: true},
+      {name: "ElleorysRealDad", bot: true},
+      {name: "BoobiliPizzaMan", bot: true},
+      {name: "JBBoulder19", bot: true}
     ]
   end
 
@@ -236,7 +317,7 @@ class Game
       min_steal_bot     = 76
       max_steal_bot     = 100
     end
-    
+  
     case num
       when 1..max_open                  then 'open'
       when min_steal_bot..max_steal_bot then 'steal_bot'

@@ -1,26 +1,25 @@
-$('.prize').eq("<%= @prize[:id] %>").html("<%= @prize[:prize][:name] %>");
-$('.user-action').eq("<%= @prize[:id] %>").text("<%= @prize[:action] %>");
 $('.finished_game').val("<%= @game.stop_game? %>");
 
 // We need to decide about other actions
 <% if @game.finished? %>
   <% @new_game.each do |g| %>
-    setAction('<%= g[:id] %>', '<%= g[:action] %>','<%= g[:prize][:name] %>')
+    setAction('<%= g[:id] %>', '<%= g[:action] %>','<%= g[:prize][:name] %>','<%= g[:prize][:class_name] %>')
   <% end %>
   $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>")
 <% elsif @game.stop_game? %>
   <% @new_game.each do |g| %>
-    setAction('<%= g[:id] %>','<%= g[:bot] && g[:finished] ? "STEAL" : (g[:bot] ? nil : (g[:finished] ? "KEEP" : "OPEN NEW GIFT")) %>','<%= g[:finished] ? g[:prize][:name] : nil %>')
+    setAction('<%= g[:id] %>','<%= g[:bot] && g[:finished] ? "STEAL" : (g[:bot] ? nil : (g[:finished] ? "KEEP" : "OPEN NEW GIFT")) %>','<%= g[:finished] ? g[:prize][:name] : nil %>','<%= g[:finished] ? g[:prize][:class_name] : nil %>')
   <% end %>
   $(".finished").html("<%= escape_javascript(render partial: 'my_prize' ) %>")
 <% else %>
   <% @new_game.each_with_index do |g,i| %>
-    setAction('<%= g[:id] %>', '<%= @prize[:id] + 1 == i && !g[:finished] ? "DECIDING..." : g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>')
+    setAction('<%= g[:id] %>', '<%= @prize[:id] + 1 == i && !g[:finished] ? "DECIDING..." : g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>','<%= g[:finished] ? g[:prize][:class_name] : nil %>')
   <% end %>
   getNextPrize();
 <% end %>
 
-function setAction(id, name, prize) {
+function setAction(id, name, prize, class_name) {
   $('.user-action').eq(id).text(name);
-  $('.prize').eq(id).html(prize);
+  $('.prize_name').eq(id).html(prize);
+  $('.gift').eq(id).prop("class","gift "+class_name);
 }

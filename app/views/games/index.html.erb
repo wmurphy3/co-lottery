@@ -13,9 +13,10 @@
 
       <div class="row">
         <% @new_game.each do |g| %>
-          <div class="col-md-4 game-piece <%= g[:bot] ? "bot" : "player" %>">
+          <div class="col-md-4 prize game-piece <%= g[:bot] ? "bot" : "player" %>">
             <h3><%= g[:name] %></h3>
-            <span class="prize">
+            <div class="gift"></div>
+            <span class="prize_name">
               <% if g[:finished] %>
                 <%= g[:prize][:name] %>
               <% end %>

@@ -2,11 +2,17 @@
 $('.finished_game').val("<%= @game.stop_game? %>");
 
 <% @new_game.each do |g| %>
-  setAction('<%= g[:id] %>', '<%= g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>')
+  setAction('<%= g[:id] %>', '<%= g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>','<%= g[:finished] ? g[:prize][:class_name] : nil %>')
 <% end %>
-getNextPrize();
 
-function setAction(id, name, prize) {
+<% if @game.finished? %>
+  $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>")
+<% else %>
+  getNextPrize();
+<% end %>
+
+function setAction(id, name, prize, class_name) {
   $('.user-action').eq(id).text(name);
   $('.prize').eq(id).html(prize);
+  $('.gift').eq(id).prop("class","gift "+class_name);
 }

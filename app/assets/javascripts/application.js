@@ -29,15 +29,46 @@ $(document).on('turbolinks:load', function () {
     }
   }
 
-  // User has decided to open gift
-  $('.user-action').click(function (){
-    getNextPrize();
-  });
-
   // Confirmed over 18
   $('#confirm').click(function () {
     $('.enter-raffle').removeAttr("disabled");
   });
+
+  // Player chose to open gift
+  $('.game-piece.player').click(function () {
+    var action = $(this).find(".user-action").text();
+
+    if (action == "KEEP") {
+      $.ajax({
+        type: 'get',
+        url: ('/games/get_next'),
+        async: false,
+        dataType: 'script',
+        success: function(data) {}
+      });
+    } else {
+      var myModal = new bootstrap.Modal(document.getElementById('myPrizeModal'), {})
+      myModal.show();
+    }
+  });
+
+  $('.game-piece.bot').click(function () {
+    var finished_game   = $('.finished_game').val() == "true";
+    var action          = $(this).find('.user-action').text();
+
+    if (finished_game && action == "STEAL") {
+      var index = $(this).index();
+
+      $.ajax({
+        type: 'get',
+        url: ('/games/'+index+'/steal'),
+        async: false,
+        dataType: 'script',
+        success: function(data) {}
+      });
+    }
+  });
+
 });
 
 // Get the next prize depending on cache

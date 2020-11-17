@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
     member do
       get :entered
+      get :steal
     end
   end
   resources :how_to, only:[:index]

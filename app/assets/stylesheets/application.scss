@@ -20,6 +20,24 @@
   font-size: 2rem;
   }
 
+.prize {
+  .gift {
+    background-image: url('red-gift.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cooler {
+    background-image: url('yeti.png') !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .login-screen {
   margin: auto;
   padding: 15px;

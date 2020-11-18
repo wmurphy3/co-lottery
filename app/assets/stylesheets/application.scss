@@ -1,24 +1,23 @@
 @import "bootstrap";
 @import "image-classes";
 @import "variables";
+@import "mobile";
 
-  *,
-  *::after,
-  *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
-  html {
-    font-size: 62.5%;
-  }
+html {
+  font-size: 62.5%;
+}
 
-  body {
-  font-family: "lato", sans-serif;
-  font-weight: 400;
-  font-size: 2rem;
-  }
+body {
+  font-family: "FS Emeric Book",Verdana,sans-serif;
+}
 
 .prize {
   .gift {
@@ -65,7 +64,6 @@
 }
 
 .logo-box-ie {
-  position: absolute;
   top: 20px;
   left: 20px;
 }
@@ -100,10 +98,6 @@
 }
 
 .dashboard-white-elephant-logo-box {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
 }
 
@@ -116,9 +110,7 @@
 }
 
 .header-ie {
-  height: 45vh;
-  background-size: cover;
-  background-position: top;
+  height: 100px;
   position: relative;
   padding: 1rem;
 }
@@ -187,6 +179,7 @@
 .background-red {
   background-image: url(BG-Pattern-Overlay-01.png);
   background-color: $red;
+  color: white;
 }
 
 .dashboard-text {

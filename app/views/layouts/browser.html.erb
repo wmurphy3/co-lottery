@@ -9,14 +9,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   
-  <body class="background-red">
+  <body class="background-red text-center">
     <div class="header-ie">
       <div class="logo-box-ie">
         <%= image_tag("CL-Logo.png", :alt => "logo", :class => "logo-ie") %>
       </div>
     </div>
-    <div class="content-body">
-      <%= yield %>
+    <div class="login-screen">
+      <div class="dashboard-white-elephant-logo-box">
+        <div class="dashboard-white-elephant-logo">
+          <%= image_tag("White-Elephant-Logo-dashboard.png", :alt => "cooler", :class => "white-elephant-logo") %> 
+        </div>
+      </div>
     </div>
+    <%= yield %>
   </body>
 </html>

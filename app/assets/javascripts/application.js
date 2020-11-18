@@ -17,7 +17,24 @@
 //= require jquery3
 //= require popper
 //= require parsley
+//= toastr
 //= require_tree .
+
+toastr.options = {
+  closeButton: true,
+  debug: false,
+  newestOnTop: false,
+  progressBar: false,
+  positionClass: "toast-bottom-center",
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: "300",
+  hideDuration: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
 
 $(document).on('turbolinks:load', function () {
   if ($('.game-piece').length > 0) {

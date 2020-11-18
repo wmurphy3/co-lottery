@@ -64,6 +64,16 @@
   left: 2rem;
 }
 
+.logo-box-ie {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo-ie {
+  height: 70px;
+}
+
 .dashboard-logo-box {
   position: absolute;
   top: 10%;
@@ -103,7 +113,14 @@
   background-position: top;
   position: relative;
   padding: 1rem;
-  background-color: $background-color-main;
+}
+
+.header-ie {
+  height: 45vh;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  padding: 1rem;
 }
 
 .dashboard-header {
@@ -112,7 +129,6 @@
   background-position: top;
   position: relative;
   padding: 1rem;
-  background-color: $background-color-main;
 }
 
 .player-card {
@@ -153,14 +169,6 @@
   text-transform: uppercase;
 }
 
-.stolen-text-box {
-  padding: 1rem 3rem;
-  background-color: $white;
-  color: gray;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
 .deciding-text {
   padding: 1rem 3rem;
   background-color: $red;
@@ -168,10 +176,18 @@
   font-size: 2rem;
 }
 
-.background-main {
+.background-yellow {
   background-color: $background-color-main;
 }
 
+.background-green {
+  background-color: $green;
+}
+
+.background-red {
+  background-image: url(BG-Pattern-Overlay-01.png);
+  background-color: $red;
+}
 
 .dashboard-text {
   position: relative;
@@ -181,7 +197,6 @@
   font-size: 3rem;
   padding: 3rem;
 }
-
 
 //Buttons
 

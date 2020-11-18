@@ -9,7 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   
-  <body class="background-yellow">
-    <%= yield %>
+  <body class="background-red">
+    <div class="header-ie">
+      <div class="logo-box-ie">
+        <%= image_tag("CL-Logo.png", :alt => "logo", :class => "logo-ie") %>
+      </div>
+    </div>
+    <div class="content-body">
+      <%= yield %>
+    </div>
   </body>
 </html>

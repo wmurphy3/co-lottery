@@ -8,7 +8,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div class="header">
+
+  <body class="background-red">
+    <div class="header">
       <div class="logo-box">
         <%= image_tag("CL-Logo.png", :alt => "cooler", :class => "logo") %>
       </div>
@@ -28,7 +30,6 @@
           </div>
         </div>
     </div>
-  <body>
     <%= yield %>
   </body>
 </html>

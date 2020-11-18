@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>White Elephant</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+  <body class="background-red text-center">
+    <div class="header-ie">
+      <div class="logo-box-ie">
+        <%= image_tag("CL-Logo.png", :alt => "logo", :class => "logo-ie") %>
+      </div>
+    </div>
+    <div class="login-screen">
+      <div class="dashboard-white-elephant-logo-box">
+        <div class="dashboard-white-elephant-logo">
+          <%= image_tag("White-Elephant-Logo-dashboard.png", :alt => "cooler", :class => "white-elephant-logo") %> 
+        </div>
+      </div>
+    </div>
+    <h1>Something is Wrong!</h1>
+    <h3>The minions are working on a fix.</h3>
+    <%= link_to root_url, class: 'btn quit-btn mt-4' do %>
+      <i class="" aria-hidden="true">Go Home</i>
+    <% end %>
+  </body>
+</html>

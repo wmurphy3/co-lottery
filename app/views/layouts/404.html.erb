@@ -8,28 +8,24 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body class="background-red">
-    <div class="header">
-      <div class="logo-box">
-        <%= image_tag("CL-Logo.png", :alt => "cooler", :class => "logo") %>
+  
+  <body class="background-red text-center">
+    <div class="header-ie">
+      <div class="logo-box-ie">
+        <%= image_tag("CL-Logo.png", :alt => "logo", :class => "logo-ie") %>
       </div>
-      <div class="float-right">
-        <%= link_to dashboard_index_url, class: 'btn quit-btn' do %>
-          <i class="" aria-hidden="true">Back</i>
-        <% end %>
-      </div>
-      <p class="404">404 Error</p>
-      <div class="row">
-          <div class="col-md-12">
-            <div class="dashboard-white-elephant-logo-box">
-              <div class="dashboard-white-elephant-logo">
-                <%= image_tag("White-Elephant-Logo-dashboard.png", :alt => "cooler", :class => "white-elephant-logo") %> 
-              </div>
-            </div>
-          </div>
-        </div>
     </div>
-    <%= yield %>
+    <div class="login-screen">
+      <div class="dashboard-white-elephant-logo-box">
+        <div class="dashboard-white-elephant-logo">
+          <%= image_tag("White-Elephant-Logo-dashboard.png", :alt => "cooler", :class => "white-elephant-logo") %> 
+        </div>
+      </div>
+    </div>
+    <h1>Not Found!</h1>
+    <h3>Are you sure you are supposed to be here?</h3>
+    <%= link_to root_url, class: 'btn quit-btn mt-4' do %>
+      <i class="" aria-hidden="true">Go Home</i>
+    <% end %>
   </body>
 </html>

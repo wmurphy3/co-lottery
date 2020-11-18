@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :setup_game, only: [:index, :get_next, :steal]
   before_action :redirect_to_present, only: [:index]
+  before_action :get_cookie, only: [:show]
 
   def index
     # TODO if failed/finished show a screen/alert?
@@ -37,6 +38,23 @@ class GamesController < ApplicationController
   def redirect_to_present
     if @game.finished?
       redirect_to game_path(@game.winner_prize_id)
+    end
+  end
+
+  def get_cookie
+    cookie = cookies[:white_elephant]
+
+    unless cookie.blank?
+      decrypted_cookie = Base64.decode64(cookie)
+
+      unless decrypted_cookie.blank?
+        if UserPrize.create({
+          user_id:  decrypted_cookie,
+          prize_id: params[:id]
+        })
+          redirect_to entered_game_path(decrypted_cookie)
+        end
+      end
     end
   end
 end

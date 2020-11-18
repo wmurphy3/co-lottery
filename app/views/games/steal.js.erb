@@ -7,6 +7,7 @@ $('.finished_game').val("<%= @game.stop_game? %>");
 
 <% if @game.finished? %>
   $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>")
+  var myModal = new bootstrap.Modal(document.getElementById('winnerModal'), {}).show();
 <% else %>
   getNextPrize();
 <% end %>

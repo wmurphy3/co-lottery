@@ -69,6 +69,17 @@ $(document).on('turbolinks:load', function () {
     }
   });
 
+  $('.signed_up').click(function () {
+    $('.sign-up').addClass('d-none');
+    $('.sign-in').removeClass('d-none');
+  });
+
+  $('.sign_up').click(function () {
+    $('.sign-up').removeClass('d-none');
+    $('.sign-in').addClass('d-none');
+  });
+
+
 });
 
 // Get the next prize depending on cache

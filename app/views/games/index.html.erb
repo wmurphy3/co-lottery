@@ -1,34 +1,33 @@
-<div class="body">
-  <div class="row vh-100 background-main">
-    <div class="col-12">
-      <div class="game">
-        <input type="hidden" value="<%= @game.stop_game? %>" class="finished_game" />
+<div class="row vh-100 background-main">
+  <div class="col-12">
+    <div class="game">
+      <input type="hidden" value="<%= @game.stop_game? %>" class="finished_game" />
+      <p class="text-center current_turn"><%= @game.current_user %></p>
 
-      <div class="row">
-        <% @new_game.each do |g| %>
-          <div class="col-md-4 prize game-piece <%= g[:bot] ? "bot" : "player" %>">
-            <h3><%= g[:name] %></h3>
-            <div class="gift"></div>
-            <span class="prize_name">
-              <% if g[:finished] %>
-                <%= g[:prize][:name] %>
-              <% end %>
-            </span>
-            <div class="user-action">
-              <p><%= g[:action] %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="finished text-center">
-            <% if @game.stop_game? %>
-              <%= render :partial => 'my_prize' %>
+    <div class="row">
+      <% @new_game.each do |g| %>
+        <div class="col-md-4 prize game-piece <%= g[:bot] ? "bot" : "player" %>">
+          <h3><%= g[:name] %></h3>
+          <div class="gift"></div>
+          <span class="prize_name">
+            <% if g[:finished] %>
+              <%= g[:prize][:name] %>
             <% end %>
+          </span>
+          <div class="user-action">
+            <p><%= g[:action] %></p>
           </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="finished text-center">
+          <% if @game.stop_game? %>
+            <%= render :partial => 'my_prize' %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
-</div>  
+</div>

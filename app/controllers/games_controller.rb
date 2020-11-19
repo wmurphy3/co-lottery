@@ -3,6 +3,8 @@ class GamesController < ApplicationController
   before_action :redirect_to_present, only: [:index]
   before_action :get_cookie, only: [:show]
 
+  layout "modal", only: [:entered]
+
   def index
     # TODO if failed/finished show a screen/alert?
   end

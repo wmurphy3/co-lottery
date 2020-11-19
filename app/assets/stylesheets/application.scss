@@ -184,10 +184,9 @@ body {
 }
 
 .background-pattern {
-  background-image: url("Button-Background-Pattern.png");
   background-color: $background-color-main;
-  background-position: center;
-  opacity: 0.75;
+  background-image: url("Button-Background-Pattern.png");
+  background-position: cover;
 }
 
 .dashboard-text {

@@ -32,11 +32,11 @@
 
 .red-gift {
   background-image: url("Red-Gift.png");
-  width: 75%;
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 75%;
+  height: 55%;
   margin: auto;
 }
 .gummy {
@@ -93,14 +93,37 @@
 
 .button-player-red {
   background-image: url("Button-Player-Red.png");
-  width: 27vw;
+  width: 24vw;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: absolute;
   display: block;
-  height: 250px;
-  left: -15px;
-  bottom: 60px;
+  height: 10vh;
+  right: -19px;
+  bottom: 50px;
+  p {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.gift-name {
+  position: absolute;
+  text-transform: uppercase;
+  margin: 0;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player-name {
+  margin-top: 10px;
 }
 
 .Button-Bot-Blue {

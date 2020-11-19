@@ -1,3 +1,29 @@
 @media only screen and (max-width: 900px){
-  
+  .player-card {
+    height: 30vh !important;
+  }
+
+  .button-player-red {
+    background-image: url("Button-Player-Red.png");
+    width: 44vw;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: block;
+    height: 7vh;
+    right: -15px;
+    bottom: 50px;
+
+    p {
+      color: white;
+      text-transform: uppercase;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 1.5rem;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
 }

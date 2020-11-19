@@ -107,14 +107,17 @@ body {
 
 .player-card {
   display: inline-block;
-  height: 50vh;
-  width: 25vw;
+  height: 40vh;
+  width: 100%;
   position: relative;
-  margin-left: 3rem;
-  margin-right: 3rem;
   border-radius: 1rem;
   border: .2rem solid $player-card-border;
-  box-shadow: 0 .2rem 1rem rgba(0,0,0,4);
+  background-clip:padding-box;
+}
+
+.no-gutters {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
 }
 
 .decision-pending {
@@ -147,8 +150,22 @@ body {
   background-color: $background-color-main;
 }
 
+.d-grid {
+  display: grid !important;
+}
+
+.background-main {
+  background: linear-gradient(180deg, rgba(99, 199, 164, 0) 0%, #63C7A4 100%)
+}
+
 .background-green {
   background-color: $green;
+  border-color: $green;
+}
+
+.background-white {
+  background-color: white;
+  border-color: $white;
 }
 
 .background-red {
@@ -157,15 +174,7 @@ body {
   color: white;
 }
 
-.underscore {
-  
-}
-
 .dashboard-text {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
   font-size: 3rem;
   padding: 3rem;
 }

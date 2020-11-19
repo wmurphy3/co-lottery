@@ -1,18 +1,16 @@
 <div class="col-12">
   <div class="card">
-    <div class="card-header">
-      <div class="float-left">
-        CL Logo
-      </div>
-      <div class="float-right">
-        Quit
-      </div>
-    </div>
     <div class="card-block card-container game">
 
       <div class="row">
         <div class="col-md-4 offset-md-4">
-          <p>You'll be entered to win <b><%= @prize.name %></b></p>
+          <p>Enter to win <b><%= @prize.name %></b></p>
+
+          <h1 class="text-center">PLAY ONCE A DAY UNTIL <strong>December 22</strong></h1>
+
+          <div  class="text-center"><%= image_tag("Prize-Pattern.png", :alt => "pixies", :class => "") %></div>
+
+          <h1 class="text-center">You'll also be enetered to win scratch tickets!</h1>
 
           <div class="sign-up">
             <%= render :partial => 'form' %>
@@ -22,7 +20,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

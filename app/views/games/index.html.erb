@@ -1,31 +1,36 @@
-<div class="row vh-100 background-main">
-  <div class="col-12">
+<div class="container vh-100">
+  <div>
     <div class="game">
       <input type="hidden" value="<%= @game.stop_game? %>" class="finished_game" />
       <h1 class="text-center current_turn"><%= @game.current_user %></h1>
       <div  class="text-center"><%= image_tag("underscore.png", :alt => "underscore", :class => "underscore") %></div>
-    <div class="row">
-      <% @new_game.each do |g| %>
-        <div class="col-md-4 prize game-piece <%= g[:bot] ? "bot" : "player" %>">
-          <h3><%= g[:name] %></h3>
-          <div class="gift"></div>
-          <span class="prize_name">
-            <% if g[:finished] %>
-              <%= g[:prize][:name] %>
-            <% end %>
-          </span>
-          <div class="user-action">
-            <p><%= g[:action] %></p>
+      <div class="row no-gutters">
+        <% @new_game.each do |g| %>
+          <div class="col-6 col-md-4 mr-auto prize game-piece <%= g[:bot] ? "bot" : "player" %>">
+            <div class="p-5">
+              <div class="player-card <%= g[:bot] ? (g[:finished] ? "background-white" : "background-pattern") : "background-green" %> text-center">
+                <p class="player-name"><%= g[:name] %></p>
+                <div class="gift <%= g[:finished] ? g[:prize][:name] : g[:gift] %>"></div>
+                <div class="button-player <%= button g[:action] %>">
+                  <p><%= g[:action] %></p>
+                </div>
+                <div class="gift-name">
+                  <% if g[:finished] %>
+                    <%= g[:prize][:name] %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="finished text-center">
-          <% if @game.stop_game? %>
-            <%= render :partial => 'my_prize' %>
-          <% end %>
+        <% end %>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="finished text-center">
+            <% if @game.stop_game? %>
+              <%= render :partial => 'my_prize' %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

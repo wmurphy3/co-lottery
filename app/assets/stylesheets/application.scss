@@ -105,6 +105,10 @@ body {
   padding: 1rem;
 }
 
+.player {
+  cursor: pointer;
+}
+
 .player-card {
   display: inline-block;
   height: 40vh;
@@ -164,14 +168,26 @@ body {
 }
 
 .background-white {
-  background-color: white;
-  border-color: $white;
+  background-color: #FFF8E5;
+  border-color: #FFF8E5;
+}
+
+.background-blue {
+  background-color: #AFC2D5;
+  border-color: #AFC2D5;
 }
 
 .background-red {
-  background-image: url(BG-Pattern-Overlay-01.png);
+  background-image: url("BG-Pattern-Overlay-01.png");
   background-color: $red;
   color: white;
+}
+
+.background-pattern {
+  background-image: url("Button-Background-Pattern.png");
+  background-color: $background-color-main;
+  background-position: center;
+  opacity: 0.75;
 }
 
 .dashboard-text {

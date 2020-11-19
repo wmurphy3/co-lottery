@@ -2,7 +2,7 @@
 $('.finished_game').val("<%= @game.stop_game? %>");
 
 <% @new_game.each do |g| %>
-  setAction('<%= g[:id] %>', '<%= g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>','<%= g[:finished] ? g[:prize][:class_name] : nil %>')
+  setAction('<%= g[:id] %>', '<%= g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>','<%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>')
 <% end %>
 
 <% if @game.finished? %>

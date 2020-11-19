@@ -30,15 +30,6 @@
   height: 100%;
 }
 
-.red-gift {
-  background-image: url("Red-Gift.png");
-  width: 55%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 55%;
-  margin: auto;
-}
 .gummy {
   background-image: url("Gummy.png");
   width: 100%;
@@ -81,6 +72,36 @@
   margin: auto;
 }
 
+.red-gift {
+  background-image: url("Red-Gift.png");
+  width: 55%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55%;
+  margin: auto;
+}
+
+.green-gift {
+  background-image: url("Green-Gift.png");
+  width: 55%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55%;
+  margin: auto;
+}
+
+.yellow-gift {
+  background-image: url("Yellow-Gift.png");
+  width: 55%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55%;
+  margin: auto;
+}
+
 // Button Classes
 
 .Button-Player_Green {
@@ -109,7 +130,76 @@
     top: 50%;
     left: 50%;
     font-size: 2rem;
-    transform: translate("-50%, -50%");
+    transform: translate(-50%, -50%);
+  }
+}
+
+.button-player-blue {
+  background-image: url("Button-Bot-Blue.png");
+  width: 24vw;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  height: 10vh;
+  right: -19px;
+  bottom: 50px;
+
+  p {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.button-player-green {
+  background-image: url("Button-Player-Green.png");
+  width: 24vw;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  height: 10vh;
+  right: -19px;
+  bottom: 50px;
+
+  p {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.button-player-white {
+  background-image: url("Button-Bot-Blue.png");
+  width: 24vw;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  height: 10vh;
+  right: -19px;
+  bottom: 50px;
+
+  p {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -119,7 +209,7 @@
   margin: 0;
   bottom: 15px;
   left: 50%;
-  transform: translate("-50%, -50%");
+  transform: translate(-50%, -50%);
 }
 
 .player-name {

@@ -1,5 +1,7 @@
 class Game
   attr_accessor :ip, :failed, :users, :prizes, :game, :cache, :prize_id
+
+  UNOPENED_GIFTS = %w(red-gift yellow-gift green-gift)
   
   # TODO Do we need to clear expired caches?
   def initialize(options={})
@@ -132,6 +134,7 @@ class Game
     users.each_with_index do |u, i| 
       u[:prize]     = {id: prizes[i].id, name: prizes[i].name, class_name: prizes[i].class_name}
       u[:finished]  = false
+      u[:gift]      = UNOPENED_GIFTS[rand(3)]
       u[:final]     = i == 0 ? false : true
       u[:action]    = i == 0 ? (u[:bot] ? "DECIDING..." : "OPEN NEW GIFT" ) :nil
       u[:id]        = i
@@ -317,8 +320,8 @@ class Game
   end
 
   def bot_action
-    max_open          = 65
-    min_steal_bot     = 66
+    max_open          = 75
+    min_steal_bot     = 76
     max_steal_bot     = 89
     min_steal_player  = 90
     max_steal_player  = 100

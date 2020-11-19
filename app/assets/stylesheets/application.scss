@@ -209,27 +209,23 @@ body {
 }
   
 .play-now-btn:link, .play-now-btn:visited {
-  background-image: url(Button-Dark.png);
-  background-repeat:no-repeat;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 3rem 6rem;
+  padding: 1.5rem 4rem;
   display: inline-block;
+  border-radius: 10rem;
   transition: all .2s;
   position: relative;
   font-size: 1.6rem;
   letter-spacing: .5rem;
-  color: $white;
 }
 
 .play-now-btn:hover {
-  background-image: url(Button-Dark.png);
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0,0,0,2);
 }
 
 .play-now-btn:active {
-  background-image: url(Button-Dark.png);
   transform: translateY(-1px);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,2);
 }
@@ -248,11 +244,9 @@ body {
 }
 
 .how-to-btn:link, .how-to-btn:visited {
-  background-image: url(Button-Light.png);
-  background-repeat:no-repeat;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 3rem 6rem;
+  padding: 1.5rem 4rem;
   display: inline-block;
   border-radius: 10rem;
   transition: all .2s;

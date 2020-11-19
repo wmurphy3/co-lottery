@@ -1,13 +1,5 @@
 <div class="col-12">
   <div class="card">
-    <div class="card-header">
-      <div class="float-left">
-        CL Logo
-      </div>
-      <div class="float-right">
-        Quit
-      </div>
-    </div>
     <div class="card-block card-container game">
 
       <div class="row">
@@ -15,6 +7,14 @@
           <p>You're entered to win <b><%= @prize.name %></b></p>
           <small>YOU HAVE <b><%= @user.user_prizes.count %></b> ENTRIES</small>
         </div>
+      </div>
+
+      <h1 class="text-center">Great, we'll send you a reminder email to play again tomorrow!</h1>
+
+      <div class="row mt-4">
+        <%= link_to https://www.coloradolottery.com/en/, class: "btn how-to-btn" do %>
+          HOW TO PLAY
+        <% end %>
       </div>
 
     </div>

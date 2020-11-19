@@ -1,27 +1,15 @@
-<div class="row vh-100">
+<div class="row">
   <div class="login-screen my-auto">
     <div class="dashboard">
-      <div class="col-12">
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="dashboard-white-elephant-logo-box">
-              <div class="dashboard-white-elephant-logo">
-                <%= image_tag("White-Elephant-Logo-dashboard.png", :alt => "cooler", :class => "white-elephant-logo") %> 
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
 
       <div class="row mb-4">
         <%= link_to games_path, class: "btn btn-green play-now-btn" do %>
           PLAY NOW
         <% end %>
       </div>
+
       <div class="row mt-4">
-        <%= link_to how_to_index_path, class: "btn btn-yellow play-now-btn" do %>
+        <%= link_to how_to_index_path, class: "btn how-to-btn" do %>
           HOW TO PLAY
         <% end %>
       </div>

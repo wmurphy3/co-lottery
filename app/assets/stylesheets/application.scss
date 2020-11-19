@@ -182,6 +182,10 @@ body {
   color: white;
 }
 
+.underscore {
+  
+}
+
 .dashboard-text {
   position: relative;
   left: 50%;
@@ -243,11 +247,6 @@ body {
   z-index: -1;
   transition: all, .4s;
 }
-
-.btn-yellow {
-    background-color: #f8cb6c;
-    color: $dark-green;
-  }
 
 .how-to-btn:link, .how-to-btn:visited {
   text-transform: uppercase;

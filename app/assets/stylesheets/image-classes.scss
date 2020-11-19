@@ -31,11 +31,13 @@
 }
 
 .red-gift {
-  background-image: url(red-gift.png);
-  width: 100%;
+  background-image: url("Red-Gift.png");
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 55%;
+  margin: auto;
 }
 .gummy {
   background-image: url(gummy.png);
@@ -70,13 +72,14 @@
 }
 
 .yeti {
-  background-image: url(yeti.png);
-  width: 100%;
+  background-image: url("Yeti.png");
+  width: 75%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 75%;
+  margin: auto;
 }
-
 
 // Button Classes
 
@@ -88,12 +91,39 @@
   height: 100%;
 }
 
-.Button-Player_Red {
-  background-image: url(Button-Player-Red.png);
-  width: 100%;
-  background-size: contain;
+.button-player-red {
+  background-image: url("Button-Player-Red.png");
+  width: 24vw;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 100%;
+  position: absolute;
+  display: block;
+  height: 10vh;
+  right: -19px;
+  bottom: 50px;
+  p {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.gift-name {
+  position: absolute;
+  text-transform: uppercase;
+  margin: 0;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player-name {
+  margin-top: 10px;
 }
 
 .Button-Bot-Blue {

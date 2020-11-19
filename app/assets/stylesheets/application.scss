@@ -19,24 +19,6 @@ body {
   font-family: "FS Emeric Book",Verdana,sans-serif;
 }
 
-.prize {
-  .gift {
-    background-image: url('red-gift.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-  }
-
-  .cooler {
-    background-image: url('yeti.png') !important;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-  }
-}
-
 .login-screen {
   margin: auto;
   padding: 15px;
@@ -125,13 +107,17 @@ body {
 
 .player-card {
   display: inline-block;
-  height: 50vh;
-  width: 25vw;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  height: 40vh;
+  width: 100%;
+  position: relative;
   border-radius: 1rem;
   border: .2rem solid $player-card-border;
-  box-shadow: 0 .2rem 1rem rgba(0,0,0,4);
+  background-clip:padding-box;
+}
+
+.no-gutters {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
 }
 
 .decision-pending {
@@ -153,14 +139,6 @@ body {
   font-size: 2rem;
 }
 
-.red-text-box {
-  padding: 1rem 3rem;
-  background-color: $red;
-  color: $white;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
 .deciding-text {
   padding: 1rem 3rem;
   background-color: $red;
@@ -172,8 +150,22 @@ body {
   background-color: $background-color-main;
 }
 
+.d-grid {
+  display: grid !important;
+}
+
+.background-main {
+  background: linear-gradient(180deg, rgba(99, 199, 164, 0) 0%, #63C7A4 100%)
+}
+
 .background-green {
   background-color: $green;
+  border-color: $green;
+}
+
+.background-white {
+  background-color: white;
+  border-color: $white;
 }
 
 .background-red {
@@ -182,15 +174,7 @@ body {
   color: white;
 }
 
-.underscore {
-  
-}
-
 .dashboard-text {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
   font-size: 3rem;
   padding: 3rem;
 }

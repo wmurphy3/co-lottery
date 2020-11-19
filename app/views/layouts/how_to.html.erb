@@ -9,20 +9,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="background-yellow">
+    <div class="d-grid">
       <div class="header">
-      <div class="logo-box">
-        <%= image_tag("CL-Logo.png", :alt => "logo", :class => "logo") %>
+        <div class="logo-box">
+          <%= image_tag("CL-Logo.png", :alt => "logo", :class => "logo") %>
+        </div>
+        <div class="float-right">
+          <%= link_to dashboard_index_url, class: 'btn quit-btn' do %>
+            <i class="" aria-hidden="true">Home</i>
+          <% end %>
+        </div>
+        <div class="white-elephant-logo-box">
+          <%= image_tag("White-Elephant-Logo.png", :alt => "logo", :class => "white-elephant-logo") %>
+        </div>
       </div>
-      <div class="float-right">
-        <%= link_to dashboard_index_url, class: 'btn quit-btn' do %>
-          <i class="" aria-hidden="true">Home</i>
-        <% end %>
-      </div>
-      <div class="white-elephant-logo-box">
-        <%= image_tag("White-Elephant-Logo.png", :alt => "logo", :class => "white-elephant-logo") %>
-      </div>
-    </div>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>

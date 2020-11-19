@@ -1,19 +1,13 @@
 <div class="row">
-  <div class="login-screen my-auto">
-    <div class="dashboard">
+  <div class="my-auto">
+    <div class="dashboard text-center">
+      <%= link_to games_path, class: "btn play-now-btn mb-4 mx-auto" do %>
+        PLAY NOW
+      <% end %>
 
-      <div class="row mb-4">
-        <%= link_to games_path, class: "btn play-now-btn" do %>
-          PLAY NOW
-        <% end %>
-      </div>
-
-      <div class="row mt-4">
-        <%= link_to how_to_index_path, class: "btn how-to-btn" do %>
-          HOW TO PLAY
-        <% end %>
-      </div>
+      <%= link_to how_to_index_path, class: "btn how-to-btn mt-4 mx-auto" do %>
+        HOW TO PLAY
+      <% end %>
     </div>
-
   </div>
 </div>

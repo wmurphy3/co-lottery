@@ -1,22 +1,23 @@
-<div class="col-12">
-  <div class="card">
-    <div class="card-block card-container game">
-
-      <div class="row">
-        <div class="col-md-4 offset-md-4">
-          <p>You're entered to win <b><%= @prize.name %></b></p>
-          <small>YOU HAVE <b><%= @user.user_prizes.count %></b> ENTRIES</small>
+<div class="background-main">
+  <div class="body text-center">
+    <div class="row no-gutters">
+      <div class="col-6 col-md-4 offset-md-4">
+        <div class="p-5">
+          <div class="player-card background-white text-center">
+            <p>You're entered to win...</p>
+            <div class="<%= @prize.class_name %> my_prize"></div>
+            <div class="gift-name">A <%= @prize.name %></div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <h1 class="text-center">Great, we'll send you a reminder email to play again tomorrow!</h1>
+    <h1 class="text-center">Great, we'll send you a reminder email to play again tomorrow!</h1>
 
-      <div class="row mt-4">
-        <%= link_to "https://www.coloradolottery.com/en/", class: "btn how-to-btn" do %>
-          HOW TO PLAY
-        <% end %>
-      </div>
-
+    <div class="row mt-4">
+      <%= link_to "https://www.coloradolottery.com/en/", class: "btn play-now-btn mx-auto" do %>
+        HOW TO PLAY
+      <% end %>
     </div>
   </div>
 </div>

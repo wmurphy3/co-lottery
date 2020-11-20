@@ -3,6 +3,7 @@
 @import "variables";
 @import "mobile";
 @import "font-awesome";
+@import "parsley";
 
 *,
 *::after,
@@ -34,6 +35,11 @@ body {
     max-width: 100%;
     max-height: 100%;
   }
+}
+
+a {
+  color: black;
+  cursor: pointer;
 }
 
 .vh-100 {
@@ -216,6 +222,38 @@ body {
   font-size: 2rem;
   background-color: $green;
   color: $white;
+}
+
+.enter-raffle {
+  display: block;
+  border-radius: 38px;
+  text-transform: uppercase;
+  height: 60px;
+  text-decoration: none;
+  padding: 1rem 4rem 1.8rem 4rem;
+  font-size: 20px;
+  letter-spacing: 3.2px;
+  color: white;
+  width: 366px;
+  background: url("Button-Dark.png") no-repeat;
+  background-size: contain;
+  border-color: transparent;
+}
+
+.enter-raffle:hover,
+.enter-raffle:active {
+  display: block;
+  border-radius: 38px;
+  text-transform: uppercase;
+  height: 60px;
+  text-decoration: none;
+  padding: 1rem 4rem 1.8rem 4rem;
+  font-size: 20px;
+  letter-spacing: 3.2px;
+  width: 366px;
+  background: url("Button-Primary-Hover.png") no-repeat;
+  background-size: contain;
+  border-color: transparent;
 }
   
 .play-now-btn {

@@ -2,15 +2,16 @@
 
 <%= form_for(UserPrize.new, remote: true, :html => {'parsley-validate' => '', id: 'login'}) do |f| %>
   <%= f.hidden_field :prize_id, value: @prize.id %>
+  <div class="col-md-4 offset-md-4 col-12 text-left">
+    <div class="form-group">
+      <label></label>
+      <%= f.email_field :email, autocomplete: "email", class: 'form-control form-control-lg',
+        placeholder: 'Email', :required => true, :data => {'parsley-type' => "email", 'parsley-trigger'=>"input",
+        'parsley-error-message'=> "Required", "parsley-error-type-message"=>"Invalid Email"} %>
+    </div>
 
-  <div class="form-group">
-    <label></label>
-    <%= f.email_field :email, autocomplete: "email", class: 'form-control',
-      placeholder: 'Email', :required => true, :data => {'parsley-type' => "email", 'parsley-trigger'=>"input",
-      'parsley-error-message'=> "Required", "parsley-error-type-message"=>"Invalid Email"} %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "ENTER RAFFLE", class: 'btn button btn-block mt-4 enter-raffle' %>
+    <div class="actions">
+      <%= f.submit "ENTER RAFFLE", class: 'btn mx-auto mt-4 mb-4 enter-raffle', disabled: true %>
+    </div>
   </div>
 <% end %>

@@ -121,7 +121,7 @@ class Game
 
   # Get 5 random bots
   def get_random_user_list 
-    @users = user_list.sample(5).insert(rand(5), {name: "ME", bot: false})
+    @users = user_list.sample(5).insert(0, {name: "ME", bot: false})
   end
 
   # Get 6 random prizes

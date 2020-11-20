@@ -1,19 +1,18 @@
 <div class="modal fade" id="myPrizeModal" tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="myPrizeTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        Close
-        <button type="button" class="btn-close close-my-prize" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+    <div class="modal-content background-yellow p-4">
+      <div class="text-center">
+      <%= submit_tag 'Close', :type => :reset, class: 'btn close-btn', "data-dismiss" => "modal", "aria-hidden" => "true" do %>
+        <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+        <% end %>
+
       <div class="modal-body text-center">
         <div class="game-piece">
-          <h3>YOU OPENED...</h3>
-          <h3><%= @game.winner_prize[:prize][:name] %></h3>
+         <div class="player-card background-green text-center">
+         <h2>YOU OPENED...</h2>
+          <h1><%= @game.winner_prize[:prize][:name] %></h1>
         </div>
-
-        <p>Try to keep or steal the gift you want by the end of the game!</p>
+        <h2 class="mt-4">Try to keep or steal the gift you want by the end of the game!</h2>
       </div>
     </div>
   </div>

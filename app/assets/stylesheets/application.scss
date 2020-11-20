@@ -2,6 +2,7 @@
 @import "image-classes";
 @import "variables";
 @import "mobile";
+@import "font-awesome";
 
 *,
 *::after,
@@ -276,6 +277,11 @@ body {
   animation: glowing 2000ms infinite;
   background-color: #2ba805;
   border-color: #2ba805;
+}
+
+.close-btn {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 @keyframes glowing {

@@ -69,6 +69,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem "parsley-rails"
+gem "font-awesome-rails"
 
 gem 'dotenv-rails'
 gem "browser"

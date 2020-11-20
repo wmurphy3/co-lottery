@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function () {
 
     // Only get next piece if the game wasn't finished earlier
     if (finished_game) {
-      // getNextPrize();
+      getNextPrize();
     }
   }
 

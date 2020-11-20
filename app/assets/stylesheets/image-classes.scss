@@ -1,74 +1,90 @@
-.amazon {
+.gift_card {
   background-image: url("Amazon.png");
-  width: 100%;
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 55%;
+  margin: auto;
 }
 
 .blanket {
   background-image: url("Blanket.png");
-  width: 100%;
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 55%;
+  margin: auto;
 }
 
-.board {
+.cutting_board {
   background-image: url("Board.png");
-  width: 100%;
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 55%;
+  margin: auto;
 }
 
 .fryer {
   background-image: url("Fryer.png");
-  width: 100%;
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 55%;
+  margin: auto;
 }
 
 .gummy {
   background-image: url("Gummy.png");
-  width: 100%;
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 55%;
+  margin: auto;
 }
 
 .headphones {
   background-image: url("Headphones.png");
-  width: 100%;
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
+  background-position: center;
+  height: 55%;
+  margin: auto;
 }
 
 .sweater {
   background-image: url("Sweater.png");
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100%;
-}
-
-.waffle {
-  background-image: url("Waffle.png");
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100%;
-}
-
-.yeti {
-  background-image: url("Yeti.png");
-  width: 75%;
+  width: 55%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 75%;
+  height: 55%;
+  margin: auto;
+}
+
+.waffle_maker {
+  background-image: url("Waffle.png");
+  width: 55%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55%;
+  margin: auto;
+}
+
+.cooler {
+  background-image: url("Yeti.png");
+  width: 55%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55%;
   margin: auto;
 }
 
@@ -181,7 +197,7 @@
 }
 
 .button-player-white {
-  background-image: url("Button-Bot-Blue.png");
+  background-image: url("Button-Stolen.png");
   width: 24vw;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -192,7 +208,6 @@
   bottom: 50px;
 
   p {
-    color: white;
     text-transform: uppercase;
     margin: 0;
     position: absolute;

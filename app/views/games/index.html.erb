@@ -10,7 +10,7 @@
             <div class="p-5">
               <div class="player-card <%= g[:bot] ? (g[:finished] ? "background-white" : "background-pattern") : "background-green" %> text-center">
                 <p class="player-name"><%= g[:name] %></p>
-                <div class="gift <%= g[:finished] ? g[:prize][:name] : g[:gift] %>"></div>
+                <div class="gift <%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>"></div>
                 <div class="button-player <%= button g[:action] %>">
                   <p><%= g[:action] %></p>
                 </div>

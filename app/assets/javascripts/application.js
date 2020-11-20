@@ -72,7 +72,7 @@ $(document).on('turbolinks:load', function () {
   $('.game-piece.bot').click(function () {
     var finished_game   = $('.finished_game').val() == "true";
     var action          = $(this).find('.button-player p').text();
-    console.log(action)
+    
     if (finished_game && action == "STEAL") {
       var index = $(this).index();
 

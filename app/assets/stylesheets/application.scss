@@ -117,6 +117,7 @@ body {
   position: relative;
   border-radius: 1rem;
   border: .2rem solid $player-card-border;
+  box-shadow: 0 1rem 1rem rgb(72, 72, 72);
   background-clip:padding-box;
 }
 
@@ -198,6 +199,10 @@ body {
 .dashboard-text {
   font-size: 3rem;
   padding: 3rem;
+}
+
+.player-name, .gift-name {
+  font-size: 1.75rem;
 }
 
 //Buttons
@@ -286,7 +291,7 @@ body {
 
 .close-btn {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @keyframes glowing {

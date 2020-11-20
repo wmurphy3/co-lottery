@@ -52,6 +52,12 @@ a {
   left: 2rem;
 }
 
+.how-to-box {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
 .logo-box-ie {
   top: 20px;
   left: 20px;
@@ -209,6 +215,7 @@ a {
 
 .player-name, .gift-name {
   font-size: 1.75rem;
+  letter-spacing: .2rem;
 }
 
 //Buttons
@@ -316,6 +323,51 @@ a {
   width: 366px;
   color: white;
   background: url("Button-Secondary-Hover.png") no-repeat;
+  background-size: contain;
+  border-color: transparent;
+}
+
+.how-to-top-btn {
+  display: block;
+  text-transform: uppercase;
+  height: 60px;
+  text-decoration: none;
+  width: 140px;
+  background: url("Button-How-To-Play.png") no-repeat;
+  background-size: contain;
+  border-color: transparent;
+}
+.how-to-top-btn:hover,
+.how-to-top-btn:active {
+  display: block;
+  text-transform: uppercase;
+  height: 60px;
+  text-decoration: none;
+  width: 140px;
+  color: white;
+  background: url("Button-How-To-Play.png") no-repeat;
+  background-size: contain;
+  border-color: transparent;
+}
+.home-btn {
+  display: block;
+  text-transform: uppercase;
+  height: 60px;
+  text-decoration: none;
+  width: 120px;
+  background: url("Button-Home.png") no-repeat;
+  background-size: contain;
+  border-color: transparent;
+}
+.home-btn:hover,
+.home-btn:active {
+  display: block;
+  text-transform: uppercase;
+  height: 60px;
+  text-decoration: none;
+  width: 120px;
+  color: white;
+  background: url("Button-Home.png") no-repeat;
   background-size: contain;
   border-color: transparent;
 }

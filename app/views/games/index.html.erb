@@ -4,15 +4,19 @@
       <input type="hidden" value="<%= @game.stop_game? %>" class="finished_game" />
       <h1 class="text-center current_turn"><%= @game.current_user %></h1>
       <div  class="text-center"><%= image_tag("underscore.png", :alt => "underscore", :class => "underscore") %></div>
-      <div class="row no-gutters">
+      <div class="row no-gutters text-center">
         <% @new_game.each do |g| %>
           <div class="col-6 col-md-4 mr-auto prize game-piece <%= g[:bot] ? "bot" : "player" %>">
             <div class="p-5">
-              <div class="player-card <%= g[:bot] ? (g[:finished] ? "background-white" : "background-pattern") : "background-green" %> text-center">
+              <div class="player-card <%= player_background(g) %> text-center">
                 <p class="player-name"><%= g[:name] %></p>
-                <div class="gift <%= g[:finished] ? g[:prize][:name] : g[:gift] %>"></div>
-                <div class="button-player <%= button g[:action] %>">
-                  <p><%= g[:action] %></p>
+                <div class="gift <%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>"></div>
+                <div class="button-player <%= button(g[:action], g[:bot]) %>">
+                  <p>
+                    <% if g[:action] != "OPENED" %>
+                      <%= g[:action] ? g[:action] : (@game.stop_game? && !@game.finished? ? "OPEN NEW GIFT" : "") %>
+                    <% end %>
+                  </p>
                 </div>
                 <div class="gift-name">
                   <% if g[:finished] %>

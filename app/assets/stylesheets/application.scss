@@ -184,6 +184,8 @@ a {
 .background-green {
   background-color: $green;
   border-color: $green;
+  border-style: solid;
+  border-color: green;
 }
 
 .background-white {
@@ -203,9 +205,11 @@ a {
 }
 
 .background-pattern {
-  background-color: $background-color-main;
-  background-image: url("Button-Background-Pattern.png");
+  background-color: #FAEBBA;
+  background-image: url("Button-Background-Pattern-Pract.png");
   background-position: cover;
+  border-style: solid;
+  border-color: #f8cb6c;
 }
 
 .dashboard-text {

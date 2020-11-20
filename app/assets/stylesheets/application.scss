@@ -105,7 +105,7 @@ body {
   padding: 1rem;
 }
 
-.player {
+.player, .bot {
   cursor: pointer;
 }
 
@@ -152,6 +152,11 @@ body {
 
 .background-yellow {
   background-color: $background-color-main;
+}
+
+.background-card-yellow {
+  background-color: #FAEBBA;
+  border: 1px solid #F8CB6B;
 }
 
 .d-grid {

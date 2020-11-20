@@ -117,6 +117,14 @@ class Game
     "It's #{name} turn..."
   end
 
+  def user_turn?
+    turn_num  = @game.count { |h| h[:finished] == true }
+    user_turn = @game.find_index{ |item| !item[:bot]}
+    turn_num == user_turn || 
+      (turn_num > user_turn && @game.count{ |item| !item[:bot] && !item[:finished]} > 0) ||
+        (turn_num == 6 && user_turn == 0)
+  end
+
   private
 
   # Get 5 random bots
@@ -204,14 +212,6 @@ class Game
 
     cache.write(@key, @game, expires_in: 24.hours)
     prize
-  end
-
-  def user_turn?
-    turn_num  = @game.count { |h| h[:finished] == true }
-    user_turn = @game.find_index{ |item| !item[:bot]}
-    turn_num == user_turn || 
-      (turn_num > user_turn && @game.count{ |item| !item[:bot] && !item[:finished]} > 0) ||
-        (turn_num == 6 && user_turn == 0)
   end
 
   def cache_key(*key)

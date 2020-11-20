@@ -18,6 +18,16 @@
   margin: auto;
 }
 
+.blow_up {
+  background-image: url("Inflatable.png");
+  width: 55%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55%;
+  margin: auto;
+}
+
 .cutting_board {
   background-image: url("Board.png");
   width: 55%;
@@ -120,14 +130,6 @@
 
 // Button Classes
 
-.Button-Player_Green {
-  background-image: url("Button-Player-Green.png");
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100%;
-}
-
 .button-player-red {
   background-image: url("Button-Player-Red.png");
   width: 24vw;
@@ -225,6 +227,7 @@
   bottom: 15px;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .player-name {

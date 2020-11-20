@@ -1,8 +1,15 @@
 
 $('.finished_game').val("<%= @game.stop_game? %>");
 
-<% @new_game.each do |g| %>
-  setAction('<%= g[:id] %>', '<%= g[:action] %>', '<%= g[:finished] ? g[:prize][:name] : nil %>','<%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>')
+<% @new_game.each_with_index do |g,i| %>
+  setAction(
+    '<%= g[:id] %>',
+    '<%= @prize[:id] + 1 == i && !g[:finished] ? "DECIDING..." : g[:action] %>', 
+    '<%= g[:finished] ? g[:prize][:name] : nil %>',
+    '<%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>',
+    '<%= g[:bot] %>',
+    '<%= g[:finished] %>'
+  )
 <% end %>
 
 <% if @game.finished? %>
@@ -12,8 +19,33 @@ $('.finished_game').val("<%= @game.stop_game? %>");
   getNextPrize();
 <% end %>
 
-function setAction(id, name, prize, class_name) {
-  $('.user-action').eq(id).text(name);
-  $('.prize').eq(id).html(prize);
+function setAction(id, name, prize, class_name, bot, finished) {
+  var action_name = "background-pattern";
+  var button_player = "";
+
+  if(bot == "false") {
+    action_name = "background-green"
+  } else if(name == "DECIDING...") {
+    action_name = "background-blue"
+  } else if (name == "STOLEN") {
+    action_name = "background-card-yellow"
+  } else if(finished == "true") {
+    action_name = "background-white"
+  }
+
+  if(name == "OPEN NEW GIFT") {
+    button_player = "button-player-red"
+  } else if(name == "DECIDING...") {
+    button_player = "button-player-blue"
+  } else if(name == "STOLEN") {
+    button_player = "button-player-white"
+  } else if(name == "STEAL") {
+    button_player = "button-player-green"
+  }
+
+  $('.player-card').eq(id).prop("class", "player-card "+action_name)
+  $('.button-player').eq(id).prop("class", "button-player "+button_player)
+  $('.button-player').eq(id).find('p').html(name == "OPENED" ? "" : name);
+  $('.gift-name').eq(id).html(prize);
   $('.gift').eq(id).prop("class","gift "+class_name);
 }

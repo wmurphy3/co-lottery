@@ -53,7 +53,7 @@ $(document).on('turbolinks:load', function () {
 
   // Player chose to open gift
   $('.game-piece.player').click(function () {
-    var action = $(this).find(".user-action").text();
+    var action = $(this).find(".button-player p").text();
 
     if (action == "KEEP") {
       $.ajax({
@@ -71,8 +71,8 @@ $(document).on('turbolinks:load', function () {
 
   $('.game-piece.bot').click(function () {
     var finished_game   = $('.finished_game').val() == "true";
-    var action          = $(this).find('.user-action').text();
-
+    var action          = $(this).find('.button-player p').text();
+    console.log(action)
     if (finished_game && action == "STEAL") {
       var index = $(this).index();
 
@@ -95,8 +95,6 @@ $(document).on('turbolinks:load', function () {
     $('.sign-up').removeClass('d-none');
     $('.sign-in').addClass('d-none');
   });
-
-
 });
 
 // Get the next prize depending on cache

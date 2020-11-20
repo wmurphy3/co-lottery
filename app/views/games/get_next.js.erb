@@ -43,14 +43,16 @@ $('.finished_game').val("<%= @game.stop_game? %>");
 <% end %>
 
 function setAction(id, name, prize, class_name, bot, finished) {
-  var action_name = "background-yellow";
+  var action_name = "background-pattern";
   var button_player = "";
 
   if(bot == "false") {
     action_name = "background-green"
   } else if(name == "DECIDING...") {
     action_name = "background-blue"
-  } else if(finished) {
+  } else if (name == "STOLEN") {
+    action_name = "background-card-yellow"
+  } else if(finished == "true") {
     action_name = "background-white"
   }
 
@@ -63,10 +65,10 @@ function setAction(id, name, prize, class_name, bot, finished) {
   } else if(name == "STEAL") {
     button_player = "button-player-green"
   }
-  
+
   $('.player-card').eq(id).prop("class", "player-card "+action_name)
   $('.button-player').eq(id).prop("class", "button-player "+button_player)
-  $('.button-player').eq(id).text(name);
+  $('.button-player').eq(id).find('p').html(name == "OPENED" ? "" : name);
   $('.gift-name').eq(id).html(prize);
   $('.gift').eq(id).prop("class","gift "+class_name);
 }

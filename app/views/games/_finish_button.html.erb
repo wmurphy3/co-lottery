@@ -1,19 +1,16 @@
 <div class="modal fade" id="winnerModal" tabindex="-1" data-backdrop="static" data-keyboard="false" aria-labelledby="winnerTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header text-center">
-      </div>
       <div class="modal-body text-center">
         <div class="col-12 col-md-12">
           <div class="p-5">
             <div class="player-card background-green text-center">
               <h1 class="player-name">CONGRATULATIONS!</h1>
               <div class="<%= @game.winner_prize[:prize][:class_name] %> my_prize"></div>
+              <div class="gift-name">Enter to win a <%= @game.winner_prize[:prize][:name] %> & scratch tickets!</div>
             </div>
           </div>
         </div>
-
-        <p>Enter to win a <%= @game.winner_prize[:prize][:name] %> & scratch tickets!</p>
 
         <%= link_to game_path(@game.winner_prize_id), class: "btn mx-auto play-now-btn" do %>
           ENTER TO WIN

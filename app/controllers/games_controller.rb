@@ -39,7 +39,22 @@ class GamesController < ApplicationController
 
   def redirect_to_present
     if @game.finished?
-      redirect_to game_path(@game.winner_prize_id)
+      cookie = cookies[:white_elephant]
+
+      if cookie.blank?
+        redirect_to game_path(@game.winner_prize_id)
+      else
+        decrypted_cookie = Base64.decode64(cookie)
+
+        unless decrypted_cookie.blank?
+          if UserPrize.create({
+            user_id:  decrypted_cookie,
+            prize_id: params[:id]
+          })
+            redirect_to entered_game_path(decrypted_cookie)
+          end
+        end
+      end
     end
   end
 

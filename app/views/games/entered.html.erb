@@ -3,8 +3,8 @@
     <div class="row no-gutters">
       <div class="col-6 col-md-4 offset-md-4">
         <div class="p-5">
-          <div class="player-card background-white text-center">
-            <p>You're entered to win...</p>
+          <div class="player-card background-white text-center static-card">
+            <h1 class="player-name">You're entered to win...</h1>
             <div class="<%= @prize.class_name %> my_prize"></div>
             <div class="gift-name">A <%= @prize.name %></div>
           </div>
@@ -16,7 +16,7 @@
 
     <div class="row mt-4">
       <%= link_to "https://www.coloradolottery.com/en/", class: "btn play-now-btn mx-auto" do %>
-        HOW TO PLAY
+        VISIT OUR WEBSITE
       <% end %>
     </div>
   </div>

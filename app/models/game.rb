@@ -320,25 +320,21 @@ class Game
   end
 
   def bot_action
-    max_open          = 75
-    min_steal_bot     = 76
-    max_steal_bot     = 89
-    min_steal_player  = 90
-    max_steal_player  = 100
+    max_open          = 80
+    min_steal_bot     = 81
+    max_steal_bot     = 94
     num               = rand(100) + 1
 
     if @game.count { |h| h[:finished] == true} < 1 || user_turn? || last_turn?
       max_open          = 100
     elsif @game.count { |h| h[:finished] == true && h[:bot] == false } < 1 
-      max_open          = 75
-      min_steal_bot     = 76
       max_steal_bot     = 100
     end
   
     case num
       when 1..max_open                  then 'open'
       when min_steal_bot..max_steal_bot then 'steal_bot'
-      when 90..100                      then 'steal_player'
+      when 95..100                      then 'steal_player'
     end
   end
 

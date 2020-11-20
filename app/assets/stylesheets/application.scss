@@ -5,6 +5,13 @@
 @import "font-awesome";
 @import "parsley";
 
+@font-face {
+  font-family: "FSEmeric";
+  src: url('FSEmeric.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 *::after,
 *::before {
@@ -18,7 +25,7 @@ html {
 }
 
 body {
-  font-family: "FS Emeric Book",Verdana,sans-serif;
+  font-family: "FSEmeric",Verdana,sans-serif;
 }
 
 .login-screen {
@@ -53,9 +60,8 @@ a {
 }
 
 .how-to-box {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+  float: right;
+  margin-right: 2rem;
 }
 
 .logo-box-ie {
@@ -122,15 +128,29 @@ a {
   cursor: pointer;
 }
 
+.static-card {
+  h1 {
+    padding-bottom: 20px;
+  }
+}
+
 .player-card {
   display: inline-block;
-  height: 40vh;
+  height: 45vh;
   width: 100%;
   position: relative;
   border-radius: 1rem;
   border: .2rem solid $player-card-border;
   box-shadow: 0 1rem 1rem rgb(72, 72, 72);
   background-clip:padding-box;
+}
+
+.player-card.background-white {
+  border: 2.12px solid #F8CB6B !important;
+}
+
+.player-card.background-green {
+  border: 2.12px solid #41836A !important;
 }
 
 .no-gutters {
@@ -185,7 +205,6 @@ a {
   background-color: $green;
   border-color: $green;
   border-style: solid;
-  border-color: green;
 }
 
 .background-white {
@@ -223,17 +242,6 @@ a {
 }
 
 //Buttons
-
-.quit-btn {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: .2rem 1rem;
-  display: inline-block;
-  position: relative;
-  font-size: 2rem;
-  background-color: $green;
-  color: $white;
-}
 
 .enter-raffle {
   display: block;
@@ -334,25 +342,33 @@ a {
 .how-to-top-btn {
   display: block;
   text-transform: uppercase;
-  height: 60px;
+  height: 50px;
   text-decoration: none;
-  width: 140px;
-  background: url("Button-How-To-Play.png") no-repeat;
-  background-size: contain;
+  font-size: 10px;
+  letter-spacing: 0.9px;
+  color: white;
+  width: 100px;
+  background: url("Button-Small-Green.png") no-repeat;
+  background-size: 100% 100%;
   border-color: transparent;
+  line-height: 60px;
 }
+
 .how-to-top-btn:hover,
 .how-to-top-btn:active {
   display: block;
   text-transform: uppercase;
-  height: 60px;
+  height: 50px;
   text-decoration: none;
-  width: 140px;
-  color: white;
-  background: url("Button-How-To-Play.png") no-repeat;
-  background-size: contain;
+  font-size: 10px;
+  letter-spacing: 0.9px;
+  width: 100px;
+  background: url("Button-Small-Green.png") no-repeat;
+  background-size: 100% 100%;
   border-color: transparent;
+  line-height: 60px;
 }
+
 .home-btn {
   display: block;
   text-transform: uppercase;

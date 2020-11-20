@@ -115,7 +115,6 @@
 
 .green-gift {
   background-image: url("Green-Gift.png");
-  width: 60%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -229,10 +228,10 @@
   position: absolute;
   text-transform: uppercase;
   margin: 0;
-  bottom: 15px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  bottom: 5px;
 }
 
 .player-name {

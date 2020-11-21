@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function () {
-  if ($('#login').length != 0) {
-    $('#login').parsley().on('form:validate', function (formInstance) {
+  if ($('#login-search').length != 0) {
+    $('#login-search').parsley().on('form:validate', function (formInstance) {
     }).on('form:submit', function () {
       return ($('.parsley-error').length === 0)
     });

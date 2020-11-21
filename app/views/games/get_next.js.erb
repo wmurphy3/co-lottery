@@ -2,6 +2,7 @@ $('.finished_game').val("<%= @game.stop_game? %>");
 
 // We need to decide about other actions
 <% if @game.finished? %>
+  console.log('finished');
   <% @new_game.each do |g| %>
     setAction(
       '<%= g[:id] %>', 
@@ -9,12 +10,14 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       '<%= g[:prize][:name] %>',
       '<%= g[:prize][:class_name] %>',
       '<%= g[:bot] %>',
-      '<%= g[:finished] %>'
+      '<%= g[:finished] %>',
+      '<%= @game.last_turn? %>'
     )
   <% end %>
   $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>")
-  var myModal = new bootstrap.Modal(document.getElementById('winnerModal'), {}).show();
+  var myModal = new bootstrap.Modal(document.getElementById('winnerModal'), {backdrop: 'static'}).show();
 <% elsif @game.stop_game? %>
+  console.log('stop game');
   <% @new_game.each do |g| %>
     setAction(
       '<%= g[:id] %>',
@@ -22,12 +25,14 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       '<%= g[:finished] ? g[:prize][:name] : nil %>',
       '<%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>',
       '<%= g[:bot] %>',
-      '<%= g[:finished] %>'
+      '<%= g[:finished] %>',
+      '<%= @game.last_turn? %>'
     )
   <% end %>
   $('.current_turn').html("<%= @game.current_user %>")
   $(".finished").html("<%= escape_javascript(render partial: 'my_prize' ) %>")
 <% else %>
+  console.log('bots turn');
   <% @new_game.each_with_index do |g,i| %>
     setAction(
       '<%= g[:id] %>',
@@ -35,20 +40,21 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       '<%= g[:finished] ? g[:prize][:name] : nil %>',
       '<%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>',
       '<%= g[:bot] %>',
-      '<%= g[:finished] %>'
+      '<%= g[:finished] %>',
+      '<%= @game.last_turn? %>'
     )
   <% end %>
   $('.current_turn').html("<%= @game.current_user %>")
   getNextPrize();
 <% end %>
 
-function setAction(id, name, prize, class_name, bot, finished) {
+function setAction(id, name, prize, class_name, bot, finished, last_turn) {
   var action_name = "background-pattern";
   var button_player = "";
 
   if(bot == "false") {
     action_name = "background-green"
-  } else if(name == "DECIDING...") {
+  } else if(name == "DECIDING..." || (last_turn == "true" && id == "0")) {
     action_name = "background-blue"
   } else if (name == "STOLEN") {
     action_name = "background-card-yellow"
@@ -58,7 +64,7 @@ function setAction(id, name, prize, class_name, bot, finished) {
 
   if(name == "OPEN NEW GIFT" || name == "KEEP") {
     button_player = "button-player-red"
-  } else if(name == "DECIDING...") {
+  } else if(name == "DECIDING..." || (last_turn == "true" && id == "0")) {
     button_player = "button-player-blue"
   } else if(name == "STOLEN") {
     button_player = "button-player-white"
@@ -66,9 +72,15 @@ function setAction(id, name, prize, class_name, bot, finished) {
     button_player = "button-player-green"
   }
 
+  if(last_turn == "true" ? (id != "0" && name != "STEAL" && name != "STOLEN") : name == "OPENED") {
+    name = ""
+  } else if(name == "DECIDING..." || (last_turn == "true" && id == "0" && bot == "true")) {
+    name = "DECIDING<span>.</span><span>.</span><span>.</span>"
+  }
+
   $('.player-card').eq(id).prop("class", "player-card "+action_name)
   $('.button-player').eq(id).prop("class", "button-player "+button_player)
-  $('.button-player').eq(id).find('p').html(name == "OPENED" ? "" : name);
+  $('.button-player').eq(id).find('p').html(name);
   $('.gift-name').eq(id).html(prize);
   $('.gift').eq(id).prop("class","gift "+class_name);
 }

@@ -1,26 +1,29 @@
 <div class="background-main">
   <div class="body text-center">
     <div class="row no-gutters">
-      <div class="col-6 col-md-4 offset-md-4">
+      <div class="col-12 col-md-4 offset-md-4">
         <div class="p-5">
           <div class="player-card background-white text-center static-card">
             <h1 class="player-name">Enter to win...</h1>
             <div class="<%= @prize.class_name %> my_prize"></div>
-            <div class="gift-name">A <%= @prize.name %></div>
+            <div class="gift-name pt-4">A <%= @prize.name %></div>
           </div>
         </div>
       </div>
+    </div>
       <h1 class="text-center">PLAY ONCE A DAY UNTIL <strong>December 22</strong></h1>
 
       <div  class="text-center"><%= image_tag("Prize-Pattern.png", :alt => "pixies", :class => "") %></div>
 
       <h1 class="text-center mb-4">You'll also be entered to win scratch tickets!</h1>
 
-      <div class="sign-up">
-        <%= render :partial => 'form' %>
-      </div>
-      <div class="sign-in d-none">
-        <%= render :partial => 'signin_form' %>
+      <div class="col-md-12">
+        <div class="sign-up">
+          <%= render :partial => 'form' %>
+        </div>
+        <div class="sign-in d-none">
+          <%= render :partial => 'signin_form' %>
+        </div>
       </div>
     </div>
   </div>

@@ -20,6 +20,8 @@ module ApplicationHelper
       background = "background-card-yellow"
     elsif game[:bot] && game[:finished]
       background = "background-white"
+    elsif game[:action] == "DECIDING..."
+      background = "background-blue"
     elsif game[:bot]
       background = "background-pattern"
     end

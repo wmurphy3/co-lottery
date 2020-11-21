@@ -43,9 +43,15 @@ function setAction(id, name, prize, class_name, bot, finished) {
     button_player = "button-player-green"
   }
 
+  if(name == "OPENED") {
+    name = ""
+  } else if(name == "DECIDING...") {
+    name = "DECIDING<span>.</span><span>.</span><span>.</span>"
+  }
+
   $('.player-card').eq(id).prop("class", "player-card "+action_name)
   $('.button-player').eq(id).prop("class", "button-player "+button_player)
-  $('.button-player').eq(id).find('p').html(name == "OPENED" ? "" : name);
+  $('.button-player').eq(id).find('p').html(name);
   $('.gift-name').eq(id).html(prize);
   $('.gift').eq(id).prop("class","gift "+class_name);
 }

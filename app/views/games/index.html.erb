@@ -13,13 +13,7 @@
                 <div class="gift <%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>"></div>
                 <div class="button-player <%= button(g[:action], g[:bot]) %>">
                   <p>
-                    <% if g[:action] != "OPENED" %>
-                      <% if g[:action] == "DECIDING..." %>
-                        DECIDING<span>.</span><span>.</span><span>.</span>
-                      <% else %>
-                        <%= g[:action] ? g[:action] : (@game.stop_game? && !@game.finished? && !g[:bot] ? "OPEN NEW GIFT" : "") %>
-                      <% end %>
-                    <% end %>
+                    <%= action_name(g) %>
                   </p>
                 </div>
                 <div class="gift-name">

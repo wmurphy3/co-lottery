@@ -7,7 +7,7 @@ module ApplicationHelper
       button_player = "button-player-blue"
     elsif name == "STOLEN"
       button_player = "button-player-white"
-    elsif name == "STEAL"
+    elsif name == "STEAL" || (@game.user_turn? && bot)
       button_player = "button-player-green"
     end
     button_player
@@ -26,5 +26,19 @@ module ApplicationHelper
       background = "background-pattern"
     end
     background
+  end
+
+  def action_name(g)
+    name = ""
+    if g[:action] != "OPENED"
+      if g[:action] == "DECIDING..."
+        name = "DECIDING<span>.</span><span>.</span><span>.</span>"
+      elsif @game.user_turn? && g[:bot]
+        name = "STEAL"
+      else
+        name = g[:action] ? g[:action] : (@game.stop_game? && !@game.finished? && !g[:bot] ? "OPEN NEW GIFT" : "")
+      end
+    end
+    name
   end
 end

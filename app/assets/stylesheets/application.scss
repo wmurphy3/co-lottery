@@ -225,11 +225,11 @@ a {
 }
 
 .background-pattern {
-  background-color: #FAEBBA;
-  background-image: url("Button-Background-Pattern-Pract.png");
-  background-position: cover;
-  border-style: solid;
-  border-color: #f8cb6c;
+  width: 100%;
+  background-image: url("Hatch-Pattern-Background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 .dashboard-text {

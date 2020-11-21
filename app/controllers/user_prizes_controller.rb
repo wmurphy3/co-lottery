@@ -19,7 +19,7 @@ class UserPrizesController < ApplicationController
 
   def set_cookie
     if user_params[:remember_me] && @user.id
-      cookies[:white_elephant] = { value: Base64.encode64(@user.id.to_s, expires: 1.month.from_now}
+      cookies[:white_elephant] = { value: Base64.encode64(@user.id.to_s), expires: 1.month.from_now}
     end
   end
 end

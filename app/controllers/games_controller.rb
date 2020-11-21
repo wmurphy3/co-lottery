@@ -23,7 +23,7 @@ class GamesController < ApplicationController
 
   def entered
     @user   = User.find(params[:id])
-    @prize  = @user.prizes.last
+    @prize  = @user.prizes.order('user_prizes.id').last
   end
 
   private

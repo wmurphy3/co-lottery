@@ -99,14 +99,13 @@ $(document).on('turbolinks:load', function () {
 
 // Get the next prize depending on cache
 function getNextPrize() {
-  // TODO show loading gif?
   setTimeout(function () {
     $.ajax({
       type: 'get',
       url: ('/games/get_next'),
       async: false,
       dataType: 'script',
-      success: function(data) {}
+      success: function (data) {}
     });
   }, 3000);
 }

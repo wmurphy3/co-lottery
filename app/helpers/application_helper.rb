@@ -32,12 +32,14 @@ module ApplicationHelper
     name = ""
     if g[:action] != "OPENED"
       if g[:action] == "DECIDING..."
-        name = "DECIDING<span>.</span><span>.</span><span>.</span>"
+        name = "DECIDING<span>.</span><span>.</span><span>.</span>".html_safe
       elsif @game.user_turn? && g[:bot]
         name = "STEAL"
       else
         name = g[:action] ? g[:action] : (@game.stop_game? && !@game.finished? && !g[:bot] ? "OPEN NEW GIFT" : "")
       end
+    elsif @game.user_turn? && g[:bot]
+      name = "STEAL"
     end
     name
   end

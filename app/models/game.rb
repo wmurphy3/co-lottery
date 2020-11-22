@@ -1,7 +1,7 @@
 class Game
   attr_accessor :ip, :failed, :users, :prizes, :game, :cache, :prize_id
 
-  UNOPENED_GIFTS = %w(red-gift yellow-gift green-gift)
+  UNOPENED_GIFTS = %w(green-gift green-gift green-gift)
   
   # TODO Do we need to clear expired caches?
   def initialize(options={})
@@ -320,9 +320,9 @@ class Game
   end
 
   def bot_action
-    max_open          = 80
-    min_steal_bot     = 81
-    max_steal_bot     = 94
+    max_open          = 84
+    min_steal_bot     = 85
+    max_steal_bot     = 97
     num               = rand(100) + 1
 
     if @game.count { |h| h[:finished] == true} < 1 || user_turn? || last_turn?
@@ -334,7 +334,7 @@ class Game
     case num
       when 1..max_open                  then 'open'
       when min_steal_bot..max_steal_bot then 'steal_bot'
-      when 95..100                      then 'steal_player'
+      when 98..100                      then 'steal_player'
     end
   end
 

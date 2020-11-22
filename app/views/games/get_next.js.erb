@@ -42,6 +42,7 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       "<%= g[:stolen] %>"
     )
   <% end %>
+  $('.current_turn').html("<%= @game.current_user %>")
   $(".finished").html("<%= escape_javascript(render partial: 'my_prize' ) %>")
 <% else %>
   console.log('bots turn');
@@ -59,10 +60,11 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       '<%= g[:id] == @prize[:id] %>',
       true,
       false,
-      "<%= @game.current_user %>",
+      ("<%= i == 5 ? @game.current_user : '' %>"),
       "<%= g[:stolen] %>"
     )
   <% end %>
+  $('.current_turn').html("<%= @game.current_user %>")
   getNextPrize();
 <% end %>
 
@@ -97,30 +99,19 @@ async function setAction(id, name, prize, class_name, bot, finished,
     name = "DECIDING<span>.</span><span>.</span><span>.</span>"
   }
 
-  setImage(current_turn == "true", id, (final_turn && last_turn == "true" || all_done), stolen).then(function() {
-    $('.gift').eq(id).prop("class","gift "+class_name); 
+  setImage(current_turn == "true", id, (final_turn && last_turn == "true" || all_done), stolen, bot).then(function() {
+    current_turn == "true" ? 
+      $('.gift').eq(id).hide().prop("class","gift "+class_name).fadeIn(1500) :
+        $('.gift').eq(id).prop("class","gift "+class_name);
     $('.player-card').eq(id).prop("class", "player-card "+action_name)
     $('.button-player').eq(id).prop("class", "button-player "+button_player)
     $('.button-player').eq(id).find('p').html(name);
     $('.gift-name').eq(id).html(prize);
-
-    if(current_name.length > 0) {
-      $('.current_turn').html(current_name)
-    }
   })
 }
 
-async function setImage(current_turn, id, bot_last, stolen) {
+async function setImage(current_turn, id, bot_last, stolen, bot) {
   await new Promise(function (resolve, reject) {
-    if(bot_last || stolen == "true") {
-      resolve();
-    } else {
-      if(current_turn) {
-        $('.gift').eq(id).addClass("animate"); 
-      }
-      setTimeout(function () {
-        resolve();
-      }, 2800);
-    }
+    resolve();
   });
 }

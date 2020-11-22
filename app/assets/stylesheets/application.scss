@@ -345,10 +345,10 @@ a {
   text-transform: uppercase;
   height: 50px;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 15px;
   letter-spacing: 0.9px;
   color: white;
-  width: 100px;
+  width: 120px;
   background: url("Button-Small-Green.png") no-repeat;
   background-size: 100% 100%;
   border-color: transparent;
@@ -361,38 +361,44 @@ a {
   text-transform: uppercase;
   height: 50px;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 15px;
   letter-spacing: 0.9px;
-  width: 100px;
+  width: 120px;
   background: url("Button-Small-Green.png") no-repeat;
   background-size: 100% 100%;
   border-color: transparent;
   line-height: 60px;
 }
 
-.home-btn {
+.home-top-btn {
   display: block;
   text-transform: uppercase;
-  height: 60px;
+  height: 50px;
   text-decoration: none;
-  width: 120px;
-  background: url("Button-Home.png") no-repeat;
-  background-size: contain;
-  border-color: transparent;
-}
-.home-btn:hover,
-.home-btn:active {
-  display: block;
-  text-transform: uppercase;
-  height: 60px;
-  text-decoration: none;
-  width: 120px;
+  font-size: 15px;
+  letter-spacing: 0.9px;
   color: white;
-  background: url("Button-Home.png") no-repeat;
-  background-size: contain;
+  width: 80px;
+  background: url("Button-Small-Green.png") no-repeat;
+  background-size: 100% 100%;
   border-color: transparent;
+  line-height: 60px;
 }
 
+.home-top-btn:hover,
+.home-top-btn:active {
+  display: block;
+  text-transform: uppercase;
+  height: 50px;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.9px;
+  width: 80px;
+  background: url("Button-Small-Green.png") no-repeat;
+  background-size: 100% 100%;
+  border-color: transparent;
+  line-height: 60px;
+}
 
 .winner-button {
   animation: glowing 2000ms infinite;

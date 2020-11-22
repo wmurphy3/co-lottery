@@ -16,7 +16,9 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       '<%= g[:gift] %>',
       '<%= g[:id] == @prize[:id] %>',
       true,
-      true
+      true,
+      "",
+      "<%= g[:stolen] %>"
     )
   <% end %>
   $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>")
@@ -35,34 +37,37 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       '<%= g[:gift] %>',
       '<%= g[:id] == @prize[:id] %>',
       false,
-      false
+      false,
+      "<%= @game.current_user %>",
+      "<%= g[:stolen] %>"
     )
   <% end %>
-  $('.current_turn').html("<%= @game.current_user %>")
   $(".finished").html("<%= escape_javascript(render partial: 'my_prize' ) %>")
 <% else %>
   console.log('bots turn');
   $('.gift').eq("<%= @prize[:id] %>").addClass('animate');
   <% @new_game.each_with_index do |g,i| %>
     setAction(
-        '<%= g[:id] %>',
-        '<%= @prize[:id] + 1 == i && !g[:finished] ? "DECIDING..." : g[:action] %>', 
-        '<%= g[:finished] ? g[:prize][:name] : nil %>',
-        '<%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>',
-        '<%= g[:bot] %>',
-        '<%= g[:finished] %>',
-        '<%= @game.last_turn? %>',
-        '<%= g[:gift] %>',
-        '<%= g[:id] == @prize[:id] %>',
-        true,
-        false
-      )
+      '<%= g[:id] %>',
+      '<%= @prize[:id] + 1 == i && !g[:finished] ? "DECIDING..." : g[:action] %>', 
+      '<%= g[:finished] ? g[:prize][:name] : nil %>',
+      '<%= g[:finished] ? g[:prize][:class_name] : g[:gift] %>',
+      '<%= g[:bot] %>',
+      '<%= g[:finished] %>',
+      '<%= @game.last_turn? %>',
+      '<%= g[:gift] %>',
+      '<%= g[:id] == @prize[:id] %>',
+      true,
+      false,
+      "<%= @game.current_user %>",
+      "<%= g[:stolen] %>"
+    )
   <% end %>
-  $('.current_turn').html("<%= @game.current_user %>")
   getNextPrize();
 <% end %>
 
-async function setAction(id, name, prize, class_name, bot, finished, last_turn, gift, current_turn, final_turn, all_done) {
+async function setAction(id, name, prize, class_name, bot, finished, 
+  last_turn, gift, current_turn, final_turn, all_done, current_name, stolen) {
   var action_name = "background-pattern";
   var button_player = "";
 
@@ -86,25 +91,28 @@ async function setAction(id, name, prize, class_name, bot, finished, last_turn, 
     button_player = "button-player-green"
   }
 
-  if(last_turn == "true" ? (id != "0" && name != "STEAL" && name != "STOLEN") : name == "OPENED") {
+  if(last_turn == "true" ? (id != "0" && name != "STEAL" && name != "STOLEN") : (name == "OPENED")) {
     name = ""
   } else if(name == "DECIDING..." || (last_turn == "true" && id == "0" && bot == "true")) {
     name = "DECIDING<span>.</span><span>.</span><span>.</span>"
   }
 
-  setImage(current_turn == "true", id, (final_turn && last_turn == "true" || all_done)).then(function() {
+  setImage(current_turn == "true", id, (final_turn && last_turn == "true" || all_done), stolen).then(function() {
     $('.gift').eq(id).prop("class","gift "+class_name); 
     $('.player-card').eq(id).prop("class", "player-card "+action_name)
     $('.button-player').eq(id).prop("class", "button-player "+button_player)
     $('.button-player').eq(id).find('p').html(name);
     $('.gift-name').eq(id).html(prize);
+
+    if(current_name.length > 0) {
+      $('.current_turn').html(current_name)
+    }
   })
 }
 
-async function setImage(current_turn, id, bot_last) {
+async function setImage(current_turn, id, bot_last, stolen) {
   await new Promise(function (resolve, reject) {
-    console.log(bot_last)
-    if(bot_last) {
+    if(bot_last || stolen == "true") {
       resolve();
     } else {
       if(current_turn) {

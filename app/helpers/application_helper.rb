@@ -7,7 +7,7 @@ module ApplicationHelper
       button_player = "button-player-blue"
     elsif name == "STOLEN"
       button_player = "button-player-white"
-    elsif name == "STEAL" || (@game.user_turn? && bot)
+    elsif name == "STEAL" || (@game.user_turn? && bot && !@game.first_turn?)
       button_player = "button-player-green"
     end
     button_player
@@ -33,7 +33,7 @@ module ApplicationHelper
     if g[:action] != "OPENED"
       if g[:action] == "DECIDING..."
         name = "DECIDING<span>.</span><span>.</span><span>.</span>".html_safe
-      elsif @game.user_turn? && g[:bot]
+      elsif @game.user_turn? && g[:bot] && !@game.first_turn?
         name = "STEAL"
       else
         name = g[:action] ? g[:action] : (@game.stop_game? && !@game.finished? && !g[:bot] ? "OPEN NEW GIFT" : "")

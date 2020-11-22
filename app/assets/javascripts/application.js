@@ -37,7 +37,7 @@ toastr.options = {
 };
 
 $(document).on('turbolinks:load', function () {
-  if ($('.game-piece').length > 0) {
+  if ($('.game-piece').length > 0 && $('.game').length > 0) {
     var finished_game = $('.finished_game').val() == "false";
 
     // Only get next piece if the game wasn't finished earlier

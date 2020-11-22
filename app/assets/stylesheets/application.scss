@@ -30,7 +30,7 @@
 }
 
 html {
-  font-size: 70%;
+  font-size: 90%;
 }
 
 body {
@@ -45,6 +45,7 @@ body {
 .button-tag {
   font-family: "FSEMericStrong";
   letter-spacing: 7px;
+  font-size: 1rem;
 }
 
 strong { font-family: "FSEMericStrong" }
@@ -257,15 +258,17 @@ a {
 }
 
 .dashboard-text {
-  font-size: 3.5rem;
+  font-size: 3rem;
   padding: 3rem;
 }
 
 .player-name, .gift-name {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   letter-spacing: .2rem;
 }
 
+.form-check-label, .form-check-input {
+  font-size: 1.5rem; }
 //Buttons
 
 .enter-raffle {

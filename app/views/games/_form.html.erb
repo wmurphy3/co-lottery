@@ -3,7 +3,7 @@
 <div class="col-md-4 offset-md-4 col-12 text-left">
   <%= form_for(User.new, remote: true, :html => {'parsley-validate' => '', id: 'login-search'}) do |f| %>
     <%= f.hidden_field :prize_id, value: @prize.id %>
-    <div class="form row g-3">
+    <div class="form row g-3 mb-6">
       <div class="col-md-6">
         <div class="mb-3">
           <label></label>
@@ -44,13 +44,13 @@
             'parsley-error-message'=> "Required"} %>
         </div>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 ml-3">
         <div class="form-check mt-4">
           <input type="checkbox" class="form-check-input" id="confirm">
           <label class="form-check-label" for="confirm">I am at least 18 years of age.</label>
         </div>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 ml-3">
         <div class="form-check mt-4">
           <%= f.check_box :remember_me, class: 'form-check-input' %>
           <label class="form-check-label" for="confirm">Remember Me</label>

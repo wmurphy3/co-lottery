@@ -1,4 +1,4 @@
-<a class="sign_up">Sign Up?</a>
+<h4><a class="sign_up">Sign Up?</a></h4>
 
 <%= form_for(UserPrize.new, remote: true, :html => {'parsley-validate' => '', id: 'login'}) do |f| %>
   <%= f.hidden_field :prize_id, value: @prize.id %>

@@ -13,6 +13,14 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: "FSEmericStrong";
+  src: url('FSEmeric-SemiBold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 *::after,
 *::before {
@@ -28,6 +36,18 @@ html {
 body {
   font-family: "FSEmeric",Verdana,sans-serif;
 }
+
+.button-player {
+  font-family: "FSEMericStrong";
+  letter-spacing: 7px;
+}
+
+.button-tag {
+  font-family: "FSEMericStrong";
+  letter-spacing: 7px;
+}
+
+strong { font-family: "FSEMericStrong" }
 
 .login-screen {
   margin: auto;
@@ -52,6 +72,10 @@ a {
 
 .vh-100 {
   height: 100vh !important;
+}
+
+.mb-6 {
+  margin-bottom: 60px;;
 }
 
 .logo-box {

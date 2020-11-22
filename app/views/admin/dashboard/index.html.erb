@@ -1,0 +1,16 @@
+<div class="col-md-4 offset-md-4">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <%= link_to report_admin_dashboard_index_path, class: 'p-4' do %>
+        <i class="fa fa-download"></i> Download Report
+      <% end %>
+    </li>
+
+    <li class="list-group-item">
+      <%= link_to cache_admin_dashboard_index_path, class: 'p-4' do %>
+        <i class="fa fa-ban"></i> Clear Cache
+      <% end %>
+      </br><small>* This clears everyone's cached game for the day.</small>
+    </li>
+  </ul>
+</div>

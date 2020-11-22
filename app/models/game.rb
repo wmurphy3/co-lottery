@@ -133,7 +133,7 @@ class Game
 
   # Get 5 random bots
   def get_random_user_list 
-    @users = user_list.sample(5).insert(rand(5), {name: "ME", bot: false})
+    @users = user_list.sample(5).insert(0, {name: "ME", bot: false})
   end
 
   # Get 6 random prizes
@@ -343,7 +343,7 @@ class Game
     elsif @game.count { |h| h[:finished] == true && h[:bot] == false } < 1 
       max_steal_bot     = 100
     end
-
+    puts "num: #{num}"
     case num
       when 1..max_open                  then 'open'
       when min_steal_bot..max_steal_bot then 'steal_bot'

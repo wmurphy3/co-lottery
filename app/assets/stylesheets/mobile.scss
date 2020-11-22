@@ -20,7 +20,7 @@
     position: absolute;
     display: block;
     height: 7vh !important;
-    bottom: 50px !important;
+    bottom: 35px !important;
 
     p {
       color: white;
@@ -42,7 +42,7 @@
     position: absolute;
     display: block;
     height: 7vh !important;
-    bottom: 50px !important;
+    bottom: 35px !important;
 
     p {
       color: white;
@@ -64,7 +64,7 @@
     position: absolute;
     display: block;
     height: 5vh !important;
-    bottom: 50px !important;
+    bottom: 35px !important;
 
     p {
       text-transform: uppercase;
@@ -85,7 +85,7 @@
     position: absolute;
     display: block;
     height: 7vh !important;
-    bottom: 50px !important;
+    bottom: 35px !important;
 
     p {
       color: white;
@@ -107,25 +107,8 @@
     }
   }
 
-  .red-gift {
-    background-position: 0px top;
-    -webkit-animation: none;
-    transform: scale(1) !important;
-    margin: -1% 9% !important;
-  }
-
-  .green-gift {
-    background-position: 0px top;
-    -webkit-animation: none;
-    transform: scale(1) !important;
-    margin: -1% 9% !important;
-  }
-
-  .yellow-gift {
-    background-position: 0px top;
-    -webkit-animation: none;
-    transform: scale(1) !important;
-    margin: -1% 9% !important;
+  .red-gift, .green-gift, .yellow-gift {
+    margin: -10% 20% !important;
   }
 
   .cooler,
@@ -138,7 +121,7 @@
   .blow_up,
   .blanket,
   .gift_card {
-    margin: -10% 18% !important;
+  
   }
 
   .gift-name {

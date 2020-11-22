@@ -11,8 +11,8 @@
             <div class="p-5">
               <div class="player-card background-green text-center static-card">
                 <h1 class="player-name">YOU OPENED...</h1>
-                <div class="<%= @game.winner_prize[:prize][:class_name] %> my_prize"></div>
-                <div class="gift-name"><%= @game.winner_prize[:prize][:name] %></div>
+                <div class="<%= @game.winner_prize[:prize][:class_name] %> animate my_prize_animate my_prize"></div>
+                <div class="gift-name"></div>
               </div>
             </div>
           </div>
@@ -27,6 +27,7 @@
   $(function() {
     var myModalEl = document.getElementById('myPrizeModal')
     myModalEl.addEventListener('hidden.bs.modal', function (e) {
+      $('.gift-name').eq("<%= @game.winner_prize[:id] %>").html("<%= @game.winner_prize[:prize][:name] %>")
       var finished_game = $('.finished_game').val() == "true";
 
       if (finished_game) {
@@ -38,6 +39,13 @@
           success: function(data) {}
         });
       }
+    })
+
+    myModalEl.addEventListener('shown.bs.modal', function (e) {
+      setTimeout(function () {
+        $('.my_prize').removeClass('my_prize_animate animate')
+        $('.static-card .gift-name').html("<%= @game.winner_prize[:prize][:name] %>")
+      }, 2400);
     })
   });
 </script>

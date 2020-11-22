@@ -6,7 +6,7 @@
           <div class="player-card background-white text-center static-card">
             <h1 class="player-name">You're entered to win...</h1>
             <div class="<%= @prize.class_name %> my_prize"></div>
-            <div class="gift-name">A <%= @prize.name %></div>
+            <div class="gift-name"><%= indefinite_articlerize @prize.name %></div>
           </div>
         </div>
       </div>

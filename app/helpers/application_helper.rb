@@ -62,4 +62,8 @@ module ApplicationHelper
     end
     name
   end
+
+  def indefinite_articlerize(params_word)
+    %w(a e i o u).include?(params_word[0].downcase) ? "An #{params_word}" : "A #{params_word}"
+  end
 end

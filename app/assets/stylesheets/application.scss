@@ -37,17 +37,6 @@ body {
   font-family: "FSEmeric",Verdana,sans-serif;
 }
 
-.button-player {
-  font-family: "FSEMericStrong";
-  letter-spacing: 7px;
-}
-
-.button-tag {
-  font-family: "FSEMericStrong";
-  letter-spacing: 7px;
-  font-size: 1rem;
-}
-
 strong { font-family: "FSEMericStrong" }
 
 .login-screen {
@@ -112,7 +101,7 @@ a {
 }
 
 .dashboard-white-elephant-logo {
-  height: 50rem;
+  height: 35rem;
 }
 
 .white-elephant-logo-box {
@@ -262,13 +251,18 @@ a {
   padding: 3rem;
 }
 
-.player-name, .gift-name {
+.gift-name {
+  font-size: 1.5rem;
+}
+
+.player-name {
   font-size: 1.5rem;
   letter-spacing: .2rem;
 }
 
 .form-check-label, .form-check-input {
   font-size: 1.5rem; }
+
 //Buttons
 
 .enter-raffle {

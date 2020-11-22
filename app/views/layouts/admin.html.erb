@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>White Elephant</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="background-yellow">
+    <div class="d-grid">
+      <div class="header">
+        <div class="logo-box">
+          <%= image_tag("CL-Logo.png", :alt => "logo", :class => "logo") %>
+        </div>
+        <div class="white-elephant-logo-box">
+          <%= image_tag("White-Elephant-Logo.png", :alt => "logo", :class => "white-elephant-logo") %>
+        </div>
+      </div>
+
+      <%= yield %>
+
+    </div>
+    <div class="flash_messages">
+      <%= custom_bootstrap_flash %>
+    </div>
+  </body>
+</html>

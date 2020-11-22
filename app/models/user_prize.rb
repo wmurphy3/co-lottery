@@ -1,6 +1,6 @@
 class UserPrize < ApplicationRecord
   belongs_to :prize
-
+  belongs_to :user
   attr_accessor :email
 
   validates :prize_id, :presence => true

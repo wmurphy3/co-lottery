@@ -8,10 +8,6 @@
 }
 
 @media only screen and (max-width: 800px){
-  .my_prize {
-    height: 50% !important;
-    width: 50% !important;
-  }
 
   .player-card {
     height: 30vh !important;
@@ -112,14 +108,53 @@
   }
 
   .red-gift {
-    background-position: top center !important;
+    background-position: 0px top;
+    -webkit-animation: none;
+    transform: scale(1) !important;
+    margin: -1% 9% !important;
   }
 
   .green-gift {
-    background-position: top center !important;
+    background-position: 0px top;
+    -webkit-animation: none;
+    transform: scale(1) !important;
+    margin: -1% 9% !important;
   }
 
   .yellow-gift {
-    background-position: top center !important;
+    background-position: 0px top;
+    -webkit-animation: none;
+    transform: scale(1) !important;
+    margin: -1% 9% !important;
+  }
+
+  .cooler,
+  .waffle_maker,
+  .sweater,
+  .headphoens,
+  .gummy,
+  .fryer,
+  .cutting_board,
+  .blow_up,
+  .blanket,
+  .gift_card {
+    margin: -10% 18% !important;
+  }
+
+  .gift-name {
+    font-size: 1rem !important;
+  }
+
+  .button-player-red,
+  .button-player-green,
+  .button-player-blue,
+  .button-player-white {
+    right: -14px !important;
+  }
+
+  .my_prize {
+    height: 70% !important;
+    width: 70% !important;
+    margin: -4% 14% !important;
   }
 }

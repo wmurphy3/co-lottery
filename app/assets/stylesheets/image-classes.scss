@@ -104,33 +104,63 @@
 }
 
 .red-gift {
-  background-image: url("Red-Gift.png");
-  width: 60%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 60%;
-  margin: auto;
+  width: 160px;
+  height: 116px;
+  background: url("green-sprite.png") left top;
+  background-position: 0px top;
+  -webkit-animation: none;
+  transform: scale(1.6);
+  margin: 15% 28%;
 }
 
 .green-gift {
-  background-image: url("Green-Gift.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 60%;
-  margin: auto;
+  width: 160px;
+  height: 116px;
+  background: url("green-sprite.png") left top;
+  background-position: 0px top;
+  -webkit-animation: none;
+  transform: scale(1.6);
+  margin: 15% 28%;
 }
 
 .yellow-gift {
-  background-image: url("Yellow-Gift.png");
-  width: 60%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 60%;
-  margin: auto;
+  width: 160px;
+  height: 116px;
+  background: url("green-sprite.png") left top;
+  background-position: 0px top;
+  -webkit-animation: none;
+  transform: scale(1.6);
+  margin: 15% 28%;
 }
+
+// .red-gift {
+//   background-image: url("Red-Gift.png");
+//   width: 60%;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   height: 60%;
+//   margin: auto;
+// }
+
+// .green-gift {
+//   background-image: url("Green-Gift.png");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   height: 60%;
+//   margin: auto;
+// }
+
+// .yellow-gift {
+//   background-image: url("Yellow-Gift.png");
+//   width: 60%;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   height: 60%;
+//   margin: auto;
+// }
 
 // Button Classes
 

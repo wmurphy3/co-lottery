@@ -24,3 +24,19 @@
 .button-player span:nth-child(3) {
   animation-delay: .4s;
 }
+
+.animate {
+  background-position: -8480px top;
+  -webkit-animation: bkg 3s steps(53);
+  transition: none;
+}
+
+@-webkit-keyframes bkg {
+  0% {
+    background-position: 0px top;
+  }
+
+  100% {
+    background-position: -8480px top;
+  }
+}

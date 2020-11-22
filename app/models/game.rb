@@ -103,6 +103,10 @@ class Game
     game && !finished? && game.count { |h| h[:finished] == true } == 6
   end
 
+  def first_turn?
+    game && game.count { |h| h[:finished] == false } == 6
+  end
+
   def current_user
     return nil if finished?
 
@@ -146,6 +150,7 @@ class Game
       u[:final]     = i == 0 ? false : true
       u[:action]    = i == 0 ? (u[:bot] ? "DECIDING..." : "OPEN NEW GIFT" ) :nil
       u[:id]        = i
+      u[:stolen]    = false
     end
   end
 
@@ -165,14 +170,18 @@ class Game
     if last_turn?
       prize[:final]     = true
       prize[:action]    = "OPENED"
+      prize[:stolen]    = false
       @game[prize[:id]] = prize
     elsif action == "open"
       prize[:finished]  = true
       prize[:action]    = "OPENED"
+      prize[:stolen]    = false
       @game[prize[:id]] = prize
     elsif action == "steal_bot"
       # Grab random index from array where finished
-      index                 = rand(finished_count)
+      random                = [*0..finished_count - 1]
+      random                = random - [winner_prize[:id]] if winner_prize[:id] < finished_count
+      index                 = random.sample
       bot_prize             = @game[index]
       #set action
       prize[:action]        = "STOLEN"
@@ -184,6 +193,8 @@ class Game
       # set status
       prize[:finished]      = true
       bot_prize[:finished]  = false
+      prize[:stolen]        = false
+      bot_prize[:stolen]    = true
       #set game
       @game[prize[:id]]     = prize
       @game[index]          = bot_prize
@@ -203,6 +214,8 @@ class Game
       # set status
       prize[:finished]      = true
       bot_prize[:finished]  = false
+      prize[:stolen]        = false
+      bot_prize[:stolen]    = true
       #set game
       @game[prize[:id]]     = prize
       @game[index]          = bot_prize
@@ -320,21 +333,21 @@ class Game
   end
 
   def bot_action
-    max_open          = 80
-    min_steal_bot     = 81
-    max_steal_bot     = 94
+    max_open          = 84
+    min_steal_bot     = 85
+    max_steal_bot     = 97
     num               = rand(100) + 1
 
-    if @game.count { |h| h[:finished] == true} < 1 || user_turn? || last_turn?
+    if @game.count { |h| h[:finished] == true && h[:bot] == true} < 2 || user_turn? || last_turn?
       max_open          = 100
     elsif @game.count { |h| h[:finished] == true && h[:bot] == false } < 1 
       max_steal_bot     = 100
     end
-  
+
     case num
       when 1..max_open                  then 'open'
       when min_steal_bot..max_steal_bot then 'steal_bot'
-      when 95..100                      then 'steal_player'
+      when 98..100                      then 'steal_player'
     end
   end
 

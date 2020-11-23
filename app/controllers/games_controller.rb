@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   layout "modal", only: [:entered, :show]
 
   def index
-    # TODO if failed/finished show a screen/alert?
+    puts "@new_game: #{@new_game.inspect}"
   end
 
   def show

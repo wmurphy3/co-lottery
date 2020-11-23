@@ -7,6 +7,7 @@ class UserPrizesController < ApplicationController
     if @user.save
       redirect_to entered_game_path(@user.user_id)
     else
+      puts "@user: #{@user.errors.inspect}"
       render :new
     end
   end

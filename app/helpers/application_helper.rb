@@ -24,10 +24,10 @@ module ApplicationHelper
       button_player = "button-player-red"
     elsif name == "DECIDING..."
       button_player = "button-player-blue"
-    elsif name == "STOLEN"
-      button_player = "button-player-white"
     elsif name == "STEAL" || (@game.user_turn? && bot && !@game.first_turn?)
       button_player = "button-player-green"
+    elsif name == "STOLEN"
+      button_player = "button-player-white"
     end
     button_player
   end
@@ -59,6 +59,8 @@ module ApplicationHelper
       end
     elsif @game.user_turn? && g[:bot]
       name = "STEAL"
+    elsif @game.user_turn? && !g[:bot] && @game.last_turn?
+      name = "KEEP"
     end
     name
   end

@@ -11,8 +11,8 @@ development:
   database: colorado_lotter_dev
 
 production:
-  <<: *default
-  database: colorado_lottery
-  host: <%=ENV['DB_HOST']%>
-  username: <%=ENV['DB_USER']%>
-  password: <%=ENV['DB_PASS']%>
+  adapter: mysql2
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: 15
+  encoding: utf8mb4
+  wait_timeout: 60

@@ -273,7 +273,19 @@ a {
 }
 
 .gift-name {
+  font-size: 1vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
+  line-height: 1.5em;
+  /* a */
+  max-height: 1.5em;
+}
+
+.gift-name-big {
   font-size: 1.5rem;
+  padding: 5px;
 }
 
 .player-name {
@@ -281,7 +293,8 @@ a {
 }
 
 .form-check-label, .form-check-input {
-  font-size: 1.5rem; }
+  font-size: 1.5rem; 
+}
 
 //Buttons
 
@@ -362,6 +375,7 @@ a {
   background: url("Button-Light.png") no-repeat;
   background-size: contain;
   border-color: transparent;
+  line-height: 15px;
 }
 
 .how-to-btn:hover,

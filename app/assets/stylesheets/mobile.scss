@@ -131,14 +131,29 @@
       width: 75vw;
     }
   }
-
+  
   .red-gift, .green-gift, .yellow-gift {
     margin: -10% 20% !important;
+  }
+
+  .background-pattern {
+    .red-gift,
+    .green-gift,
+    .yellow-gift {
+      margin: -10% 20% !important;
+    }
   }
 
   .gift-name {
     font-size: 1rem !important;
     bottom: -2px !important;
+    padding: 0px !important;
+    line-height: 15px !important;
+    overflow: visible !important;
+  }
+
+  .gift-name-big {
+    font-size: 1rem !important;
   }
 
   .gift {
@@ -150,6 +165,15 @@
   .button-player-blue,
   .button-player-white {
     right: -10px !important;
+  }
+
+  .background-main {
+    .button-player-red,
+    .button-player-green,
+    .button-player-blue,
+    .button-player-white {
+      bottom: 35px !important;
+    }
   }
 
   .my_prize {
@@ -226,5 +250,9 @@
     img {
       width: 100%;
     }
+  }
+
+  .button-player-green p:empty ~ .gift {
+      width: 500px !important;
   }
 }

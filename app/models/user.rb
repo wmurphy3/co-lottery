@@ -29,7 +29,7 @@ class User < ApplicationRecord
   def validates_user_prize
     return if self.id.blank?
 
-    if UserPrize.where("user_id = ? AND created_at >= #{DateTime.now.beginning_of_day} AND created <= #{DateTime.now.end_of_day}")
+    if UserPrize.where("user_id = ? AND created_at >= #{DateTime.now.beginning_of_day} AND created <= #{DateTime.now.end_of_day}", self.id)
       errors.add(:prize, "already selected today.")
     end
   end

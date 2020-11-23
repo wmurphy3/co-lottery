@@ -99,6 +99,10 @@ async function setAction(id, name, prize, class_name, bot, finished,
     name = "DECIDING<span>.</span><span>.</span><span>.</span>"
   }
 
+  if(button_player.length <= 0) {
+    class_name = class_name + " no-banner";
+  }
+
   setImage(current_turn == "true", id, (final_turn && last_turn == "true" || all_done), stolen, bot).then(function() {
     current_turn == "true" ? 
       $('.gift').eq(id).hide().prop("class","gift "+class_name).fadeIn(1500) :

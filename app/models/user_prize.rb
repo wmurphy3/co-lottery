@@ -6,8 +6,9 @@ class UserPrize < ApplicationRecord
 
   validates :prize_id, :presence => true
   validate :validates_user
+  validate :validates_user_prize
 
-  before_create :set_user_id
+  before_validation :set_user_id
 
   private
 
@@ -22,6 +23,14 @@ class UserPrize < ApplicationRecord
     if user_id.blank?
       user_id = User.find_by(email: email).try(:id)
       self.user_id = user_id
+    end
+  end
+
+  def validates_user_prize
+    return if self.user_id.blank?
+
+    if UserPrize.where("user_id = ? AND created_at >= #{DateTime.now.beginning_of_day} AND created <= #{DateTime.now.end_of_day}", self.user_id)
+      errors.add(:prize, "already selected today.")
     end
   end
 end

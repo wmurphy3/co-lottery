@@ -18,13 +18,13 @@ module ApplicationHelper
     flash_messages.join("\n").html_safe
   end
   
-  def button(name, bot)
+  def button(name, bot, finished)
     button_player = ""
     if name == "OPEN NEW GIFT" || (@game.user_turn? && !bot)
       button_player = "button-player-red"
     elsif name == "DECIDING..."
       button_player = "button-player-blue"
-    elsif name == "STEAL" || (@game.user_turn? && bot && !@game.first_turn?)
+    elsif name == "STEAL" || (@game.user_turn? && bot && !@game.first_turn? && finished)
       button_player = "button-player-green"
     elsif name == "STOLEN"
       button_player = "button-player-white"
@@ -52,17 +52,24 @@ module ApplicationHelper
     if g[:action] != "OPENED"
       if g[:action] == "DECIDING..."
         name = "DECIDING<span>.</span><span>.</span><span>.</span>".html_safe
-      elsif @game.user_turn? && g[:bot] && !@game.first_turn?
+      elsif @game.user_turn? && g[:bot] && !@game.first_turn? && g[:finished]
         name = "STEAL"
       else
         name = g[:action] ? g[:action] : (@game.stop_game? && !@game.finished? && !g[:bot] ? "OPEN NEW GIFT" : "")
       end
-    elsif @game.user_turn? && g[:bot]
+    elsif @game.user_turn? && g[:bot] && g[:finished]
       name = "STEAL"
     elsif @game.user_turn? && !g[:bot] && @game.last_turn?
       name = "KEEP"
     end
     name
+  end
+
+  def class_name(g)
+    button = button(g[:action], g[:bot], g[:finished])
+    c = g[:finished] ? g[:prize][:class_name] : g[:gift]
+    c += " no-banner" if button.blank?
+    c
   end
 
   def indefinite_articlerize(params_word)

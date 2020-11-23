@@ -7,7 +7,6 @@ class UserPrizesController < ApplicationController
     if @user.save
       redirect_to entered_game_path(@user.user_id)
     else
-      puts "@user: #{@user.errors.inspect}"
       render :new
     end
   end
@@ -19,7 +18,7 @@ class UserPrizesController < ApplicationController
   end
 
   def set_cookie
-    if user_params[:remember_me] && @user.id
+    if @user.id
       cookies[:white_elephant] = { value: Base64.encode64(@user.id.to_s), expires: 1.month.from_now}
     end
   end

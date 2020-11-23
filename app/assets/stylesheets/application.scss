@@ -375,11 +375,43 @@ a {
   background: url("Button-Light.png") no-repeat;
   background-size: contain;
   border-color: transparent;
-  line-height: 15px;
 }
 
 .how-to-btn:hover,
 .how-to-btn:active {
+  display: block;
+  border-radius: 38px;
+  text-transform: uppercase;
+  height: 60px;
+  text-decoration: none;
+  padding: 1.8rem 4rem 1.5rem 4rem;
+  font-size: 20px;
+  letter-spacing: 3.2px;
+  width: 366px;
+  color: white;
+  background: url("Button-Secondary-Hover.png") no-repeat;
+  background-size: contain;
+  border-color: transparent;
+}
+
+.final {
+  display: block;
+  border-radius: 38px;
+  text-transform: uppercase;
+  height: 60px;
+  text-decoration: none;
+  padding: 1.8rem 4rem 1.5rem 4rem;
+  font-size: 20px;
+  letter-spacing: 3.2px;
+  width: 366px;
+  background: url("Button-Light.png") no-repeat;
+  background-size: contain;
+  border-color: transparent;
+  line-height: 15px;
+}
+
+.final:hover,
+.final:active {
   display: block;
   border-radius: 38px;
   text-transform: uppercase;

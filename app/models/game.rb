@@ -118,7 +118,7 @@ class Game
 
     name = name == "ME" ? "your" : name
 
-    "It's #{name} turn..."
+    "It's #{name} turn<span>.</span><span>.</span><span>.</span>".html_safe
   end
 
   def user_turn?
@@ -330,8 +330,8 @@ class Game
   end
 
   def bot_action
-    max_open          = 84
-    min_steal_bot     = 85
+    max_open          = 89
+    min_steal_bot     = 90
     max_steal_bot     = 97
     num               = rand(100) + 1
 
@@ -340,7 +340,7 @@ class Game
     elsif @game.count { |h| h[:finished] == true && h[:bot] == false } < 1 
       max_steal_bot     = 100
     end
-    puts "num: #{num}"
+
     case num
       when 1..max_open                  then 'open'
       when min_steal_bot..max_steal_bot then 'steal_bot'

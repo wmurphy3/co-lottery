@@ -1,19 +1,19 @@
 <div class="background-main">
   <div class="body text-center">
-    <div class="row no-gutters">
+    <div class="row no-gutters mb-4 mt-4">
       <div class="col-12 col-md-4 offset-md-4">
         <div class="p-5">
           <div class="player-card background-white text-center static-card">
             <h1 class="">Enter to win...</h1>
             <div class="<%= @prize.class_name %> my_prize"></div>
-            <h2 class="pt-4"><%= indefinite_articlerize @prize.name %></h2>
+            <h2><%= indefinite_articlerize @prize.name %></h2>
           </div>
         </div>
       </div>
     </div>
       <h1 class="text-center mb-6">PLAY ONCE A DAY UNTIL <strong>December 22</strong></h1>
 
-      <div  class="text-center mb-6"><%= image_tag("Prize-Pattern.png", :alt => "pixies", :class => "") %></div>
+      <div class="text-center mb-6 prize-pattern"><%= image_tag("Prize-Pattern.png", :alt => "pixies", :class => "") %></div>
 
       <h1 class="text-center mb-4">You'll also be entered to win scratch tickets!</h1>
 

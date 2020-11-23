@@ -16,3 +16,4 @@ production:
   pool: 15
   encoding: utf8mb4
   wait_timeout: 60
+  database: colorado_lotter_prod

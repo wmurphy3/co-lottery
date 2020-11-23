@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-  skip_before_action :check_for_lockup, raise: false
+  before_action :check_for_lockup
 end

@@ -1,3 +1,17 @@
+@media only screen and (max-width: 1400px) {
+  .button-player-red,
+  .button-player-green,
+  .button-player-blue,
+  .button-player-white {
+    right: -16px !important;
+
+    p {
+      font-size: 1.2rem !important;
+      letter-spacing: 2px !important;
+    }
+  }
+}
+
 @media only screen and (max-width: 1240px) {
   .button-player-red,
   .button-player-green,
@@ -8,6 +22,17 @@
 }
 
 @media only screen and (max-width: 800px){
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+  }
+
+  body {
+    line-height: 1.2 !important;
+  }
 
   .player-card {
     height: 30vh !important;
@@ -29,7 +54,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      font-size: 1.5rem;
+      font-size: 1rem !important;
       transform: translate(-50%, -50%);
       width: 100%;
     }
@@ -51,7 +76,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      font-size: 1.5rem;
+      font-size: 1rem !important;
       transform: translate(-50%, -50%);
       width: 100%;
     }
@@ -72,7 +97,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      font-size: 1.5rem;
+      font-size: 1rem !important;
       transform: translate(-50%, -50%);
       width: 100%;
     }
@@ -94,14 +119,14 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      font-size: 1.5rem;
+      font-size: 1rem !important;
       transform: translate(-50%, -50%);
       width: 100%;
     }
   }
 
   .white-elephant-logo-box {
-    top: 60% !important;
+    top: 85% !important;
     .white-elephant-logo {
       width: 75vw;
     }
@@ -109,19 +134,6 @@
 
   .red-gift, .green-gift, .yellow-gift {
     margin: -10% 20% !important;
-  }
-
-  .cooler,
-  .waffle_maker,
-  .sweater,
-  .headphoens,
-  .gummy,
-  .fryer,
-  .cutting_board,
-  .blow_up,
-  .blanket,
-  .gift_card {
-  
   }
 
   .gift-name {
@@ -132,12 +144,59 @@
   .button-player-green,
   .button-player-blue,
   .button-player-white {
-    right: -14px !important;
+    right: -10px !important;
   }
 
   .my_prize {
     height: 70% !important;
     width: 70% !important;
     margin: -4% 14% !important;
+  }
+
+  .col-6 {
+    .p-5 {
+      padding: 1rem !important;
+    }
+  }
+
+  .play-now-btn,
+  .how-to-btn {
+    width: 100% !important;
+    background-size: cover !important;
+    height: 70px !important;
+    line-height: 15px !important;
+    margin-top: 50px;
+  }
+
+  .home-top-btn {
+    line-height: 40px !important;
+  }
+
+  .header {
+    padding: 20px;
+    .logo-box {
+      top: 1rem !important;
+      left: 1rem !important;
+    }
+    .how-to-box {
+      margin-right: 0px !important;
+    }
+  }
+
+  .player-name {
+    font-size: 0.5px !important;
+  }
+
+  .dashboard-white-elephant-logo {
+    height: 25rem !important;
+  }
+
+  .how-to-top-btn {
+    width: 150px !important;
+    line-height: 40px !important;
+  }
+
+  .container.vh-100 {
+    margin-top: 50px;
   }
 }

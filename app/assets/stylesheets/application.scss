@@ -214,7 +214,27 @@ a {
 }
 
 .background-main {
-  background: linear-gradient(180deg, rgba(99, 199, 164, 0) 0%, #63C7A4 100%)
+  position: relative;
+  z-index: 1;
+
+  body {
+    z-index: 0;
+  }
+}
+
+#gradient {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 10%;
+  background: -moz-inear-gradient(180deg, rgba(99, 199, 164, 0) 0%, #63C7A4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(70%, rgba(255, 255, 255, 1)));
+  background: -webkit-linear-gradient(180deg, rgba(99, 199, 164, 0) 0%, #63C7A4 100%);
+  background: -o-inear-gradient(180deg, rgba(99, 199, 164, 0) 0%, #63C7A4 100%);
+  background: -ms-inear-gradient(180deg, rgba(99, 199, 164, 0) 0%, #63C7A4 100%);
+  background: linear-gradient(180deg, rgba(99, 199, 164, 0) 0%, #63C7A4 100%);
 }
 
 .background-green {

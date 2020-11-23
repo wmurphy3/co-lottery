@@ -154,6 +154,7 @@
 
   .gift-name-big {
     font-size: 1rem !important;
+    margin-top: 45px !important;
   }
 
   .gift {
@@ -190,7 +191,8 @@
 
   .play-now-btn,
   .how-to-btn,
-  .enter-raffle {
+  .enter-raffle,
+  .final {
     width: 100% !important;
     background-size: cover !important;
     height: 70px !important;
@@ -255,4 +257,8 @@
   .button-player-green p:empty ~ .gift {
       width: 500px !important;
   }
+
+  .player-card .no-banner {
+    margin: -10% 5% !important;
+  }  
 }

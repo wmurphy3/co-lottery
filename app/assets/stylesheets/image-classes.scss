@@ -286,15 +286,16 @@
 }
 
 .gift-name-big {
-  position: absolute;
+  position: relative;
   text-transform: uppercase;
   margin: 0;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   padding: 5px;
-  bottom: -8%;
-  width: 100%;
+  bottom: 15px;
+  width: 99%;
+  margin-top: 65px;
 }
 
 .player-name {

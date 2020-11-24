@@ -65,7 +65,7 @@ class GamesController < ApplicationController
       decrypted_cookie = Base64.decode64(cookie)
 
       unless decrypted_cookie.blank?
-        if UserPrize.find({
+        if UserPrize.find_by({
           user_id:  decrypted_cookie,
           prize_id: params[:id]
         })

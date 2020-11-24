@@ -48,7 +48,11 @@ $(document).on('turbolinks:load', function () {
 
   // Confirmed over 18
   $('#confirm').click(function () {
-    $('.enter-raffle').removeAttr("disabled");
+    if ($(this).is(':checked')) {
+      $('.enter-raffle').removeAttr("disabled");
+    } else {
+      $('.enter-raffle').prop("disabled",true);
+    }
   });
 
   // Player chose to open gift

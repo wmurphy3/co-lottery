@@ -12,6 +12,16 @@
   }
 }
 
+@media only screen and (max-height: 834px) {
+  .mb-percent {
+    margin-bottom: 3% !important;
+  }
+  .login-screen img {
+    max-width: 65% !important;
+    max-width: 65% !important;
+  }
+}
+
 @media only screen and (max-width: 1240px) {
   .button-player-red,
   .button-player-green,

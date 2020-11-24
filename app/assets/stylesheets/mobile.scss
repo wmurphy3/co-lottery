@@ -203,11 +203,21 @@
   .how-to-btn,
   .enter-raffle,
   .final {
-    width: 100% !important;
-    background-size: cover !important;
-    height: 70px !important;
+    background-size: contain !important;
+    height: 100px !important;
     line-height: 15px !important;
     margin-top: 50px;
+  }
+
+  .button-container {
+    width: 90%;
+    position: relative;
+    .play-now-btn,
+    .how-to-btn {
+      width: 100% !important;
+      line-height: 10px !important;
+      border-radius: 3px !important;
+    }
   }
 
   .home-top-btn {
@@ -227,6 +237,10 @@
     .how-to-box {
       margin-right: 0px !important;
     }
+  }
+
+  .header-ie {
+    height: 100px !important;
   }
 
   .player-name {

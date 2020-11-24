@@ -532,3 +532,21 @@ input[type="email"] {
 .btn {
   box-sizing: inherit !important;
 }
+
+#winnerModal {
+  .modal-content {
+    background-color: #f4e1a6 !important;
+  }
+
+  .player-card.background-white {
+    border: none !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .player-name {
+    letter-spacing: 3px;
+  }
+
+}

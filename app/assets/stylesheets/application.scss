@@ -308,7 +308,53 @@ a {
 }
 
 .form-check-label, .form-check-input {
-  font-size: 1.5rem; 
+  font-size: 1.2rem; 
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.form-check-input:checked,
+.form-check-input:focus {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 0;
+  left: 0;
+  border: 2px solid #555555;
+  border-radius: 3px;
+  background-color: black;
+  opacity: 0.3;
+}
+
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 4px;
+  left: 12px;
 }
 
 //Buttons

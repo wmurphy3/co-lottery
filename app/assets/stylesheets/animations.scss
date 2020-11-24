@@ -11,7 +11,7 @@
 }
 
 .button-player span , .current_turn span,
-.button-player-red {
+.game .button-player-red {
   animation-name: blink;
   animation-duration: 1.4s;
   animation-iteration-count: infinite;
@@ -20,13 +20,13 @@
 
 .button-player span:nth-child(2),
 .current_turn span:nth-child(2),
-.button-player-red {
+.game .button-player-red {
   animation-delay: .2s;
 }
 
 .button-player span:nth-child(3),
 .current_turn span:nth-child(3),
-.button-player-red {
+.game .button-player-red {
   animation-delay: .4s;
 }
 

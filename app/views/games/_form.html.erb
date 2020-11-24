@@ -4,7 +4,7 @@
   <%= form_for(User.new, remote: true, :html => {'parsley-validate' => '', id: 'login-search'}) do |f| %>
     <%= f.hidden_field :prize_id, value: @prize.id %>
     <div class="form row g-3 mb-6">
-      <div class="col-md-6">
+      <div class="col-6">
         <div class="mb-3">
           <label></label>
           <%= f.text_field :first_name, class: 'form-control form-control-lg',
@@ -12,7 +12,7 @@
             'parsley-error-message'=> "Required"} %>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-6">
         <div class="mb-3">
           <label></label>
           <%= f.text_field :last_name, class: 'form-control form-control-lg',
@@ -22,7 +22,6 @@
       </div>
       <div class="col-md-12">
         <div class="mb-3">
-          <label></label>
           <%= f.text_field :phone, class: 'form-control form-control-lg',
             placeholder: 'Phone Number', :required => true, :data => {'parsley-trigger'=>"input",
             'parsley-error-message'=> "Required"} %>
@@ -30,7 +29,6 @@
       </div>
       <div class="col-md-12">
         <div class="mb-3">
-          <label></label>
           <%= f.email_field :email, autocomplete: "email", class: 'form-control form-control-lg',
             placeholder: 'Email', :required => true, :data => {'parsley-type' => "email", 'parsley-trigger'=>"input",
             'parsley-required-message'=> "Required", "parsley-type-message"=>"Invalid Email"} %>
@@ -38,7 +36,6 @@
       </div>
       <div class="col-md-12">
         <div class="mb-3">
-          <label></label>
           <%= f.text_field :address, class: 'form-control form-control-lg',
             placeholder: 'Mailing Address', :required => true, :data => {'parsley-trigger'=>"input",
             'parsley-error-message'=> "Required"} %>

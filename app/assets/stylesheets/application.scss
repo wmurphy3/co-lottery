@@ -14,7 +14,6 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: "FSEmericStrong";
   src: url('FSEmeric-SemiBold.otf');
@@ -51,9 +50,19 @@ strong { font-family: "FSEMericStrong" }
   }
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: 90%;
   }
+}
+
+.mb-percent {
+  margin-bottom: 7%;
+}
+
+input[type=text],
+input[type=email] {
+  border: 1px solid #F8CB6B !important;
+  background-color: #FFF8E5 !important;
 }
 
 a {
@@ -127,7 +136,7 @@ a {
 }
 
 .header-ie {
-  height: 100px;
+  height: 50px;
   position: relative;
   padding: 1rem;
 }

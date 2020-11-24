@@ -9,9 +9,6 @@
         placeholder: 'Email', :required => true, :data => {'parsley-type' => "email", 'parsley-trigger'=>"input",
         'parsley-error-message'=> "Required", "parsley-error-type-message"=>"Invalid Email"} %>
     </div>
-
-    <div class="actions">
-      <%= f.submit "ENTER RAFFLE", class: 'btn mx-auto mt-4 mb-4 enter-raffle' %>
-    </div>
   </div>
+  <%= f.submit "ENTER RAFFLE", class: 'btn mx-auto mt-4 mb-4 enter-raffle' %>
 <% end %>

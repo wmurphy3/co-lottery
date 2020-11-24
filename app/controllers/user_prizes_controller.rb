@@ -7,6 +7,7 @@ class UserPrizesController < ApplicationController
     if @user.save
       redirect_to entered_game_path(@user.user_id)
     else
+      flash[:error] = @user.errors.messages
       render :new
     end
   end
@@ -18,7 +19,7 @@ class UserPrizesController < ApplicationController
   end
 
   def set_cookie
-    if @user.user_id
+    if @user.user_id && @user.persisted?
       cookies[:white_elephant] = { value: Base64.encode64(@user.user_id.to_s), expires: 1.month.from_now}
     end
   end

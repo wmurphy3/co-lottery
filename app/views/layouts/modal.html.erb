@@ -18,6 +18,11 @@
         <%= image_tag("White-Elephant-Logo.png", :alt => "logo", :class => "white-elephant-logo") %>
       </div>
     </div>
+    
     <%= yield %>
+
+    <div class="flash_messages">
+      <%= render :partial => "/shared/banners" %>
+    </div>
   </body>
 </html>

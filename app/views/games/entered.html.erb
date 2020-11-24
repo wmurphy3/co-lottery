@@ -4,16 +4,16 @@
       <div class="col-12 col-md-4 offset-md-4">
         <div class="p-5">
           <div class="player-card background-white text-center static-card">
-            <h1 class="player-name">You're entered to win...</h1>
+            <h1 class="player-name">YOU'RE ENTERED TO WIN...</h1>
             <div class="<%= @prize.class_name %> my_prize"></div>
             <%= image_tag "Scratch-Tickets.png", class: 'scratch-it-big' %>
-            <h2 class="gift-name"><%= indefinite_articlerize @prize.name %></h2>
+            <h2 class="mt-3"><%= indefinite_articlerize @prize.name %></h2>
           </div>
         </div>
       </div>
     </div>
 
-    <h1 class="text-center mb-4">YOU CAN PLAY AGAIN TOMORROW</h1>
+    <h1 class="text-center mb-4">PLAY AGAIN TOMORROW!</h1>
 
     <%= link_to "https://www.coloradolottery.com/en/", class: "btn play-now-btn mx-auto" do %>
       VISIT OUR WEBSITE

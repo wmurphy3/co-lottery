@@ -16,5 +16,5 @@ Prize.create([
   { name: 'Air Fryer', probability: 10, class_name: 'fryer' },
   { name: 'Tacky Holiday Sweater', probability: 10, class_name: 'sweater' },
   { name: 'Amazon Gift Card', probability: 10, class_name: 'gift_card' },
-  { name: 'Desktop Waffle Maker', probability: 10, class_name: 'waffle_maker' }
+  { name: 'Waffle Maker', probability: 10, class_name: 'waffle_maker' }
 ])

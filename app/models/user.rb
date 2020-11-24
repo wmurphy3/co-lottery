@@ -23,7 +23,6 @@ class User < ApplicationRecord
       user_id:  self.id,
       prize_id: prize_id
     })
-    puts "prize: #{prize.errors.messages}"
   end
 
   def validates_user_prize

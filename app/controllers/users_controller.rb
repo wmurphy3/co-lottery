@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def set_cookie
-    if user_params[:remember_me] && @user.id
+    if user_params[:remember_me] == "1" && @user.id
       cookies[:white_elephant] = { value: Base64.encode64(@user.id.to_s), expires: 1.month.from_now}
     end
   end

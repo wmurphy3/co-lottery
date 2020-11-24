@@ -13,7 +13,7 @@ class UserPrize < ApplicationRecord
   private
 
   def validates_user
-    return unless user_id.blank?
+    return true if email.blank?
     unless User.where(email: email).exists?
       errors.add(:email, "doesn't exist")
     end
@@ -27,9 +27,10 @@ class UserPrize < ApplicationRecord
   end
 
   def validates_user_prize
-    return if self.user_id.blank?
+    return true if self.user_id.blank?
 
-    if UserPrize.where("user_id = ? AND created_at >= #{DateTime.now.beginning_of_day} AND created <= #{DateTime.now.end_of_day}", self.user_id)
+    if UserPrize.where(user_id: self.user_id)
+      .where("created_at >= '#{DateTime.now.beginning_of_day}' AND created_at <= '#{DateTime.now.end_of_day}'").exists?
       errors.add(:prize, "already selected today.")
     end
   end

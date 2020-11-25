@@ -66,7 +66,7 @@ gem "hiredis"
 gem "redis", "~> 4.0"
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.5.3'
 gem 'jquery-rails'
 gem "parsley-rails"
 gem "font-awesome-rails"

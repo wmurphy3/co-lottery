@@ -13,8 +13,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require bootstrap
 //= require jquery3
+//= require bootstrap
 //= require popper
 //= require parsley
 //= toastr
@@ -36,7 +36,7 @@ toastr.options = {
   hideMethod: "fadeOut",
 };
 
-$(document).on('turbolinks:load', function () {
+$(document).on('turbolinks:load', function (i) {
   if ($('.game-piece').length > 0 && $('.game').length > 0) {
     var finished_game = $('.finished_game').val() == "false";
 
@@ -47,7 +47,7 @@ $(document).on('turbolinks:load', function () {
   }
 
   // Confirmed over 18
-  $('#confirm').click(function () {
+  $('#confirm').click(function (i) {
     if ($(this).is(':checked')) {
       $('.enter-raffle').removeAttr("disabled");
     } else {
@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function () {
   });
 
   // Player chose to open gift
-  $('.game-piece.player').click(function () {
+  $('.game-piece.player').click(function (i) {
     var action = $(this).find(".button-player p").text();
 
     if (action == "KEEP") {
@@ -68,12 +68,11 @@ $(document).on('turbolinks:load', function () {
         success: function(data) {}
       });
     } else {
-      var myModal = new bootstrap.Modal(document.getElementById('myPrizeModal'), {})
-      myModal.show();
+      $('#myPrizeModal').modal('show')
     }
   });
 
-  $('.game-piece.bot').click(function () {
+  $('.game-piece.bot').click(function (i) {
     var finished_game   = $('.finished_game').val() == "true";
     var action          = $(this).find('.button-player p').text();
     
@@ -90,12 +89,12 @@ $(document).on('turbolinks:load', function () {
     }
   });
 
-  $('.signed_up').click(function () {
+  $('.signed_up').click(function (i) {
     $('.sign-up').addClass('d-none');
     $('.sign-in').removeClass('d-none');
   });
 
-  $('.sign_up').click(function () {
+  $('.sign_up').click(function (i) {
     $('.sign-up').removeClass('d-none');
     $('.sign-in').addClass('d-none');
   });
@@ -103,7 +102,7 @@ $(document).on('turbolinks:load', function () {
 
 // Get the next prize depending on cache
 function getNextPrize() {
-  setTimeout(function () {
+  setTimeout(function (i) {
     $.ajax({
       type: 'get',
       url: ('/games/get_next'),

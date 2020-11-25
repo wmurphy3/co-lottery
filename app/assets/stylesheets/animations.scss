@@ -33,6 +33,7 @@
 .animate {
   background-position: -8480px top;
   -webkit-animation: bkg 3s steps(53);
+  animation: bkg 3s steps(53);
   transition: none;
 }
 

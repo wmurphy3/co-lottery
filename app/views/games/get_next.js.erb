@@ -18,10 +18,10 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       true,
       "",
       "<%= g[:stolen] %>"
-    )
+    );
   <% end %>
-  $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>")
-  var myModal = new bootstrap.Modal(document.getElementById('winnerModal'), {backdrop: 'static'}).show();
+  $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>");
+  $('#winnerModal').modal({show: true, backdrop: 'static'})
 <% elsif @game.stop_game? %>
   console.log('stop game');
   <% @new_game.each do |g| %>
@@ -39,12 +39,11 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       false,
       "<%= @game.current_user %>",
       "<%= g[:stolen] %>"
-    )
+    );
   <% end %>
-  $('.current_turn').html("<%= @game.current_user %>")
-  $(".finished").html("<%= escape_javascript(render partial: 'my_prize' ) %>")
+  $('.current_turn').html("<%= @game.current_user %>");
+  $(".finished").html("<%= escape_javascript(render partial: 'my_prize' ) %>");
 <% else %>
-  console.log('bots turn');
   $('.gift').eq("<%= @prize[:id] %>").addClass('animate');
   <% @new_game.each_with_index do |g,i| %>
     setAction(
@@ -61,60 +60,56 @@ $('.finished_game').val("<%= @game.stop_game? %>");
       false,
       ("<%= i == 5 ? @game.current_user : '' %>"),
       "<%= g[:stolen] %>"
-    )
+    );
   <% end %>
-  $('.current_turn').html("<%= @game.current_user %>")
+  $('.current_turn').html("<%= @game.current_user %>");
   getNextPrize();
 <% end %>
 
-async function setAction(id, name, prize, class_name, bot, finished, 
+function setAction(id, name, prize, class_name, bot, finished, 
   last_turn, gift, current_turn, final_turn, all_done, current_name, stolen) {
-  var action_name = "background-pattern";
+  var action_name   = "background-pattern";
   var button_player = "";
 
   if(bot == "false") {
-    action_name = "background-green"
+    action_name = "background-green";
   } else if(name == "DECIDING..." || (last_turn == "true" && id == "0")) {
-    action_name = "background-blue"
+    action_name = "background-blue";
   } else if (name == "STOLEN") {
-    action_name = "background-card-yellow"
+    action_name = "background-card-yellow";
   } else if(finished == "true") {
-    action_name = "background-white"
+    action_name = "background-white";
   }
 
   if(name == "OPEN NEW GIFT" || name == "KEEP") {
-    button_player = "button-player-red"
+    button_player = "button-player-red";
   } else if(name == "DECIDING..." || (last_turn == "true" && id == "0")) {
-    button_player = "button-player-blue"
+    button_player = "button-player-blue";
   } else if(name == "STOLEN") {
-    button_player = "button-player-white"
+    button_player = "button-player-white";
   } else if(name == "STEAL") {
-    button_player = "button-player-green"
+    button_player = "button-player-green";
   }
 
   if(last_turn == "true" ? (id != "0" && name != "STEAL" && name != "STOLEN") : (name == "OPENED")) {
-    name = ""
+    name = "";
   } else if(name == "DECIDING..." || (last_turn == "true" && id == "0" && bot == "true")) {
-    name = "DECIDING<span>.</span><span>.</span><span>.</span>"
+    name = "DECIDING<span>.</span><span>.</span><span>.</span>";
   }
 
   if(button_player.length <= 0) {
     class_name = class_name + " no-banner";
   }
 
-  setImage(current_turn == "true", id, (final_turn && last_turn == "true" || all_done), stolen, bot).then(function() {
-    current_turn == "true" ? 
-      $('.gift').eq(id).hide().prop("class","gift "+class_name).fadeIn(1500) :
-        $('.gift').eq(id).prop("class","gift "+class_name);
-    $('.player-card').eq(id).prop("class", "player-card "+action_name)
-    $('.button-player').eq(id).prop("class", "button-player "+button_player)
-    $('.button-player').eq(id).find('p').html(name);
-    $('.gift-name').eq(id).html(prize);
-  })
-}
+  var button_player_class = "button-player "+button_player;
+  var player_card_class = "player-card "+action_name;
+  var gift_class = "gift "+class_name;
 
-async function setImage(current_turn, id, bot_last, stolen, bot) {
-  await new Promise(function (resolve, reject) {
-    resolve();
-  });
+  current_turn == "true" ? 
+      $('.gift').eq(id).hide().prop("class",gift_class).fadeIn(1500) :
+        $('.gift').eq(id).prop("class","gift "+class_name);
+  $('.player-card').eq(id).prop("class", player_card_class);
+  $('.button-player').eq(id).prop("class", button_player_class);
+  $('.button-player').eq(id).find('p').html(name);
+  $('.gift-name').eq(id).html(prize);
 }

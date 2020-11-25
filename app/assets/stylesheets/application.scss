@@ -9,14 +9,14 @@
 
 @font-face {
   font-family: "FSEmeric";
-  src: url('FSEmeric.otf');
+  src: url('FSEmeric.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "FSEmericStrong";
-  src: url('FSEmeric-SemiBold.otf');
+  src: url('FSEmeric-SemiBold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -165,6 +165,9 @@ a {
   }
   .my_prize {
     margin-top: 15% !important;
+  }
+  .my_prize_animate {
+    margin-top: 35% !important;
   }
 }
 
@@ -321,8 +324,15 @@ a {
 
 .form-check-label, .form-check-input {
   font-size: 1.2rem; 
-  margin-left: 15px;
   line-height: 38px;
+}
+
+.form-check-label {
+  margin-left: 15px;
+}
+
+.check {
+  margin-left: 50px;
 }
 
 .form-check-input:checked,
@@ -338,6 +348,20 @@ input[type=checkbox] {
   cursor: pointer;
   width: 0 !important;
   height: 0 !important;
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .btn {
+    background-size: cover !important;
+  }
 }
 
 input[type=checkbox]:before {

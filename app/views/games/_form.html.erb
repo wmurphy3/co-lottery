@@ -42,16 +42,20 @@
           <small id="emailHelp" class="form-text text-muted">ex. 303 16th St Mall Ste. 100, Denver, CO 80202</small>
         </div>
       </div>
-      <div class="col-md-12 ml-3">
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="confirm">
-          <label class="form-check-label" for="confirm">I am at least 18 years of age.</label>
+      <div class="col-md-12">
+        <div>
+          <input type="checkbox" id="confirm">
+        </div>
+        <div class="check">
+          <label for="confirm">I am at least 18 years of age.</label>
         </div>
       </div>
-      <div class="col-md-12 ml-3">
-        <div class="form-check">
-          <%= f.check_box :remember_me, value: true, class: 'form-check-input' %>
-          <label class="form-check-label" for="confirm">Remember Me</label>
+      <div class="col-md-12">
+        <div>
+          <%= f.check_box :remember_me, value: true %>
+        </div>
+        <div class="check">
+          <label for="confirm">Remember Me</label>
         </div>
       </div>
     </div>

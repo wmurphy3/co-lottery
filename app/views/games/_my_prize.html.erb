@@ -24,8 +24,7 @@
 
 <script>
   $(function() {
-    var myModalEl = document.getElementById('myPrizeModal')
-    myModalEl.addEventListener('hidden.bs.modal', function (e) {
+    $('#myPrizeModal').on('hidden.bs.modal', function (e) {
       $('.gift-name').eq("<%= @game.winner_prize[:id] %>").html("<%= @game.winner_prize[:prize][:name] %>")
       var finished_game = $('.finished_game').val() == "true";
 
@@ -40,7 +39,7 @@
       }
     })
 
-    myModalEl.addEventListener('shown.bs.modal', function (e) {
+    $('#myPrizeModal').on('shown.bs.modal', function (e) {
       setTimeout(function () {
         $('.my_prize').removeClass('my_prize_animate animate')
         $('.static-card .gift-name').html("<%= @game.winner_prize[:prize][:name] %>")

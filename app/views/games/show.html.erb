@@ -1,6 +1,6 @@
 <div class="background-main">
   <div class="body text-center">
-    <div class="row no-gutters mb-4 mt-4">
+    <div class="row no-gutters mb-5 mt-4">
       <div class="col-12 col-md-4 offset-md-4">
         <div>
           <div class="player-card background-white text-center static-card static-prize">
@@ -12,19 +12,18 @@
         </div>
       </div>
     </div>
-      <h1 class="text-center mb-6">PLAY ONCE A DAY UNTIL <strong>DECEMBER 16</strong></h1>
+    <h1 class="text-center mb-6 mt-5">PLAY ONCE A DAY UNTIL <strong>DECEMBER 16</strong></h1>
 
-      <div class="text-center mb-6 prize-pattern"><%= image_tag("Prize-Pattern.png", :alt => "pixies", :class => "") %></div>
+    <div class="text-center mb-6 prize-pattern"><%= image_tag("Prize-Pattern.png", :alt => "pixies", :class => "") %></div>
 
-      <h1 class="text-center mb-4">You'll also be entered to win SCRATCH games!</h1>
+    <h1 class="text-center mb-4">You'll also be entered to win SCRATCH games!</h1>
 
-      <div class="col-md-12">
-        <div class="sign-up">
-          <%= render :partial => 'form' %>
-        </div>
-        <div class="sign-in d-none">
-          <%= render :partial => 'signin_form' %>
-        </div>
+    <div class="col-md-12">
+      <div class="sign-up">
+        <%= render :partial => 'form' %>
+      </div>
+      <div class="sign-in d-none">
+        <%= render :partial => 'signin_form' %>
       </div>
     </div>
   </div>

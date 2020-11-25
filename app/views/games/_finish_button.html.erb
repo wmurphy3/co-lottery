@@ -12,7 +12,7 @@
           </div>
         </div>
 
-        <h2 class="text-center mb-4">Enter to win <%= indefinite_articlerize @game.winner_prize[:prize][:name] %> & scratch tickets!</h2>
+        <h2 class="text-center mb-4">Enter to win <%= indefinite_articlerize @game.winner_prize[:prize][:name] %> or scratch tickets!</h2>
 
         <%= link_to game_path(@game.winner_prize_id), class: "btn mx-auto final mb-2 px-3" do %>
           ENTER TO WIN

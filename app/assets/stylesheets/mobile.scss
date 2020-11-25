@@ -49,6 +49,10 @@
     min-height: 30vh !important;
   }
 
+  .static-gift {
+    margin-top: 0.5rem !important;
+  }
+
   .button-player-red {
     background-image: url("Button-Player-Red.png");
     background-size: 100% 100%;
@@ -137,9 +141,10 @@
   }
 
   .white-elephant-logo-box {
-    top: 75% !important;
+    top: 60% !important;
     .white-elephant-logo {
-      width: 75vw;
+      width: 100%;
+      min-width: 250px;
     }
   }
   
@@ -222,7 +227,10 @@
   }
 
   .enter-raffle {
-    padding: 0rem 4rem 2.4rem 4rem !important;
+    padding: 0rem 4rem 2.8rem 4rem !important;
+    width: 100% !important;
+    border-radius: 3px !important;
+    max-width: 400px;
   }
 
   .button-container {

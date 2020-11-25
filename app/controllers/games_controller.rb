@@ -6,7 +6,6 @@ class GamesController < ApplicationController
   layout "modal", only: [:entered, :show]
 
   def index
-    puts "@new_game: #{@new_game.inspect}"
   end
 
   def show

@@ -9,14 +9,16 @@
 
 @font-face {
   font-family: "FSEmeric";
-  src: url('FSEmeric.otf') format('opentype');
+  src: url('FSEmeric.woff') format('woff'),
+      url('FSEmeric.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "FSEmericStrong";
-  src: url('FSEmeric-SemiBold.otf') format('opentype');
+  src: url('FSEmeric-SemiBold.woff') format('woff'),
+      url('FSEmeric-SemiBold.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }

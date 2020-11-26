@@ -21,6 +21,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "TheBambankScript";
+  src: url('The-Bambank-Script.woff') format('woff'),
+      url('The-Bambank-Script.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 *::after,
 *::before {
@@ -39,6 +47,14 @@ body {
 }
 
 strong { font-family: "FSEMericStrong" }
+
+.static-gift,
+.gift-name,
+.bam-gift {
+  font-family: "TheBambankScript",
+  Verdana,
+  sans-serif;
+}
 
 .login-screen {
   margin: auto;
@@ -172,7 +188,7 @@ a {
 }
 
 .static-prize .my_prize {
-  margin: auto !important;
+  margin: -20px auto !important;
 }
 
 .static-gift {

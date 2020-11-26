@@ -144,6 +144,10 @@
   margin: auto;
 }
 
+.gift {
+  margin: -10% auto;
+}
+
 // Button Classes
 
 .button-player-red {
@@ -155,7 +159,7 @@
   display: block;
   height: 10vh;
   right: -25px;
-  bottom: 50px;
+  bottom: 70px;
   p {
     color: white;
     text-transform: uppercase;
@@ -180,7 +184,7 @@
   display: block;
   height: 10vh;
   right: -25px;
-  bottom: 50px;
+  bottom: 70px;
 
   p {
     color: white;
@@ -204,7 +208,7 @@
   display: block;
   height: 10vh;
   right: -25px;
-  bottom: 50px;
+  bottom: 70px;
 
   p {
     color: white;
@@ -254,7 +258,7 @@
   transform: translate(-50%, -50%);
   width: 100%;
   padding: 5px;
-  bottom: -3%;
+  bottom: -4%;
 }
 
 .gift-name-big {

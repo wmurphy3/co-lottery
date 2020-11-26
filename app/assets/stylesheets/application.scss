@@ -56,6 +56,7 @@ strong { font-family: "FSEMericStrong" }
   font-family: "TheBambankScript",
   Verdana,
   sans-serif;
+  color: #378469;
 }
 
 .login-screen {
@@ -194,7 +195,7 @@ a {
 }
 
 .static-gift {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .player-card {
@@ -326,9 +327,8 @@ a {
   text-overflow: ellipsis;
   word-wrap: break-word;
   display: block;
-  line-height: 1.5em;
   /* a */
-  max-height: 1.5em;
+  max-height: 3em;
 }
 
 .gift-name-big {

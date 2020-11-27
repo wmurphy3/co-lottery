@@ -31,14 +31,6 @@
   font-style: normal;
 }
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
 html {
   font-size: 90%;
 }
@@ -56,7 +48,11 @@ strong { font-family: "FSEMericStrong" }
   font-family: "TheBambankScript",
   Verdana,
   sans-serif;
-  color: #378469;
+  color: #173e2f;
+}
+
+.container {
+  max-width: 1340px;
 }
 
 .login-screen {
@@ -106,6 +102,10 @@ a {
   position: absolute;
   top: 2rem;
   left: 2rem;
+}
+
+.sign-in {
+  width: 100%;
 }
 
 .how-to-box {
@@ -160,7 +160,7 @@ a {
 }
 
 .header-ie {
-  height: 50px;
+  height: 80px;
   position: relative;
   padding: 1rem;
 }
@@ -183,10 +183,10 @@ a {
     padding-bottom: 20px;
   }
   .my_prize {
-    margin-top: 15% !important;
+    margin-top: 10% !important;
   }
   .my_prize_animate {
-    margin-top: 35% !important;
+    margin-top: 20% !important;
   }
 }
 
@@ -429,7 +429,8 @@ input[type=checkbox]:checked:after {
 }
 
 .enter-raffle:hover,
-.enter-raffle:active {
+.enter-raffle:active,
+.enter-raffle:focus {
   display: block;
   border-radius: 38px;
   text-transform: uppercase;
@@ -461,7 +462,8 @@ input[type=checkbox]:checked:after {
 }
 
 .play-now-btn:hover,
-.play-now-btn:active {
+.play-now-btn:active,
+.play-now-btn:focus {
   display: block;
   border-radius: 38px;
   text-transform: uppercase;
@@ -494,7 +496,8 @@ input[type=checkbox]:checked:after {
 }
 
 .final:hover,
-.final:active {
+.final:active,
+.final:focus {
   display: block;
   border-radius: 38px;
   text-transform: uppercase;
@@ -525,7 +528,8 @@ input[type=checkbox]:checked:after {
 }
 
 .how-to-btn:hover,
-.how-to-btn:active {
+.how-to-btn:active,
+.how-to-btn:focus {
   display: block;
   border-radius: 38px;
   text-transform: uppercase;
@@ -558,7 +562,8 @@ input[type=checkbox]:checked:after {
 }
 
 .how-to-top-btn:hover,
-.how-to-top-btn:active {
+.how-to-top-btn:active ,
+.how-to-top-btn:focus {
   display: block;
   text-transform: uppercase;
   height: 50px;
@@ -590,7 +595,8 @@ input[type=checkbox]:checked:after {
 }
 
 .home-top-btn:hover,
-.home-top-btn:active {
+.home-top-btn:active,
+.home-top-btn:focus {
   display: block;
   text-transform: uppercase;
   height: 50px;
@@ -620,17 +626,13 @@ form {
   padding: 20px;
 }
 
-input::after, input::after, input, .form {
-  box-sizing: border-box !important;
-}
-
 input[type="text"],
 input[type="email"] {
   height: 50px;
 }
 
 .btn {
-  box-sizing: inherit !important;
+  box-sizing: initial;
 }
 
 #winnerModal {

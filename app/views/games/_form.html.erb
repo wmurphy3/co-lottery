@@ -1,7 +1,7 @@
 <h4><a class="signed_up">Already Signed Up? Enter Your Email</a></h4>
 
 <%= form_for(User.new, remote: true, :html => {'parsley-validate' => '', id: 'login-search', class: 'mb-4'}) do |f| %>
-  <div class="col-md-4 offset-md-4 col-12 text-left">
+  <div class="col-md-6 offset-md-3 col-12 text-left border_box">
     <%= f.hidden_field :prize_id, value: @prize.id %>
     <div class="form row g-3 mb-6">
       <div class="col-6">

@@ -1,14 +1,18 @@
 <h4><a class="sign_up">Sign Up?</a></h4>
 
-<%= form_for(UserPrize.new, remote: true, :html => {'parsley-validate' => '', id: 'login', class: 'mb-4'}) do |f| %>
-  <%= f.hidden_field :prize_id, value: @prize.id %>
-  <div class="col-md-4 offset-md-4 col-12 text-left">
-    <div class="form-group">
-      <label></label>
-      <%= f.email_field :email, autocomplete: "email", class: 'form-control form-control-lg',
-        placeholder: 'Email', :required => true, :data => {'parsley-type' => "email", 'parsley-trigger'=>"input",
-        'parsley-error-message'=> "Required", "parsley-error-type-message"=>"Invalid Email"} %>
+<%= form_for(UserPrize.new, remote: true, :html => {'parsley-validate' => '', id: 'login-search', class: 'mb-4'}) do |f| %>
+  <div class="col-md-6 offset-md-3 col-12 text-left border_box">
+    <%= f.hidden_field :prize_id, value: @prize.id %>
+    <div class="form row g-3 mb-6">
+      <div class="col-md-12">
+        <div class="">
+          <label></label>
+          <%= f.email_field :email, autocomplete: "email", class: 'form-control form-control-lg',
+            placeholder: 'Email', :required => true, :data => {'parsley-type' => "email", 'parsley-trigger'=>"input",
+            'parsley-error-message'=> "Required", "parsley-error-type-message"=>"Invalid Email"} %>
+        </div>
+      </div>
     </div>
   </div>
-  <%= f.submit "ENTER RAFFLE", class: 'btn mx-auto mt-4 mb-4 enter-raffle' %>
+  <%= f.submit "ENTER RAFFLE", class: 'btn mx-auto mb-4 enter-raffle' %>
 <% end %>

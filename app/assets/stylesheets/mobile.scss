@@ -3,6 +3,10 @@
     height: 90% !important;
   }
 
+  .gift-name {
+    height: 50px !important;
+  }
+
   .static-gift {
     margin-top: 4rem !important;
   }
@@ -26,6 +30,10 @@
   .player-card {
     min-height: 0px !important;
     max-height: 300px !important;
+  }
+
+  .player-card.static-prize {
+    min-width: 300px;
   }
 
   .background-main {
@@ -81,7 +89,6 @@
     .gift-name {
       bottom: -5% !important;
       width: 90% !important;
-      display: table-cell;
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -132,6 +139,7 @@
   .player-card {
     height: 30vh !important;
     min-height: 30vh !important;
+    min-width: 0px !important;
   }
 
   .static-gift {
@@ -251,6 +259,9 @@
     padding: 0px !important;
     line-height: 15px !important;
     overflow: visible !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-end;
   }
 
   .gift-name-big {
@@ -460,6 +471,28 @@
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .gift-name {
+    bottom: -4% !important;
+  }
+
+  .static-card .my_prize {
+    margin-top: 10% !important;
+  }
+
+  .static-prize {
+    max-width: 90%;
+
+    .static-gift {
+      margin-top: 1.5rem !important;
+      display: flex !important;
+      justify-content: center;
+      align-items: flex-end;
+      height: 40px;
+    }
+  }
+}
+
 @media only screen and (max-width: 765px) and (min-width: 600px) {
 
   .game .button-player-red,
@@ -520,5 +553,13 @@
 
   .static-card .my_prize {
     margin-top: 5% !important;
+  }
+
+  .static-card .gift-name {
+    bottom: -25px !important;
+  }
+
+  .player-card {
+    max-width: 400px !important;
   }
 }

@@ -45,7 +45,7 @@ class GamesController < ApplicationController
       else
         decrypted_cookie = Base64.decode64(cookie)
 
-        unless decrypted_cookie.blank?
+        unless decrypted_cookie.blank? || params[:id].blank?
           if UserPrize.create({
             user_id:  decrypted_cookie,
             prize_id: decrypted_id

@@ -5,7 +5,7 @@ class UserPrizesController < ApplicationController
     @user = UserPrize.new(user_params)
 
     if @user.save
-      redirect_to entered_game_path(@user.user_id)
+      redirect_to entered_game_path(encrypted_id(@user.user_id))
     else
       flash[:error] = @user.errors.messages
       render :new

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to entered_game_path(@user.id)
+      redirect_to entered_game_path(encrypted_id(@user.id))
     else
       render :new
     end

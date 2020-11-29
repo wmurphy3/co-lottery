@@ -78,4 +78,8 @@ module ApplicationHelper
         %w(a e i o u).include?(params_word[0].downcase) ? 
           "an #{params_word}" : "a #{params_word}"
   end
+
+  def encrypted_id(id)
+    URI.escape((Base64.encode64(id.to_s).strip))
+  end
 end

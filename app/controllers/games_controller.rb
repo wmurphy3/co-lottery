@@ -9,7 +9,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @prize = Prize.find(params[:id])
+    @prize = Prize.find(decrypted_id)
   end
 
   def get_next
@@ -21,7 +21,7 @@ class GamesController < ApplicationController
   end
 
   def entered
-    @user   = User.find(params[:id])
+    @user   = User.find(decrypted_id)
     @prize  = @user.prizes.order('user_prizes.id').last
   end
 
@@ -41,16 +41,16 @@ class GamesController < ApplicationController
       cookie = cookies[:white_elephant]
 
       if cookie.blank?
-        redirect_to game_path(@game.winner_prize_id)
+        redirect_to game_path(encrypted_id(@game.winner_prize_id))
       else
         decrypted_cookie = Base64.decode64(cookie)
 
         unless decrypted_cookie.blank?
           if UserPrize.create({
             user_id:  decrypted_cookie,
-            prize_id: params[:id]
+            prize_id: decrypted_id
           })
-            redirect_to entered_game_path(decrypted_cookie)
+            redirect_to entered_game_path(encrypted_id(decrypted_cookie))
           end
         end
       end
@@ -66,9 +66,9 @@ class GamesController < ApplicationController
       unless decrypted_cookie.blank?
         if UserPrize.find_by({
           user_id:  decrypted_cookie,
-          prize_id: params[:id]
+          prize_id: decrypted_id
         })
-          redirect_to entered_game_path(decrypted_cookie)
+          redirect_to entered_game_path(encrypted_id(decrypted_cookie))
         end
       end
     end

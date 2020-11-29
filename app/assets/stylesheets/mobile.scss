@@ -224,14 +224,14 @@
   }
   
   .red-gift, .green-gift, .yellow-gift {
-    margin: -10% 20% !important;
+    margin: -7% 20% !important;
   }
 
   .background-pattern {
     .red-gift,
     .green-gift,
     .yellow-gift {
-      margin: -10% 20% !important;
+      margin: -7% 20% !important;
     }
   }
 
@@ -439,15 +439,76 @@
       bottom: -3% !important;
     }
   }
+
+  .background-main {
+    .button-player-red,
+    .button-player-green,
+    .button-player-blue,
+    .button-player-white {
+      height: 6vh !important;
+    }
+  }
 }
 
 @media only screen and (max-width: 765px) and (min-width: 600px) {
 
   .game .button-player-red,
+  .background-main .button-player-red,
   .game .button-player-green,
+  .background-main .button-player-green,
   .game .button-player-blue,
-  .game .button-player-white {
+  .background-main .button-plater-blue,
+  .game .button-player-white,
+  .background-main .button-player-white {
     bottom: 30px !important;
     width: 107% !important;
+  }
+
+  .game {
+    .bot .gummy,
+    .bot .gift_card,
+    .bot .blanket,
+    .bot .blow_up,
+    .bot .cutting_board,
+    .bot .fryer,
+    .bot .headphones,
+    .bot .sweater,
+    .bot .waffle_maker,
+    .bot .cooler,
+    .player .gummy,
+    .player .gift_card,
+    .player .blanket,
+    .player .blow_up,
+    .player .cutting_board,
+    .player .fryer,
+    .player .headphones,
+    .player .sweater,
+    .player .waffle_maker,
+    .player .cooler {
+      margin: 0% 20% !important;
+    }
+  }
+
+  .red-gift,
+  .green-gift,
+  .yellow-gift {
+    margin: -5% 20% !important;
+  }
+
+  .player-card .gift.no-banner, .bot .gift.no-banner, .player .gift.no-banner {
+    margin: auto !important;
+    height: 60% !important;
+  }
+
+  .static-card .my_prize.my_prize_animate {
+    width: 40% !important;
+    height: 55% !important;
+    margin-left: 0 !important;
+    margin-top: 10% !important;
+    margin: 10% auto !important;
+  }
+
+  .static-card .my_prize {
+    margin-top: 5% !important;
   }
 }

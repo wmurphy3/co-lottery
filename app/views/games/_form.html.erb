@@ -1,6 +1,6 @@
 <h4><a class="signed_up">Already Signed Up? Enter Your Email</a></h4>
 
-<%= form_for(User.new, remote: true, :html => {'parsley-validate' => '', id: 'login-search', class: 'mb-4'}) do |f| %>
+<%= form_for(User.new, remote: true, :html => {'parsley-validate' => '', id: 'login-search', class: 'mb-2'}) do |f| %>
   <div class="col-md-6 offset-md-3 col-12 text-left border_box">
     <%= f.hidden_field :prize_id, value: @prize.id %>
     <div class="form row g-3 mb-6">

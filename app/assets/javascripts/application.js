@@ -49,9 +49,9 @@ $(document).on('turbolinks:load', function (i) {
   // Confirmed over 18
   $('#confirm').click(function (i) {
     if ($(this).is(':checked')) {
-      $('.enter-raffle').removeAttr("disabled");
+      $('.enter-raffle:first').removeAttr("disabled");
     } else {
-      $('.enter-raffle').prop("disabled",true);
+      $('.enter-raffle:first').prop("disabled",true);
     }
   });
 

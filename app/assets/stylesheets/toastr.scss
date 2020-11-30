@@ -6,12 +6,14 @@
 .toast-title {
   font-weight: 700;
   margin-left: 3%;
+  font-size: 22px;
 }
 
 .toast-message {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   margin-left: 3%;
+  font-size: 20px;
 }
 
 .toast-message a,
@@ -26,10 +28,10 @@
 
 .toast-close-button {
   position: relative;
-  right: -.3em;
+  right: 2em;
   top: -.3em;
   float: right;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 700;
   color: #FFF;
   -webkit-text-shadow: 0 1px 0 #fff;
@@ -81,9 +83,9 @@ button.toast-close-button {
 }
 
 #toast-container * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  -moz-box-sizing: initial;
+  -webkit-box-sizing: initial;
+  box-sizing: initial;
 }
 
 #toast-container > div {
@@ -147,7 +149,7 @@ button.toast-close-button {
 
 #toast-container.toast-bottom-center > div,
 #toast-container.toast-top-center > div {
-  width: 100%;
+  min-width: 100vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -161,6 +163,7 @@ button.toast-close-button {
 
 .toast {
   background-color: #030303;
+  width: 10vw;
 }
 
 .toast-success {
@@ -229,8 +232,15 @@ button.toast-close-button {
     left: -.2em;
     right: 0.2em;
   }
+
+  .toast-close-button {
+    right: 0em !important;
+  }
 }
 @media all and (min-width:481px) and (max-width:768px) {
+  .toast-close-button {
+    right: 0em !important;
+  }
   #toast-container > div {
     padding: 15px 15px 15px 50px;
     width: 25em;

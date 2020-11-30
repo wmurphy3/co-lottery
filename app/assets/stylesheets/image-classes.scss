@@ -8,8 +8,28 @@
   margin: auto;
 }
 
+.gift_card_ticket {
+  background-image: url("Amazon-Ticket.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
 .blanket {
   background-image: url("Blanket.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
+.blanket_ticket {
+  background-image: url("Blanket-Ticket.png");
   width: 60%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -28,8 +48,28 @@
   margin: auto;
 }
 
+.blow_up_ticket {
+  background-image: url("Inflatable-Ticket.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
 .cutting_board {
   background-image: url("Board.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
+.cutting_board_ticket {
+  background-image: url("Board-Ticket.png");
   width: 60%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -48,8 +88,28 @@
   margin: auto;
 }
 
+.fryer_ticket {
+  background-image: url("Fryer-Ticket.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
 .gummy {
   background-image: url("Gummy.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
+.gummy_ticket {
+  background-image: url("Gummy-Ticket.png");
   width: 60%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -68,8 +128,28 @@
   margin: auto;
 }
 
+.headphones_ticket {
+  background-image: url("Headphones-Ticket.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
 .sweater {
   background-image: url("Sweater.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
+.sweater_ticket {
+  background-image: url("Sweater-Ticket.png");
   width: 60%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -88,6 +168,16 @@
   margin: auto;
 }
 
+.waffle_maker_ticket {
+  background-image: url("Waffle-Ticket.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
 .cooler {
   background-image: url("Yeti.png");
   width: 60%;
@@ -96,6 +186,41 @@
   background-position: center;
   height: 50%;
   margin: auto;
+}
+
+.cooler_ticket {
+  background-image: url("Yeti-Ticket.png");
+  width: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50%;
+  margin: auto;
+}
+
+.how-to-card {
+  .gummy_ticket,
+  .gift_card_ticket,
+  .blanket_ticket,
+  .blow_up_ticket,
+  .cutting_board_ticket,
+  .fryer_ticket,
+  .headphones_ticket,
+  .sweater_ticket,
+  .waffle_maker_ticket,
+  .cooler_ticket,
+  .gummy,
+  .gift_card,
+  .blanket,
+  .blow_up,
+  .cutting_board,
+  .fryer,
+  .headphones,
+  .sweater,
+  .waffle_maker,
+  .cooler {
+    height: 70%;
+  }
 }
 
 .my_prize {

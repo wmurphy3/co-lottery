@@ -4,14 +4,25 @@
   }
 
   .gift-name {
-    height: 55px !important;
+    height: 60px !important;
     display: flex !important;
     justify-content: center;
     align-items: flex-end;
+    bottom: -6% !important;
   }
 
   .static-gift {
     margin-top: 4rem !important;
+  }
+
+  .static-gift,
+  .bam-gift {
+    margin-top: 1.5rem !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-end;
+    height: 40px;
+    margin-top: 2rem !important;
   }
 }
 
@@ -44,9 +55,14 @@
     .button-player-green,
     .button-player-blue,
     .button-player-white {
-      bottom: 30px !important;
+      bottom: 50px !important;
       height: 7vh !important;
     }
+  }
+
+  .gift-name {
+    height: 50px !important;
+    bottom: -13% !important;
   }
 
   .game {
@@ -90,7 +106,7 @@
 
   .player, .bot {
     .gift-name {
-      bottom: -5% !important;
+      bottom: -7% !important;
       width: 90% !important;
       display: flex;
       justify-content: center;
@@ -98,8 +114,18 @@
     }
   }
 
-  .no-banner {
+  .game-piece .no-banner {
     height: 60% !important;
+  }
+
+  .static-gift,
+  .bam-gift {
+    margin-top: 1.5rem !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-end;
+    height: 40px;
+    margin-top: 2rem !important;
   }
 }
 
@@ -294,6 +320,10 @@
     .button-player-white {
       bottom: 35px !important;
     }
+
+    .gift-name {
+      bottom: -8% !important;
+    }
   }
 
   .my_prize {
@@ -479,8 +509,8 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .gift-name {
-    bottom: -4% !important;
+  .player-card .gift-name {
+    bottom: -5% !important;
   }
 
   .static-card .my_prize {
@@ -490,12 +520,17 @@
   .static-prize {
     max-width: 90%;
 
-    .static-gift {
+    .static-gift, .bam-gift {
       margin-top: 1.5rem !important;
       display: flex !important;
       justify-content: center;
       align-items: flex-end;
       height: 40px;
+      margin-top: 3rem !important;
+    }
+
+    .static-gift {
+      margin-top: 2rem !important;
     }
   }
 }
@@ -510,7 +545,7 @@
   .background-main .button-plater-blue,
   .game .button-player-white,
   .background-main .button-player-white {
-    bottom: 30px !important;
+    bottom: 40px !important;
     width: 107% !important;
   }
 
@@ -537,6 +572,10 @@
     .player .cooler {
       margin: 0% 20% !important;
     }
+
+    .gift-name {
+      bottom: -8% !important;
+    }
   }
 
   .red-gift,
@@ -552,7 +591,7 @@
 
   .static-card .my_prize.my_prize_animate {
     width: 40% !important;
-    height: 55% !important;
+    height: 50% !important;
     margin-left: 0 !important;
     margin-top: 10% !important;
     margin: 10% auto !important;
@@ -568,5 +607,9 @@
 
   .player-card {
     max-width: 400px !important;
+  }
+
+  .static-prize .static-gift {
+    margin-top: 1rem !important;
   }
 }

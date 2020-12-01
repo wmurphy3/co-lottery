@@ -75,8 +75,8 @@ $(document).on('turbolinks:load', function (i) {
   $('.game-piece.bot').click(function (i) {
     var finished_game   = $('.finished_game').val() == "true";
     var action          = $(this).find('.button-player p').text();
-    
-    if (finished_game && action == "STEAL") {
+
+    if (finished_game && action.trim() == "STEAL") {
       var index = $(this).index();
 
       $.ajax({

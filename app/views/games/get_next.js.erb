@@ -104,12 +104,13 @@ function setAction(id, name, prize, class_name, bot, finished,
   var button_player_class = "button-player "+button_player;
   var player_card_class = "player-card "+action_name;
   var gift_class = "gift "+class_name;
-
-  current_turn == "true" ? 
+  if($('.game').length > 0) {
+    current_turn == "true" ? 
       $('.gift').eq(id).hide().prop("class",gift_class).fadeIn(1500) :
         $('.gift').eq(id).prop("class","gift "+class_name);
-  $('.player-card').eq(id).prop("class", player_card_class);
-  $('.button-player').eq(id).prop("class", button_player_class);
-  $('.button-player').eq(id).find('p').html(name);
-  $('.gift-name').eq(id).html(prize);
+    $('.player-card').eq(id).prop("class", player_card_class);
+    $('.button-player').eq(id).prop("class", button_player_class);
+    $('.button-player').eq(id).find('p').html(name);
+    $('.gift-name').eq(id).html(prize);
+  }
 }

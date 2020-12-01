@@ -147,6 +147,16 @@
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .how-to-top-btn {
+    width: 100px !important;
+    line-height: 50px !important;
+    font-size: 11px !important;
+    height: 40px !important;
+    padding: 5px !important;
+  }
+}
+
 @media only screen and (max-width: 800px){
   *,
   *::after,
@@ -594,6 +604,15 @@
 
   .my_prize_animate {
     height: 45% !important;
+  }
+}
+
+@media only screen and (min-width: 802px) and (max-width: 875px) {
+  .col-6,
+  .col-12 {
+    .p-5 {
+      padding: 1rem !important;
+    }
   }
 }
 

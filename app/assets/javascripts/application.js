@@ -102,13 +102,15 @@ $(document).on('turbolinks:load', function (i) {
 
 // Get the next prize depending on cache
 function getNextPrize() {
-  setTimeout(function (i) {
-    $.ajax({
-      type: 'get',
-      url: ('/games/get_next'),
-      async: false,
-      dataType: 'script',
-      success: function (data) {}
-    });
-  }, 3000);
+  if ($('.game').length > 0) {
+    setTimeout(function (i) {
+      $.ajax({
+        type: 'get',
+        url: ('/games/get_next'),
+        async: false,
+        dataType: 'script',
+        success: function (data) {}
+      });
+    }, 3000);
+  }
 }

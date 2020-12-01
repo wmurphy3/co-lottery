@@ -393,6 +393,12 @@ input[type=checkbox] {
   .btn {
     background-size: cover !important;
   }
+
+  .how-to-top-btn {
+    background-size: 100% 100% !important;
+    width: 150px !important;
+    line-height: 40px !important;
+  }
 }
 
 @media not all and (min-resolution:.001dpcm) {

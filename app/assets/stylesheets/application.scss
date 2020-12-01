@@ -399,10 +399,10 @@ input[type=checkbox] {
     width: 150px !important;
     line-height: 40px !important;
   }
-}
 
-.inline-block {
-  display: inline-block;
+  .inline-block {
+    display: inline-block;
+  }
 }
 
 @media not all and (min-resolution:.001dpcm) {

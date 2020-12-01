@@ -401,6 +401,10 @@ input[type=checkbox] {
   }
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 @media not all and (min-resolution:.001dpcm) {
   @supports (-webkit-appearance:none) {
     input[type=checkbox]:before {

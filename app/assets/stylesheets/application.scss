@@ -395,6 +395,14 @@ input[type=checkbox] {
   }
 }
 
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    input[type=checkbox]:before {
+      opacity: 1 !important;
+    }
+  }
+}
+
 input[type=checkbox]:before {
   content: "";
   display: block;

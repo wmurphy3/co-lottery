@@ -166,8 +166,7 @@ class Game
   # Update game array and cache it
   def update_game(prize)
     action = bot_action
-    puts "action: #{action}"
-    puts "last_turn?: #{last_turn?}"
+
     if last_turn?
       prize[:final]     = true
       prize[:action]    = "OPENED"
@@ -341,8 +340,6 @@ class Game
     elsif @game.count { |h| h[:finished] == true && h[:bot] == false } < 1 
       max_steal_bot     = 100
     end
-
-    puts "num: #{num}"
 
     case num
       when 1..max_open                  then 'open'

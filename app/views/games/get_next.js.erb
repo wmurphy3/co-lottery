@@ -2,7 +2,6 @@ $('.finished_game').val("<%= @game.stop_game? %>");
 
 // We need to decide about other actions
 <% if @game.finished? %>
-  console.log('finished');
   <% @new_game.each do |g| %>
     setAction(
       '<%= g[:id] %>', 
@@ -23,7 +22,6 @@ $('.finished_game').val("<%= @game.stop_game? %>");
   $(".finished").html("<%= escape_javascript(render partial: 'finish_button' ) %>");
   $('#winnerModal').modal({show: true, backdrop: 'static'})
 <% elsif @game.stop_game? %>
-  console.log('stop game');
   <% @new_game.each do |g| %>
     setAction(
       '<%= g[:id] %>',
@@ -101,9 +99,9 @@ function setAction(id, name, prize, class_name, bot, finished,
     class_name = class_name + " no-banner";
   }
 
-  var button_player_class = "button-player "+button_player;
-  var player_card_class = "player-card "+action_name;
-  var gift_class = "gift "+class_name;
+  var button_player_class   = "button-player "+button_player;
+  var player_card_class     = "player-card "+action_name;
+  var gift_class            = "gift "+class_name;
   if($('.game').length > 0) {
     current_turn == "true" ? 
       $('.gift').eq(id).hide().prop("class",gift_class).fadeIn(1500) :

@@ -24,7 +24,6 @@
 
 <script>
   $(function() {
-    console.log('my prize modal shown')
     $('#myPrizeModal').on('hidden.bs.modal', function (e) {
       $('.gift-name').eq("<%= @game.winner_prize[:id] %>").html("<%= @game.winner_prize[:prize][:name] %>")
       var finished_game = $('.finished_game').val() == "true";

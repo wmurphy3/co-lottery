@@ -42,6 +42,11 @@ body {
 
 strong { font-family: "FSEMericStrong" }
 
+h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
 .static-gift,
 .gift-name,
 .bam-gift {
@@ -210,17 +215,17 @@ a {
   width: 100%;
   position: relative;
   border-radius: 1rem;
-  border: .2rem solid $player-card-border;
-  box-shadow: 0 1rem 1rem rgb(72, 72, 72);
+  border: 0.1px solid $player-card-border;
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.3);
   background-clip:padding-box;
 }
 
 .player-card.background-white {
-  border: 2.12px solid #F8CB6B !important;
+  border: 0.1px solid #F8CB6B !important;
 }
 
 .player-card.background-green {
-  border: 2.12px solid #41836A !important;
+  border: 0.1px solid #41836A !important;
 }
 
 .no-gutters {
@@ -355,6 +360,10 @@ a {
 
 .check {
   margin-left: 50px;
+}
+
+.current_turn {
+  font-size: 1.7rem !important;
 }
 
 .form-check-input:checked,

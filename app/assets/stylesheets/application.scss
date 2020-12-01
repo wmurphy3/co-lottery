@@ -24,9 +24,9 @@
 }
 
 @font-face {
-  font-family: "TheBambankScript";
-  src: url('The-Bambank-Script.woff') format('woff'),
-      url('The-Bambank-Script.woff2') format('woff2');
+  font-family: "BealeRegularWebFont";
+  src: url('beale-regular-webfont.woff') format('woff'),
+       url('Tbeale-regular-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -45,7 +45,7 @@ strong { font-family: "FSEMericStrong" }
 .static-gift,
 .gift-name,
 .bam-gift {
-  font-family: "TheBambankScript",
+  font-family: "BealeRegularWebFont",
   Verdana,
   sans-serif;
   color: #333333;
@@ -316,9 +316,9 @@ a {
 .background-pattern {
   width: 100%;
   background-image: url("Hatch-Pattern-Background.svg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 .dashboard-text {

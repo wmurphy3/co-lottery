@@ -509,6 +509,57 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .white-elephant-logo-box {
+    top: 70% !important;
+  }
+
+  .my_prize_animate {
+    height: 55% !important;
+  }
+
+  .static-card .my_prize.my_prize_animate {
+    margin-top: 10% !important;
+    margin-left: 25% !important;
+  }
+
+  .game .gift {
+    margin: -10% 20% !important;
+  }
+
+  .bot .gummy,
+  .bot .gift_card,
+  .bot .blanket,
+  .bot .blow_up,
+  .bot .cutting_board,
+  .bot .fryer,
+  .bot .headphones,
+  .bot .sweater,
+  .bot .waffle_maker,
+  .bot .cooler,
+  .player .gummy,
+  .player .gift_card,
+  .player .blanket,
+  .player .blow_up,
+  .player .cutting_board,
+  .player .fryer,
+  .player .headphones,
+  .player .sweater,
+  .player .waffle_maker,
+  .player .cooler {
+    margin: -5% 20% !important;
+  }
+
+  .game .button-player-red,
+  .game .button-player-green,
+  .game .button-player-blue,
+  .game .button-player-white {
+    bottom: 50px !important;
+  }
+
+  .player-card .no-banner {
+    margin: 20% 5% !important;
+  }
+
   .player-card .gift-name {
     bottom: -5% !important;
   }
@@ -530,8 +581,19 @@
     }
 
     .static-gift {
-      margin-top: 2rem !important;
+      margin-top: 1rem !important;
     }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .static-card .my_prize.my_prize_animate {
+    margin-top: 20% !important;
+    margin-left: 20% !important;
+  }
+
+  .my_prize_animate {
+    height: 45% !important;
   }
 }
 

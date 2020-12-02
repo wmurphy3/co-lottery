@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :check_for_lockup
-
+  skip_before_action :check_for_lockup
 
   private
 

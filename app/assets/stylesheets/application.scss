@@ -381,8 +381,8 @@ a {
 input[type=checkbox] {
   position: relative;
   cursor: pointer;
-  width: 0 !important;
-  height: 0 !important;
+  width: 0;
+  height: 0;
 }
 
 @media all and (-ms-high-contrast: none),

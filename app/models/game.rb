@@ -30,7 +30,12 @@ class Game
   def get_next
     begin
       prize = get_next_present
-      prize = update_game(prize)
+
+      if prize.blank?
+        prize = @game[0]
+      else
+        prize = update_game(prize)
+      end
     
       prize
     rescue => e

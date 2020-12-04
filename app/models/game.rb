@@ -34,6 +34,7 @@ class Game
     
       prize
     rescue => e
+      Airbrake.notify("game next failed", {error: e.inspect})
       puts "e: #{e.inspect}"
       @failed = true
     end 

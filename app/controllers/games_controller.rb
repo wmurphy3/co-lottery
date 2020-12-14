@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   before_action :setup_game, only: [:index, :get_next, :steal]
   before_action :redirect_to_present, only: [:index]
-  before_action :get_cookie, only: [:show]
+  #before_action :get_cookie, only: [:show]
 
   layout "modal", only: [:entered, :show]
 

@@ -385,6 +385,10 @@ input[type=checkbox] {
   height: 0;
 }
 
+.mx-width-300 {
+  max-width: 700px;
+}
+
 @media all and (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */
